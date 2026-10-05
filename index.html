@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#f4f1ea;--surface:#fffdf8;--ink:#202c2a;--muted:#65706b;--forest:#204d45;--deep:#143c37;--accent:#d74f35;--line:#d8d8cc;--note:#f9e5a3;--sage:#e6ede4;--serif:"Noto Serif TC","Songti TC","PMingLiU",serif;--sans:"Noto Sans TC",system-ui,sans-serif}
+:root{--paper:#f4f1ea;--surface:#fffdf8;--ink:#202c2a;--muted:#65706b;--forest:#204d45;--forest-fill:#204d45;--deep:#143c37;--accent:#d74f35;--line:#d8d8cc;--note:#f9e5a3;--annotation-ink:#202c2a;--sage:#e6ede4;--reading-size:22px;--serif:"Noto Serif TC","Songti TC","PMingLiU",serif;--sans:"Noto Sans TC",system-ui,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--sans)}button,input{font:inherit}button{cursor:pointer}a{color:inherit}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .top{height:76px;background:var(--deep);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,calc((100vw - 1300px)/2));position:sticky;top:0;z-index:20}.brand{font:600 22px var(--serif);text-decoration:none;white-space:nowrap}.nav{display:flex;gap:38px;align-items:center}.nav a{font-size:13px;text-decoration:none;opacity:.82}.nav a:hover,.nav a:focus-visible{opacity:1;color:var(--note)}.mobile-nav{display:none}
 main{max-width:1440px;margin:auto;padding:0 5% 60px}.eyebrow,.section-label{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--accent);margin:0}.today{display:grid;grid-template-columns:minmax(0,1fr) 316px;gap:60px;padding:48px 0 44px;border-bottom:1px solid var(--line)}.today-copy{align-self:center}.today h1{font:600 clamp(42px,4.2vw,58px)/1.25 var(--serif);letter-spacing:-.04em;max-width:740px;margin:23px 0 18px}.today-desc{color:var(--muted);font-size:16px;margin:0}.today-meta{font-size:12px;color:var(--muted);margin:20px 0 0}.today-aside{background:var(--sage);padding:26px 28px;min-height:226px;display:flex;flex-direction:column;align-items:flex-start}.today-aside small{font-size:12px;color:var(--forest);font-weight:700;letter-spacing:.07em}.today-aside strong{font:400 104px/1.1 var(--serif);color:var(--forest);letter-spacing:-.08em}.today-aside span{font-size:14px;font-weight:500;color:var(--forest)}
@@ -19,6 +19,25 @@ main{max-width:1440px;margin:auto;padding:0 5% 60px}.eyebrow,.section-label{font
 @media(max-width:1100px){.reader-shell{grid-template-columns:minmax(0,1fr) 255px}.reading-rail{display:none}.today{gap:32px}}
 @media(max-width:760px){.top{height:62px;padding:0 20px}.brand{font-size:17px}.nav{display:none}main{padding:0 20px 94px}.today{display:block;padding:31px 0 27px}.today h1{font-size:38px;margin:16px 0}.today-desc{font-size:14px}.today-meta{margin-top:12px}.today-aside{display:none}.selection-bar{padding:16px 0;align-items:center}.selection-bar .section-label span{display:none}.buttons .primary{display:none}.reader-shell{display:block;margin:0 -20px}.readcard{padding:25px 20px;border-left:0;border-right:0}.article-head{padding-bottom:26px}.article-head h3{font-size:37px}.article-head p{font-size:14px}.para{padding:12px 0 28px}.original{font-size:21px;line-height:2.05}.note-panel{display:none}.note-bubble{position:absolute;z-index:8;top:calc(100% + 8px);left:0;display:block;width:max-content;max-width:min(330px,calc(100vw - 40px));background:var(--sage);color:var(--ink);border:1px solid var(--line);padding:14px 16px;box-shadow:0 15px 32px #143c3722;border-radius:3px;font:14px/1.65 var(--sans)}.note-bubble[hidden]{display:none}.note-open-left .note-bubble{left:auto;right:0}.library{padding:66px 0 10px}.library h2{font-size:38px}.library-intro{font-size:14px}.library-total{display:none}.library-tools{display:block;margin-top:28px;padding:21px 0}.search{width:100%}.filters{margin-top:18px;gap:7px}.filter{padding:7px 15px}.item{grid-template-columns:28px minmax(0,1fr) 25px;gap:10px;padding:17px 0}.item-type{display:none}.item-title{font-size:20px}.item small{font-size:12px}.footer{display:block}.footer span{display:block;margin-top:8px}.mobile-nav{display:flex;position:fixed;z-index:25;bottom:0;left:0;right:0;height:70px;background:var(--deep);color:#fff;align-items:center;justify-content:space-around}.mobile-nav a,.mobile-nav button{color:#fff;text-decoration:none;background:none;border:0;font-size:13px;padding:15px 8px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+body[data-theme="bright"]{--paper:#fff;--surface:#fff;--ink:#172522;--muted:#52635d;--forest:#204d45;--forest-fill:#204d45;--line:#d5e0da;--note:#ffe59a;--sage:#eef5f0}
+body[data-theme="night"]{--paper:#14201e;--surface:#1c2b28;--ink:#f0eee5;--muted:#b6c5bb;--forest:#b7e0d2;--forest-fill:#315e54;--deep:#102722;--accent:#ff9a79;--line:#42564e;--note:#f6d477;--sage:#293f38}
+.reader-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:12px 16px;margin-bottom:12px;background:var(--surface);border:1px solid var(--line);font-size:13px}
+.reader-toolbar>strong{color:var(--forest);font-size:12px;letter-spacing:.04em;margin-right:auto;white-space:nowrap}
+.tool-group{display:flex;align-items:center;gap:7px;white-space:nowrap}.tool-group>span{color:var(--muted);font-size:12px}
+.reader-toolbar button{min-height:36px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:3px;padding:5px 10px;font-size:13px}
+.reader-toolbar button:hover{background:var(--sage)}.reader-toolbar button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.reader-toolbar button:disabled{opacity:.4;cursor:not-allowed}
+.size-control output{min-width:42px;text-align:center;color:var(--ink);font-variant-numeric:tabular-nums}
+.theme-control{gap:0}.theme-control button{border-radius:0;margin-left:-1px}.theme-control button:first-of-type{margin-left:3px;border-radius:18px 0 0 18px}.theme-control button:last-child{border-radius:0 18px 18px 0}
+.reader-toolbar .theme-control button[aria-pressed="true"],.reader-toolbar .focus-toggle[aria-pressed="true"]{background:var(--forest-fill);border-color:var(--forest-fill);color:#fff}
+.reader-toolbar .focus-toggle{border-radius:18px;white-space:nowrap;padding-inline:14px}
+.original{font-size:var(--reading-size)}.translation p,.insight p,.quote{font-size:clamp(14px,calc(var(--reading-size) - 6px),24px)}.annotated-word{color:var(--annotation-ink)}
+.btn.primary{background:var(--forest-fill);border-color:var(--forest-fill)}.filter[aria-pressed="true"]{background:var(--forest-fill);border-color:var(--forest-fill)}
+.focus-mode .top,.focus-mode .today,.focus-mode .selection-bar,.focus-mode .reading-rail,.focus-mode .note-panel,.focus-mode .library,.focus-mode .footer,.focus-mode .mobile-nav{display:none}
+.focus-mode main{max-width:840px;padding:16px 20px 80px}.focus-mode .reader-shell{display:block;margin:0 auto;max-width:760px}.focus-mode .reader-toolbar{position:sticky;top:0;z-index:15;box-shadow:0 8px 18px #00000012}.focus-mode .readcard{width:100%}
+.focus-mode .note-bubble{position:absolute;z-index:18;top:calc(100% + 8px);left:0;display:block;width:max-content;max-width:min(330px,calc(100vw - 40px));background:var(--sage);color:var(--ink);border:1px solid var(--line);padding:14px 16px;box-shadow:0 15px 32px #0003;border-radius:3px;font:14px/1.65 var(--sans)}.focus-mode .note-bubble[hidden]{display:none}.focus-mode .note-open-left .note-bubble{left:auto;right:0}
+@media(max-width:760px){.reader-toolbar{padding:12px 20px;gap:10px;border-left:0;border-right:0}.reader-toolbar>strong{width:100%}.tool-group>span{display:none}.reader-toolbar .theme-control button:first-of-type{margin-left:0}.reader-toolbar button{min-height:40px}.focus-mode main{padding:0 0 60px}.focus-mode .reader-toolbar{margin-bottom:0}.focus-mode .reader-toolbar>strong{display:none}.focus-mode .readcard{border-top:0}.original{font-size:var(--reading-size)}}
+@media(prefers-reduced-motion:reduce){.focus-mode .reader-toolbar{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -26,12 +45,46 @@ main{max-width:1440px;margin:auto;padding:0 5% 60px}.eyebrow,.section-label{font
 <main id="home">
 <section class="today" id="today"><div class="today-copy"><p class="eyebrow">READ SOMETHING GOOD TODAY　 /　 每日一篇</p><h1 id="daily-title">把一篇文章，<br>讀得更深一些。</h1><p class="today-desc" id="daily-desc">古今文章，每日一篇。細讀文字，點開註釋，再慢慢理解。</p><p class="today-meta" id="daily-meta"></p></div><aside class="today-aside"><small>TODAY'S PICK</small><strong id="issue-day">—</strong><span id="issue-month"></span></aside></section>
 <div class="selection-bar"><p class="section-label">01　/　今日選文 <span>細讀原文，再按需展開</span></p><div class="buttons"><button class="btn primary" id="start" type="button">開始閱讀　↗</button><button class="btn" id="reroll" type="button">↻　再抽一篇</button></div></div>
-<div class="reader-shell" id="reader"><aside class="reading-rail" aria-label="閱讀路徑"><strong>閱讀路徑</strong><ol><li>01　原文</li><li>02　譯文</li><li>03　總結與分析</li></ol><p>點擊標亮的字詞查看註釋；按需展開每段的理解提示。</p></aside><section class="reading"><div class="reading-head"><h2 id="reader-heading">今日選文</h2></div><article class="readcard" id="article" aria-live="polite"></article></section><aside class="note-panel" id="annotation-guide" aria-live="polite"><h2>字詞註釋</h2><strong id="note-title">點擊字詞</strong><p id="note-body">原文中標亮的字詞都有註釋。按一下，即可在這裏查看符合語境的解釋。</p><small>細讀提示　/　按 Escape 可收起註釋</small></aside></div>
+<div class="reader-shell" id="reader"><aside class="reading-rail" aria-label="閱讀路徑"><strong>閱讀路徑</strong><ol><li>01　原文</li><li>02　譯文</li><li>03　總結與分析</li></ol><p>點擊標亮的字詞查看註釋；按需展開每段的理解提示。</p></aside><section class="reading"><div class="reader-toolbar" role="group" aria-label="閱讀設定"><strong>閱讀設定</strong><div class="tool-group size-control"><span>字級</span><button id="font-decrease" type="button" aria-label="縮小閱讀字體">A−</button><output id="font-size-display" aria-live="polite">22 px</output><button id="font-increase" type="button" aria-label="放大閱讀字體">A＋</button></div><div class="tool-group theme-control" role="group" aria-label="頁面配色"><span>配色</span><button type="button" data-reader-theme="paper" aria-pressed="true">紙本</button><button type="button" data-reader-theme="bright" aria-pressed="false">明亮</button><button type="button" data-reader-theme="night" aria-pressed="false">夜讀</button></div><button class="focus-toggle" id="focus-toggle" type="button" aria-pressed="false">專注模式</button></div><div class="reading-head"><h2 id="reader-heading">今日選文</h2></div><article class="readcard" id="article" aria-live="polite"></article></section><aside class="note-panel" id="annotation-guide" aria-live="polite"><h2>字詞註釋</h2><strong id="note-title">點擊字詞</strong><p id="note-body">原文中標亮的字詞都有註釋。按一下，即可在這裏查看符合語境的解釋。</p><small>細讀提示　/　按 Escape 可收起註釋</small></aside></div>
 <section class="library" id="library"><div class="library-top"><div><p class="eyebrow">THE LIBRARY　 /　 按自己的節奏探索</p><h2>篇章庫</h2><p class="library-intro" id="library-intro">從古典到當代，找到今天想讀的一篇。</p></div><div class="library-total"><span id="library-number">—</span><small>篇已整理文章</small></div></div><div class="library-tools"><label class="sr" for="search">搜尋篇名、作者或關鍵詞</label><input id="search" class="search" type="search" placeholder="⌕　搜尋篇名、作者或關鍵詞"><div class="filters" role="group" aria-label="按文體分類"><button class="filter" type="button" data-type="all" aria-pressed="true">全部</button><button class="filter" type="button" data-type="classical" aria-pressed="false">文言文</button><button class="filter" type="button" data-type="vernacular" aria-pressed="false">白話文</button></div></div><div class="count" id="count"></div><div class="items" id="items"></div></section>
 <footer class="footer"><div>READMAUD　/　一天一篇，慢慢讀。</div><span>新增篇章時，只需更新 articles.json。</span></footer>
 </main><nav class="mobile-nav" aria-label="手機導覽"><a href="#today">今日</a><a href="#library">篇章庫</a><button type="button" id="mobile-reroll">再抽一篇</button></nav>
 <script>
 const $=q=>document.querySelector(q);
+const safeGet=key=>{try{return localStorage.getItem(key)}catch{return null}};
+const safeSet=(key,value)=>{try{localStorage.setItem(key,value)}catch{}};
+const readerSettingsKey='readmaud-reader-settings-v1';
+const readerSizes=[18,20,22,24,26,28,30];
+function initReaderSettings(){
+ let saved={};
+ try{saved=JSON.parse(safeGet(readerSettingsKey)||'{}')||{}}catch{}
+ let size=readerSizes.includes(saved.size)?saved.size:22;
+ let theme=['paper','bright','night'].includes(saved.theme)?saved.theme:'paper';
+ const persist=()=>safeSet(readerSettingsKey,JSON.stringify({size,theme}));
+ const updateSize=()=>{
+  document.documentElement.style.setProperty('--reading-size',size+'px');
+  $('#font-size-display').textContent=size+' px';
+  $('#font-decrease').disabled=size===readerSizes[0];
+  $('#font-increase').disabled=size===readerSizes[readerSizes.length-1];
+ };
+ const updateTheme=()=>{
+  document.body.dataset.theme=theme;
+  document.querySelectorAll('[data-reader-theme]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.readerTheme===theme)));
+  document.querySelector('meta[name="theme-color"]').content=theme==='night'?'#14201e':theme==='bright'?'#ffffff':'#143c37';
+ };
+ $('#font-decrease').addEventListener('click',()=>{size=readerSizes[Math.max(0,readerSizes.indexOf(size)-1)];updateSize();persist()});
+ $('#font-increase').addEventListener('click',()=>{size=readerSizes[Math.min(readerSizes.length-1,readerSizes.indexOf(size)+1)];updateSize();persist()});
+ document.querySelectorAll('[data-reader-theme]').forEach(button=>button.addEventListener('click',()=>{theme=button.dataset.readerTheme;updateTheme();persist()}));
+ const toggleFocus=active=>{
+  document.body.classList.toggle('focus-mode',active);
+  $('#focus-toggle').setAttribute('aria-pressed',String(active));
+  $('#focus-toggle').textContent=active?'退出專注':'專注模式';
+  if(active)$('#reader').scrollIntoView({behavior:'auto',block:'start'});
+ };
+ $('#focus-toggle').addEventListener('click',()=>toggleFocus(!document.body.classList.contains('focus-mode')));
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&document.body.classList.contains('focus-mode'))toggleFocus(false)});
+ updateSize();updateTheme();
+}
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dayKey=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Hong_Kong'});
 const storageKey=`readmaud-daily:${dayKey}`;
@@ -75,7 +128,7 @@ function render(){
    const rect=button.getBoundingClientRect();if(rect.right>window.innerWidth-310)button.parentElement.classList.add('note-open-left');
   }
  };
- $('#article').onkeydown=e=>{if(e.key==='Escape')$('#article').querySelectorAll('.annotated-word[aria-expanded="true"]').forEach(open=>{open.setAttribute('aria-expanded','false');open.nextElementSibling.hidden=true;open.parentElement.classList.remove('note-open-left')})};
+ $('#article').onkeydown=e=>{if(e.key==='Escape'&&$('#article').querySelector('.annotated-word[aria-expanded="true"]')){e.stopPropagation();$('#article').querySelectorAll('.annotated-word[aria-expanded="true"]').forEach(open=>{open.setAttribute('aria-expanded','false');open.nextElementSibling.hidden=true;open.parentElement.classList.remove('note-open-left')})}};
  $('#start').onclick=()=>$('#reader').scrollIntoView({behavior:'smooth'});
 }
 let activeType='all';
@@ -84,7 +137,7 @@ function renderList(){
  const list=articles.filter(a=>(activeType==='all'||a.type===activeType)&&label(a).toLowerCase().includes(q));
  $('#count').textContent=`顯示 ${list.length} / ${articles.length} 篇`;
  $('#items').innerHTML=list.map(a=>`<button class="item ${activeId===a.id?'selected':''}" type="button" data-id="${esc(a.id)}"><span class="item-no">${String(articles.indexOf(a)+1).padStart(2,'0')}</span><span class="item-title">${esc(a.title)}<small>${esc(a.author)} · ${typeLabel(a.type)} · ${isReady(a)?'可閱讀':'整理中'}</small></span><span class="item-type">${typeLabel(a.type)}</span><span class="item-arrow" aria-hidden="true">↗</span></button>`).join('');
- document.querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>{activeId=b.dataset.id;localStorage.setItem(storageKey,activeId);render();renderList();$('#reader').scrollIntoView({behavior:'smooth'})});
+ document.querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>{activeId=b.dataset.id;safeSet(storageKey,activeId);render();renderList();$('#reader').scrollIntoView({behavior:'smooth'})});
 }
 function showLoadError(){ $('#daily-title').textContent='篇章資料未能載入';$('#daily-desc').textContent='請重新載入頁面；如剛新增了文章，請確認 articles.json 格式正確。';$('#reader-heading').textContent='暫時無法開啟篇章';$('#article').innerHTML='<div class="not-ready"><h4>資料檔讀取失敗</h4><p>請檢查 articles.json 是否為有效 JSON，再重新部署。</p></div>'; }
 async function init(){
@@ -92,10 +145,10 @@ async function init(){
   const response=await fetch('./articles.json',{cache:'no-store'});if(!response.ok)throw new Error('articles.json request failed');
   const data=await response.json();if(!Array.isArray(data.articles))throw new Error('articles must be an array');
   articles=data.articles.slice().sort((a,b)=>(a.order??999999)-(b.order??999999));
-  const complete=readyArticles(),saved=localStorage.getItem(storageKey);
+  const complete=readyArticles(),saved=safeGet(storageKey);
   const initial=complete.find(a=>a.id===saved)||complete[dateSeed()%Math.max(complete.length,1)]||articles[0];
   activeId=initial?.id||'';
-  $('#reroll').addEventListener('click',()=>{const pool=readyArticles().filter(x=>x.id!==activeId);if(!pool.length)return;const pick=pool[Math.floor(Math.random()*pool.length)];activeId=pick.id;localStorage.setItem(storageKey,activeId);render();renderList()});
+  $('#reroll').addEventListener('click',()=>{const pool=readyArticles().filter(x=>x.id!==activeId);if(!pool.length)return;const pick=pool[Math.floor(Math.random()*pool.length)];activeId=pick.id;safeSet(storageKey,activeId);render();renderList()});
   $('#mobile-reroll').addEventListener('click',()=>{$('#reroll').click();$('#reader').scrollIntoView({behavior:'smooth'})});
   $('#search').addEventListener('input',renderList);
   document.querySelectorAll('[data-type]').forEach(b=>b.addEventListener('click',()=>{activeType=b.dataset.type;document.querySelectorAll('[data-type]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderList()}));
@@ -104,6 +157,7 @@ async function init(){
   render();renderList();
  }catch(error){console.error(error);showLoadError()}
 }
+initReaderSettings();
 init();
 </script>
 </body></html>
