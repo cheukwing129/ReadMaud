@@ -70,7 +70,7 @@ main{max-width:1360px;margin:0 auto;padding:0 32px 90px}.view{animation:view-in 
 <div class="view" id="today-view">
  <div class="edition"><span>READMAUD / DAILY READING</span><span id="daily-date"></span></div>
  <section class="hero" id="today" aria-labelledby="daily-title"><div class="hero-main"><p class="eyebrow">TODAY'S STORY / 今日選文</p><h1 id="daily-title">今天讀甚麼？</h1><p class="hero-desc" id="daily-desc">每天一篇，按自己的節奏閱讀。</p><div class="hero-meta"><span id="daily-author"></span><span class="dot"></span><span class="type" id="daily-type"></span><span class="dot"></span><span id="daily-meta"></span></div><div class="hero-actions"><button class="action primary" type="button" id="start">開始閱讀 ↓</button><button class="action" type="button" id="reroll">換一篇 ↗</button></div></div><aside class="hero-aside" aria-label="篇章序號"><small>IN THE COLLECTION</small><div class="issue-number" id="issue-number">—</div><p>從篇章庫中抽選<br>今天的一篇。</p></aside></section>
- <section class="reading-area" id="reader" aria-labelledby="reader-heading"><h2 id="reader-heading" class="sr">今日選文原文</h2><div class="reader-toolbar" role="group" aria-label="閱讀設定"><strong>READING TOOLS</strong><div class="tool-group size-control"><span class="tool-label">字級</span><button id="font-decrease" type="button" aria-label="縮小閱讀字體">A−</button><output id="font-size-display" aria-live="polite">22 px</output><button id="font-increase" type="button" aria-label="放大閱讀字體">A＋</button></div><div class="tool-group theme-control" role="group" aria-label="頁面配色"><span class="tool-label">配色</span><button type="button" data-reader-theme="paper" aria-pressed="true">紙本</button><button type="button" data-reader-theme="bright" aria-pressed="false">明亮</button><button type="button" data-reader-theme="night" aria-pressed="false">夜讀</button></div><button class="mode-toggle" id="reading-mode-toggle" type="button" aria-pressed="false">翻頁閱讀</button><button class="focus-toggle" id="focus-toggle" type="button" aria-pressed="false">專注模式</button></div><div class="reading-hint" id="note-hint"><b>THE TEXT</b><p>標亮字詞可點開註釋；譯文及段落分析按需展開。</p></div><article class="readcard" id="article" aria-live="polite"></article></section>
+ <section class="reading-area" id="reader" aria-labelledby="reader-heading"><h2 id="reader-heading" class="sr">今日選文原文</h2><div class="reader-toolbar" role="group" aria-label="閱讀設定"><strong>READING TOOLS</strong><div class="tool-group size-control"><span class="tool-label">字級</span><button id="font-decrease" type="button" aria-label="縮小閱讀字體">A−</button><output id="font-size-display" aria-live="polite">22 px</output><button id="font-increase" type="button" aria-label="放大閱讀字體">A＋</button></div><div class="tool-group font-control"><label class="tool-label" for="reader-font">字體</label><select id="reader-font" aria-label="閱讀字體"><option value="auto">預設字體</option><option value="sourcehan">思源宋體</option></select></div><div class="tool-group theme-control" role="group" aria-label="頁面配色"><span class="tool-label">配色</span><button type="button" data-reader-theme="paper" aria-pressed="true">紙本</button><button type="button" data-reader-theme="bright" aria-pressed="false">明亮</button><button type="button" data-reader-theme="night" aria-pressed="false">夜讀</button></div><button id="export-pdf" type="button">匯出 PDF</button><button class="mode-toggle" id="reading-mode-toggle" type="button" aria-pressed="false">翻頁閱讀</button><button class="focus-toggle" id="focus-toggle" type="button" aria-pressed="false">專注模式</button></div><div id="pdf-status" class="pdf-status" role="status"></div><div class="reading-hint" id="note-hint"><b>THE TEXT</b><p>標亮字詞可點開註釋；譯文按需展開，總結及分析列於每段後。</p></div><article class="readcard" id="article" aria-live="polite"></article></section>
 </div>
 <section class="view" id="library-view" hidden aria-labelledby="library-heading"><div class="edition"><span>READMAUD / THE INDEX</span><span>EXPLORE THE COLLECTION</span></div><div class="library-intro"><p class="eyebrow">THE COLLECTION / 篇章庫</p><h2 id="library-heading">讀什麼，自己挑。</h2><p id="library-intro">從古典到當代，找到今天想讀的一篇。</p></div><div class="library-tools"><label class="sr" for="search">搜尋篇名或作者</label><input id="search" class="search" type="search" placeholder="搜尋篇名或作者…"><div class="filters" role="group" aria-label="按文體分類"><button class="filter" type="button" data-type="all" aria-pressed="true">全部</button><button class="filter" type="button" data-type="classical" aria-pressed="false">文言文</button><button class="filter" type="button" data-type="vernacular" aria-pressed="false">白話文</button></div></div><div class="library-count"><span id="count"></span>　/　已整理 <span id="library-number">—</span> 篇</div><div class="items" id="items"></div></section>
 <footer class="footer"><b>READMAUD.</b><span>每天一篇，慢慢讀。新增文章時更新 articles.json 即可。</span></footer>
@@ -87,7 +87,14 @@ function initReaderSettings(){
  try{saved=JSON.parse(safeGet(readerSettingsKey)||'{}')||{}}catch{}
  let size=readerSizes.includes(saved.size)?saved.size:22;
  let theme=['paper','bright','night'].includes(saved.theme)?saved.theme:'paper';
- const persist=()=>safeSet(readerSettingsKey,JSON.stringify({size,theme}));
+ let font=saved.font==='sourcehan'?'sourcehan':'auto';
+ const persist=()=>safeSet(readerSettingsKey,JSON.stringify({size,theme,font}));
+ const updateFont=()=>{
+  document.body.dataset.readingFont=font;$('#reader-font').value=font;
+  document.dispatchEvent(new Event('readerlayoutchange'));
+  if(font==='sourcehan'&&document.fonts)document.fonts.load(size+'px "ReadMaud Source Serif"').then(()=>document.dispatchEvent(new Event('readerlayoutchange'))).catch(()=>{});
+ };
+ $('#reader-font').addEventListener('change',()=>{font=$('#reader-font').value==='sourcehan'?'sourcehan':'auto';updateFont();persist()});
  const updateSize=()=>{
   document.documentElement.style.setProperty('--reading-size',size+'px');
   $('#font-size-display').textContent=size+' px';
@@ -112,7 +119,7 @@ function initReaderSettings(){
  };
  $('#focus-toggle').addEventListener('click',()=>toggleFocus(!document.body.classList.contains('focus-mode')));
  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!document.querySelector('dialog[open]')&&document.body.classList.contains('focus-mode'))toggleFocus(false)});
- updateSize();updateTheme();
+ updateSize();updateTheme();updateFont();
 }
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dayKey=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Hong_Kong'});
@@ -165,8 +172,8 @@ function render(){
  $('#issue-number').textContent=String(articles.indexOf(a)+1).padStart(2,'0');
  $('#article').dataset.type=a.type;
  $('#reader-heading').textContent=a.title+'原文';
- $('#article').innerHTML=ready?`<header class="article-head sr"><h2>${esc(a.title)}</h2><p>${esc(a.author)}${category}</p></header>${a.paragraphs.map((p,i)=>`<section class="para"><span class="tag" aria-label="第 ${i+1} 段">${String(i+1).padStart(2,'0')}</span><div class="para-content"><p class="original">${renderOriginal(p)}</p>${a.type==='classical'&&p.translation?`<details class="translation"><summary>＋  顯示這一段的譯文</summary><p>${esc(p.translation)}</p></details>`:p.translation?`<p class="quote">譯文｜${esc(p.translation)}</p>`:''}<div class="analysis-grid"><details class="insight"><summary>＋  這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight"><summary>＋  深入分析</summary><p>${esc(p.analysis)}</p></details></div></div></section>`).join('')}<div class="reader-foot"><span>共 ${a.paragraphs.length} 段 · 建議逐段閱讀</span></div>`:`<header class="article-head"><span class="type-chip">${typeLabel(a.type)}</span><span class="author">篇章庫 · 內容整理中</span><h3>${esc(a.title)}</h3><p>${esc(a.author)}</p></header><div class="not-ready"><h4>逐段內容整理中</h4><p>這篇文章尚未補齊內容；文言文還須填寫每段白話譯文及按語境編寫的字詞／句式注釋。完成後會自動列入每日隨機選讀。</p></div><div class="reader-foot"><span>篇章 ${articles.indexOf(a)+1} / ${articles.length}</span></div>`;
- $('#note-hint').querySelector('p').textContent=a.type==='classical'?'標亮字詞可點開註釋；譯文及段落分析按需展開。':'段落總結與分析按需展開。';
+ $('#article').innerHTML=ready?`<header class="article-head sr"><h2>${esc(a.title)}</h2><p>${esc(a.author)}${category}</p></header>${a.paragraphs.map((p,i)=>`<section class="para"><span class="tag" aria-label="第 ${i+1} 段">${String(i+1).padStart(2,'0')}</span><div class="para-content"><p class="original">${renderOriginal(p)}</p>${a.type==='classical'&&p.translation?`<details class="translation"><summary>＋  顯示這一段的譯文</summary><p>${esc(p.translation)}</p></details>`:p.translation?`<p class="quote">譯文｜${esc(p.translation)}</p>`:''}<div class="analysis-grid"><details class="insight" open><summary>＋  這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight" open><summary>＋  深入分析</summary><p>${esc(p.analysis)}</p></details></div></div></section>`).join('')}<div class="reader-foot"><span>共 ${a.paragraphs.length} 段 · 建議逐段閱讀</span></div>`:`<header class="article-head"><span class="type-chip">${typeLabel(a.type)}</span><span class="author">篇章庫 · 內容整理中</span><h3>${esc(a.title)}</h3><p>${esc(a.author)}</p></header><div class="not-ready"><h4>逐段內容整理中</h4><p>這篇文章尚未補齊內容；文言文還須填寫每段白話譯文及按語境編寫的字詞／句式注釋。完成後會自動列入每日隨機選讀。</p></div><div class="reader-foot"><span>篇章 ${articles.indexOf(a)+1} / ${articles.length}</span></div>`;
+ $('#note-hint').querySelector('p').textContent=a.type==='classical'?'標亮字詞可點開註釋；譯文按需展開，總結及分析列於每段後。':'每段後顯示總結與分析；開啟專注模式可隱藏。';
  $('#article').onclick=e=>{const button=e.target.closest('.annotated-word');if(button)window.ReaderNotes.toggle(button)};
  $('#start').onclick=()=>$('#reader').scrollIntoView({behavior:'smooth'});
  document.dispatchEvent(new CustomEvent('readerarticlechange',{detail:a}));
@@ -215,4 +222,5 @@ window.addEventListener('scroll',()=>{
 </script>
 <script src="./reader-notes.js"></script>
 <script src="./reader-pages.js"></script>
+<script src="./reader-pdf.js"></script>
 </body></html>

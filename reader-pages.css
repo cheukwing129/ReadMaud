@@ -36,5 +36,13 @@
 @media(prefers-reduced-motion:reduce){.page-flow{transition:none!important}}
 
 .focus-mode .analysis-grid,.focus-mode .quote,.focus-mode .reader-foot,.focus-mode .reading-hint{display:none!important}
-body,.top,.reader-toolbar,.paged-reader,.page-detail-dialog,.page-detail-head,.mobile-nav{background-image:url(./paper-grain.svg);background-repeat:repeat;background-size:240px 240px}
+body,.top,.reader-toolbar,.paged-reader,.page-detail-dialog,.page-detail-head,.mobile-nav{background-image:url(./assets/paper-texture.png);background-repeat:repeat;background-size:auto}
 .reader-note{overflow-wrap:anywhere;overscroll-behavior:contain;box-shadow:0 5px 20px #0003}
+
+body{background-image:url(./assets/paper-gloss.png),url(./assets/paper-texture.png);background-repeat:repeat-x,repeat;background-size:auto,auto;background-attachment:fixed,fixed}
+@font-face{font-family:"ReadMaud Source Serif";src:url(./assets/source-han-serif-tc.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+body[data-reading-font="sourcehan"] .readcard .original,body[data-reading-font="sourcehan"] .page-flow .page-paragraph,body[data-reading-font="sourcehan"] .translation p,body[data-reading-font="sourcehan"] .insight p,body[data-reading-font="sourcehan"] .page-detail-body{font-family:"ReadMaud Source Serif",var(--serif)}
+.reader-toolbar select{min-height:38px;max-width:130px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:12px;padding:7px 10px}
+.reader-toolbar select option{background:var(--page);color:var(--ink)}
+.pdf-status:empty{display:none}.pdf-status{font-size:13px;color:var(--muted);padding-top:10px}
+@media(max-width:620px){.reader-toolbar select{min-height:42px}.focus-mode .reading-area{margin-inline:0}}
