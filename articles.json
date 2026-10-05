@@ -14,58 +14,183 @@
           "translation": "山不在於高，有仙人居住就有盛名；水不在於深，有蛟龍潛藏就顯示神靈。",
           "guide": "先看「山高、水深」這兩個常見的衡量標準，作者如何把它們改寫？",
           "summary": "山水的價值不在外在大小，而在其中是否有仙、龍。",
-          "analysis": "以山、水作比，提出「環境的價值由內在精神決定」；也替下文寫居室作鋪墊。"
+          "analysis": "以山、水作比，提出「環境的價值由內在精神決定」；也替下文寫居室作鋪墊。",
+          "notes": [
+            {
+              "term": "在",
+              "explanation": "動詞，意思是「在於」。這裏指出山水是否高深並非關鍵，價值取決於其中有沒有仙人、蛟龍。"
+            },
+            {
+              "term": "名",
+              "explanation": "名詞活用作動詞，指「有名、著名」。"
+            },
+            {
+              "term": "靈",
+              "explanation": "形容詞活用作動詞，指「顯得靈異、有靈氣」。「有龍則靈」與「有仙則名」句式相對。"
+            }
+          ]
         },
         {
           "text": "斯是陋室，惟吾德馨。",
           "translation": "這雖然是間簡陋的小屋，但我品德高尚、德行美好。",
           "guide": "「斯」承接前文，指眼前的居室；「惟」把重心轉到什麼？",
           "summary": "居室雖然簡陋，作者認為自己的品德使居所充滿美好氣息。",
-          "analysis": "全文主旨句。「陋」與「馨」形成對照，說明居室的高雅不靠華麗裝潢，而由居住者的品德決定。"
+          "analysis": "全文主旨句。「陋」與「馨」形成對照，說明居室的高雅不靠華麗裝潢，而由居住者的品德決定。",
+          "notes": [
+            {
+              "term": "斯",
+              "explanation": "指示代詞，意思是「這」，指作者所居的陋室。"
+            },
+            {
+              "term": "惟",
+              "explanation": "副詞，意思是「只、唯獨」，把焦點由居室轉到居住者。"
+            },
+            {
+              "term": "德馨",
+              "explanation": "「馨」本指香氣遠播，這裏比喻品德高尚。「德馨」是全篇立意所在。"
+            }
+          ]
         },
         {
           "text": "苔痕上階綠，草色入簾青。",
           "translation": "苔痕佈滿階石，一片翠綠；草色映入簾櫳，滿室蔥青。",
           "guide": "留意「上」和「入」兩個動詞，景物如何越過室內外的界線？",
           "summary": "青苔爬上石階，青草的顏色映入簾內，居室與自然相連。",
-          "analysis": "以「綠」「青」寫清幽生機；「上」「入」使景物帶有動態，呈現不經修飾的自然之美。"
+          "analysis": "以「綠」「青」寫清幽生機；「上」「入」使景物帶有動態，呈現不經修飾的自然之美。",
+          "notes": [
+            {
+              "term": "上",
+              "explanation": "名詞活用作動詞，意思是「爬上、長上」。寫出青苔沿石階生長的動態。"
+            },
+            {
+              "term": "綠、青",
+              "explanation": "形容詞作動詞用，分別指呈現綠色、青色；兩字照應，寫出清幽景色。"
+            },
+            {
+              "term": "入",
+              "explanation": "動詞，指草色映入簾內，呈現景物由室外延伸至室內的感覺。"
+            }
+          ]
         },
         {
           "text": "談笑有鴻儒，往來無白丁。",
           "translation": "往來談笑的都是博學多識之士，沒有淺薄無識之人。",
           "guide": "作者用交往的人物，補充說明自己過着怎樣的生活。",
           "summary": "來訪和交談的都是有學問、有修養的人。",
-          "analysis": "「鴻儒」與「白丁」對舉，凸顯作者重視精神交流和學識修養，也寫出生活圈子的清雅。"
+          "analysis": "「鴻儒」與「白丁」對舉，凸顯作者重視精神交流和學識修養，也寫出生活圈子的清雅。",
+          "notes": [
+            {
+              "term": "鴻儒",
+              "explanation": "「鴻」有大之意；「鴻儒」指博學之士。"
+            },
+            {
+              "term": "白丁",
+              "explanation": "原指平民，亦可指沒有功名或學識的人；此處與「鴻儒」對舉，突出交往者的學養。"
+            },
+            {
+              "term": "談笑、往來",
+              "explanation": "不是只描寫談話動作，也借交遊情況表現作者的生活志趣。"
+            }
+          ]
         },
         {
           "text": "可以調素琴，閱金經。",
           "translation": "可以彈未加彩飾的琴，可以閱讀珍貴的經典。",
           "guide": "「素」和「金」分別帶出琴與經典的什麼意味？",
           "summary": "作者在室內彈琴、讀經，享受簡樸而充實的生活。",
-          "analysis": "「素琴」見樸素，「金經」見珍重；兩件日常活動表現清靜自足的精神生活。"
+          "analysis": "「素琴」見樸素，「金經」見珍重；兩件日常活動表現清靜自足的精神生活。",
+          "notes": [
+            {
+              "term": "可以",
+              "explanation": "古今用法相近，指「可以用來」。承接上句，說明陋室中可做的雅事。"
+            },
+            {
+              "term": "調",
+              "explanation": "動詞，指彈奏；「調素琴」即彈奏樸素的琴。"
+            },
+            {
+              "term": "素琴",
+              "explanation": "「素」指樸素、沒有華飾；與「金經」形成簡雅而珍重的對照。"
+            },
+            {
+              "term": "金經",
+              "explanation": "指珍貴的佛經。「金」形容其珍貴，不是指金屬製成的經書。"
+            }
+          ]
         },
         {
           "text": "無絲竹之亂耳，無案牘之勞形。",
           "translation": "沒有嘈雜的音樂聲擾亂耳朵，也沒有官府公文使身體勞累。",
           "guide": "兩個「無」寫出作者刻意遠離哪些生活？",
           "summary": "沒有嘈雜樂聲和繁重公務，心神與身體都不受干擾。",
-          "analysis": "以「亂耳」「勞形」寫俗務造成的煩擾，反襯陋室中的清靜自在；句式整齊，讀來有節奏。"
+          "analysis": "以「亂耳」「勞形」寫俗務造成的煩擾，反襯陋室中的清靜自在；句式整齊，讀來有節奏。",
+          "notes": [
+            {
+              "term": "絲竹",
+              "explanation": "以樂器材料「絲」（弦樂器）、「竹」（管樂器）代指音樂。"
+            },
+            {
+              "term": "之",
+              "explanation": "結構助詞，置於主謂短語「絲竹亂耳」之間，使其成為「無」所涉及的事情，可理解為沒有音樂聲擾亂耳朵。"
+            },
+            {
+              "term": "亂耳",
+              "explanation": "「亂」是使動用法，指使耳朵受到擾亂。"
+            },
+            {
+              "term": "案牘",
+              "explanation": "官府往來的文書、公務文件。"
+            },
+            {
+              "term": "勞形",
+              "explanation": "「勞」是使動用法，指使身體勞累；「形」指身體。"
+            }
+          ]
         },
         {
           "text": "南陽諸葛廬，西蜀子雲亭。",
           "translation": "南陽有諸葛亮的草廬，西蜀有揚雄的玄亭。",
           "guide": "作者提到諸葛亮和揚雄，為自己的居室引入哪一類人物？",
           "summary": "以兩位古代賢者的居所，聯想到自己的陋室。",
-          "analysis": "援引諸葛亮、揚雄自況，暗示居所雖簡，居者可以有高尚志趣與學問抱負。"
+          "analysis": "援引諸葛亮、揚雄自況，暗示居所雖簡，居者可以有高尚志趣與學問抱負。",
+          "notes": [
+            {
+              "term": "諸葛廬",
+              "explanation": "指南陽諸葛亮躬耕時的草廬。作者借賢者居所聯想到自己的陋室。"
+            },
+            {
+              "term": "子雲亭",
+              "explanation": "子雲是西漢揚雄的字；此處指揚雄在蜀地的居所玄亭。"
+            },
+            {
+              "term": "南陽、西蜀",
+              "explanation": "分別帶出諸葛亮和揚雄，兩句以地名、人物居所相對，語序整齊。"
+            }
+          ]
         },
         {
           "text": "孔子云：「何陋之有？」",
           "translation": "正如孔子說的：「有什麼簡陋之處呢？」",
           "guide": "結尾引用孔子的話，如何回答篇題中的「陋」？",
           "summary": "作者借孔子的話作結：有德者居住，便沒有真正的簡陋。",
-          "analysis": "以反問收束，語氣堅定有力；呼應「惟吾德馨」，再次點明精神品格比物質環境更重要。"
+          "analysis": "以反問收束，語氣堅定有力；呼應「惟吾德馨」，再次點明精神品格比物質環境更重要。",
+          "notes": [
+            {
+              "term": "云",
+              "explanation": "動詞，意思是「說」。孔子云即孔子說。"
+            },
+            {
+              "term": "何陋之有",
+              "explanation": "「何陋」是「有」的賓語；「之」是賓語前置的標誌。按一般語序可理解為「有何陋」，即「有甚麼簡陋呢？」"
+            },
+            {
+              "term": "何",
+              "explanation": "疑問代詞，意思是「甚麼」。句末反問並非真要詢問，而是強調陋室不陋。"
+            }
+          ]
         }
-      ]
+      ],
+      "type": "classical"
     },
     {
       "id": "article-02",
@@ -75,7 +200,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B9%9D%E6%9C%88/%E7%AC%AC2%E5%91%A8%E6%A0%97%E8%89%AF%E5%B9%B3%E4%B8%80%E7%A2%97%E9%99%BD%E6%98%A5%E9%BA%B5",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-03",
@@ -85,7 +211,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B9%9D%E6%9C%88/%E7%AC%AC3%E5%91%A8%E5%B7%A6%E5%82%B3%E5%AE%AE%E4%B9%8B%E5%A5%87%E8%AB%AB%E5%81%87%E9%81%93",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-04",
@@ -95,7 +222,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B9%9D%E6%9C%88/%E7%AC%AC4%E5%91%A8%E9%87%91%E5%BA%B8%E5%B0%84%E9%B5%B0%E8%8B%B1%E9%9B%84%E5%82%B3%E6%99%BA%E9%AC%A5%E6%9B%B8%E7%94%9F",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-05",
@@ -105,7 +233,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E6%9C%88/%E7%AC%AC5%E5%91%A8%E5%B7%A6%E5%82%B3%E7%87%AD%E4%B9%8B%E6%AD%A6%E9%80%80%E7%A7%A6%E5%B8%AB",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-06",
@@ -115,7 +244,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E6%9C%88/%E7%AC%AC6%E5%91%A8%E5%BC%B5%E6%9B%89%E9%A2%A8%E6%9C%88%E9%97%95%E4%B9%9F",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-07",
@@ -125,7 +255,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E6%9C%88/%E7%AC%AC7%E5%91%A8%E6%9D%8E%E5%AF%86%E9%99%B3%E6%83%85%E8%A1%A8%E4%B8%8A",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-08",
@@ -135,7 +266,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E6%9C%88/%E7%AC%AC8%E5%91%A8%E6%9D%8E%E5%AF%86%E9%99%B3%E6%83%85%E8%A1%A8%E4%B8%8B",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-09",
@@ -145,7 +277,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E6%9C%88/%E7%AC%AC9%E5%91%A8%E6%B1%AA%E6%9B%BE%E7%A5%BA%E9%91%91%E8%B3%9E%E5%AE%B6",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-10",
@@ -155,7 +288,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E4%B8%80%E6%9C%88/%E7%AC%AC10%E5%91%A8%E6%9B%B9%E4%B8%95%E8%88%87%E5%90%B3%E8%B3%AA%E6%9B%B8",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-11",
@@ -165,7 +299,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E4%B8%80%E6%9C%88/%E7%AC%AC11%E5%91%A8%E5%BC%B5%E6%9B%89%E9%A2%A8%E6%9C%80%E5%BE%8C%E7%9A%84%E6%88%B3%E8%A8%98",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-12",
@@ -175,7 +310,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E4%B8%80%E6%9C%88/%E7%AC%AC12%E5%91%A8%E7%8E%8B%E7%BE%B2%E4%B9%8B%E8%98%AD%E4%BA%AD%E9%9B%86%E5%BA%8F",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-13",
@@ -185,7 +321,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E4%B8%80%E6%9C%88/%E7%AC%AC13%E5%91%A8%E4%BD%99%E5%85%89%E4%B8%AD%E6%88%91%E7%9A%84%E5%9B%9B%E5%80%8B%E5%81%87%E6%83%B3%E6%95%B5",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-14",
@@ -195,7 +332,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E4%BA%8C%E6%9C%88/%E7%AC%AC14%E5%91%A8%E6%9D%8E%E7%99%BD%E8%88%87%E9%9F%93%E8%8D%8A%E5%B7%9E%E6%9B%B8",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-15",
@@ -205,7 +343,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E4%BA%8C%E6%9C%88/%E7%AC%AC15%E5%91%A8%E6%9E%97%E4%BD%B3%E6%A8%BA%E9%96%BB%E7%8E%8B%E4%BD%8E%E9%A0%AD",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-16",
@@ -215,7 +354,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E4%BA%8C%E6%9C%88/%E7%AC%AC16%E5%91%A8%E9%9F%93%E6%84%88%E7%A5%AD%E9%B1%B7%E9%AD%9A%E6%96%87",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-17",
@@ -225,7 +365,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E4%BA%8C%E6%9C%88/%E7%AC%AC17%E5%91%A8%E4%BD%99%E5%85%89%E4%B8%AD%E8%81%BD%E8%81%BD%E9%82%A3%E5%86%B7%E9%9B%A8",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-18",
@@ -235,7 +376,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B8%80%E6%9C%88/%E7%AC%AC18%E5%91%A8%E6%9F%B3%E5%AE%97%E5%85%83%E8%87%B3%E5%B0%8F%E4%B8%98%E8%A5%BF%E5%B0%8F%E7%9F%B3%E6%BD%AD%E8%A8%98",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-19",
@@ -245,7 +387,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B8%80%E6%9C%88/%E7%AC%AC19%E5%91%A8%E7%B0%A1%E5%AA%9C%E7%AB%88",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-20",
@@ -255,7 +398,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B8%80%E6%9C%88/%E7%AC%AC20%E5%91%A8%E8%98%87%E8%BB%BE%E6%97%A5%E5%96%BB",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-21",
@@ -265,7 +409,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B8%80%E6%9C%88/%E7%AC%AC21%E5%91%A8%E6%A2%81%E5%AF%A6%E7%A7%8B%E9%80%81%E8%A1%8C",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-22",
@@ -275,7 +420,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%BA%8C%E6%9C%88/%E7%AC%AC22%E5%91%A8%E6%9B%BE%E9%9E%8F%E5%A2%A8%E6%B1%A0%E8%A8%98",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-23",
@@ -285,7 +431,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%BA%8C%E6%9C%88/%E7%AC%AC23%E5%91%A8%E6%9E%97%E6%96%87%E6%9C%88%E7%99%BD%E9%AB%AE%E8%88%87%E8%87%8D%E5%B8%B6",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-24",
@@ -295,7 +442,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%BA%8C%E6%9C%88/%E7%AC%AC24%E5%91%A8%E8%98%87%E8%BB%BE%E8%B6%85%E7%84%B6%E8%87%BA%E8%A8%98",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-25",
@@ -305,7 +453,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%BA%8C%E6%9C%88/%E7%AC%AC25%E5%91%A8%E6%A5%8A%E7%89%A7%E6%88%B0%E7%81%AB%E5%9C%A8%E5%A4%A9%E5%A4%96%E7%87%83%E7%87%92",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-26",
@@ -315,7 +464,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B8%89%E6%9C%88/%E7%AC%AC26%E5%91%A8%E8%98%87%E8%BB%BE%E7%AD%94%E6%9D%8E%E7%AB%AF%E5%8F%94%E6%9B%B8",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-27",
@@ -325,7 +475,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B8%89%E6%9C%88/%E7%AC%AC27%E5%91%A8%E4%BD%99%E5%85%89%E4%B8%AD%E9%96%8B%E5%8D%B7%E5%A6%82%E9%96%8B%E8%8A%9D%E9%BA%BB%E9%96%80",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-28",
@@ -335,7 +486,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B8%89%E6%9C%88/%E7%AC%AC28%E5%91%A8%E8%98%87%E8%BB%BE%E7%95%99%E4%BE%AF%E8%AB%96",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-29",
@@ -345,7 +497,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B8%89%E6%9C%88/%E7%AC%AC29%E5%91%A8%E4%BD%99%E7%A7%8B%E9%9B%A8%E8%8E%AB%E9%AB%98%E7%AA%9F",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-30",
@@ -355,7 +508,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B8%89%E6%9C%88/%E7%AC%AC30%E5%91%A8%E7%8E%8B%E5%AE%89%E7%9F%B3%E5%82%B7%E4%BB%B2%E6%B0%B8",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-31",
@@ -365,7 +519,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%9B%9B%E6%9C%88/%E7%AC%AC31%E5%91%A8%E5%8A%89%E4%BA%AE%E7%A8%8B%E5%AF%92%E9%A2%A8%E5%90%B9%E5%BE%B9",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-32",
@@ -375,7 +530,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%9B%9B%E6%9C%88/%E7%AC%AC32%E5%91%A8%E6%AD%90%E9%99%BD%E4%BF%AE%E7%B8%B1%E5%9B%9A%E8%AB%96",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-33",
@@ -385,7 +541,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%9B%9B%E6%9C%88/%E7%AC%AC33%E5%91%A8%E9%8D%BE%E6%80%A1%E9%9B%AF%E9%BA%BB%E9%9B%80%E6%A8%B9%E8%88%87%E5%A4%A2",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-34",
@@ -395,7 +552,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%9B%9B%E6%9C%88/%E7%AC%AC34%E5%91%A8%E6%AD%B8%E6%9C%89%E5%85%89%E6%BB%84%E6%B5%AA%E4%BA%AD%E8%A8%98",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-35",
@@ -405,7 +563,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%BA%94%E6%9C%88/%E7%AC%AC35%E5%91%A8%E8%A8%80%E5%8F%94%E5%A4%8F%E7%99%BD%E9%A6%AC%E8%B5%B0%E9%81%8E%E5%A4%A9%E4%BA%AE",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-36",
@@ -415,7 +574,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%BA%94%E6%9C%88/%E7%AC%AC36%E5%91%A8%E6%AD%B8%E6%9C%89%E5%85%89%E9%A0%85%E8%84%8A%E8%BB%92%E5%BF%97",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-37",
@@ -425,7 +585,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%BA%94%E6%9C%88/%E7%AC%AC37%E5%91%A8%E6%A5%8A%E8%8E%89%E6%95%8F%E4%B8%8D%E6%95%A3",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-38",
@@ -435,7 +596,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%BA%94%E6%9C%88/%E7%AC%AC38%E5%91%A8%E6%96%B9%E5%AD%9D%E5%AD%BA%E6%B7%B1%E6%85%AE%E8%AB%96",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-39",
@@ -445,7 +607,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%85%AD%E6%9C%88/%E7%AC%AC39%E5%91%A8%E5%AE%87%E6%96%87%E6%AD%A3%E5%AE%B6%E5%BA%AD%E4%BB%A3%E5%B7%A5",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-40",
@@ -455,7 +618,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%85%AD%E6%9C%88/%E7%AC%AC40%E5%91%A8%E5%BC%B5%E5%B2%B1%E8%A5%BF%E6%B9%96%E4%B8%83%E6%9C%88%E5%8D%8A",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-41",
@@ -465,7 +629,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%85%AD%E6%9C%88/%E7%AC%AC41%E5%91%A8%E5%BB%96%E9%B4%BB%E5%9F%BA%E6%BC%81%E5%AD%A3%E7%B5%90%E6%9D%9F%E4%BA%86",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-42",
@@ -475,7 +640,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%85%AD%E6%9C%88/%E7%AC%AC42%E5%91%A8%E8%A2%81%E5%AE%8F%E9%81%93%E6%99%9A%E9%81%8A%E5%85%AD%E6%A9%8B%E5%BE%85%E6%9C%88%E8%A8%98",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-43",
@@ -485,7 +651,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%85%AD%E6%9C%88/%E7%AC%AC43%E5%91%A8%E5%BE%90%E5%9C%8B%E8%83%BD%E6%AF%92",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-44",
@@ -495,7 +662,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B8%83%E6%9C%88/%E7%AC%AC44%E5%91%A8%E6%96%B9%E8%8B%9E%E5%B7%A6%E5%BF%A0%E6%AF%85%E5%85%AC%E9%80%B8%E4%BA%8B",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-45",
@@ -505,7 +673,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B8%83%E6%9C%88/%E7%AC%AC45%E5%91%A8%E5%90%B3%E5%A6%AE%E6%B0%91%E9%80%B1%E9%96%93%E6%97%85%E8%A1%8C",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-46",
@@ -515,7 +684,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B8%83%E6%9C%88/%E7%AC%AC46%E5%91%A8%E9%8C%A2%E5%A4%A7%E6%98%95%E5%BC%88%E5%96%BB",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-47",
@@ -525,7 +695,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E4%B8%83%E6%9C%88/%E7%AC%AC47%E5%91%A8%E9%BB%83%E6%96%87%E9%89%85%E5%B0%B1%E6%9C%A8",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-48",
@@ -535,7 +706,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%85%AB%E6%9C%88/%E7%AC%AC48%E5%91%A8%E9%BB%83%E5%AE%97%E7%BE%B2%E5%8E%9F%E5%90%9B",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-49",
@@ -545,7 +717,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%85%AB%E6%9C%88/%E7%AC%AC49%E5%91%A8%E9%99%B3%E5%A4%A7%E7%82%BA%E5%BE%9E%E9%AC%BC",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-50",
@@ -555,7 +728,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%85%AB%E6%9C%88/%E7%AC%AC50%E5%91%A8%E9%A1%A7%E7%82%8E%E6%AD%A6%E5%BB%89%E6%81%A5",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     },
     {
       "id": "article-51",
@@ -565,7 +739,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%85%AB%E6%9C%88/%E7%AC%AC51%E5%91%A8%E7%B0%A1%E5%AA%9C%E5%88%9D%E9%9B%A8%E5%8F%88%E5%90%8D%E5%B0%8F%E5%90%8C%E7%AA%97",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "vernacular"
     },
     {
       "id": "article-52",
@@ -575,7 +750,8 @@
       "category": "",
       "intro": "",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%85%AB%E6%9C%88/%E7%AC%AC52%E5%91%A8%E8%98%87%E8%BB%BE%E5%89%8D%E8%B5%A4%E5%A3%81%E8%B3%A6",
-      "paragraphs": []
+      "paragraphs": [],
+      "type": "classical"
     }
   ]
 }
