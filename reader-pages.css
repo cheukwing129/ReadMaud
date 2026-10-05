@@ -55,7 +55,7 @@ body[data-reading-font="sourcehan"] .readcard .original,body[data-reading-font="
 .reader-settings-panel .size-control{justify-content:flex-start}
 .reader-setting-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px}
 .reader-setting-row label,.reader-setting-label{font-size:12px;font-weight:700;color:var(--muted)}
-.reader-toolbar .reader-settings-panel select{width:150px;max-width:150px}
+.reader-settings-panel select{width:150px;max-width:150px}
 .reader-settings-panel .theme-control{display:grid;grid-template-columns:1fr repeat(3,auto);align-items:center;gap:5px}
 .reader-settings-panel .theme-control button{min-width:0}
 .reader-settings-panel .export-pdf-action{width:100%;min-height:42px;background:var(--ink);color:var(--page);border-color:var(--ink)}
@@ -70,3 +70,5 @@ body[data-reading-font="sourcehan"] .readcard .original,body[data-reading-font="
  .reader-toolbar>.mode-toggle,.reader-toolbar>.focus-toggle,.reader-toolbar>.reader-settings-toggle{font-size:11px}
 }
 .reader-settings-open .view{transform:none!important}
+
+.reader-settings-panel.reader-settings-portal{position:fixed;top:auto;right:18px;bottom:calc(72px + env(safe-area-inset-bottom));max-height:min(70vh,420px);overflow:auto}

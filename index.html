@@ -119,8 +119,9 @@ function initReaderSettings(){
  };
  $('#focus-toggle').addEventListener('click',()=>toggleFocus(!document.body.classList.contains('focus-mode')));
  const settingsPanel=$('#reader-settings-panel'),settingsToggle=$('#reader-settings-toggle');
- const closeSettings=(restoreFocus=false)=>{settingsPanel.hidden=true;settingsToggle.setAttribute('aria-expanded','false');document.body.classList.remove('reader-settings-open');if(restoreFocus)settingsToggle.focus()};
- settingsToggle.addEventListener('click',()=>{const open=settingsPanel.hidden;settingsPanel.hidden=!open;settingsToggle.setAttribute('aria-expanded',String(open));document.body.classList.toggle('reader-settings-open',open)});
+ const restoreSettingsPanel=()=>{if(settingsPanel.parentElement!==settingsToggle.parentElement)settingsToggle.insertAdjacentElement('afterend',settingsPanel);settingsPanel.classList.remove('reader-settings-portal')};
+ const closeSettings=(restoreFocus=false)=>{settingsPanel.hidden=true;settingsToggle.setAttribute('aria-expanded','false');document.body.classList.remove('reader-settings-open');restoreSettingsPanel();if(restoreFocus)settingsToggle.focus()};
+ settingsToggle.addEventListener('click',()=>{if(!settingsPanel.hidden){closeSettings();return}if(window.matchMedia('(max-width: 620px)').matches){settingsPanel.classList.add('reader-settings-portal');document.body.append(settingsPanel)}settingsPanel.hidden=false;settingsToggle.setAttribute('aria-expanded','true');document.body.classList.add('reader-settings-open')});
  $('#export-pdf').addEventListener('click',()=>closeSettings());
  document.addEventListener('click',event=>{if(!settingsPanel.hidden&&!settingsPanel.contains(event.target)&&event.target!==settingsToggle)closeSettings()});
  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!settingsPanel.hidden){closeSettings(true);event.preventDefault();return}if(event.key==='Escape'&&!document.querySelector('dialog[open]')&&document.body.classList.contains('focus-mode'))toggleFocus(false)});
