@@ -1076,10 +1076,10 @@
     {
       "id": "article-07",
       "order": 7,
-      "title": "陳情表（上）",
+      "title": "陳情表",
       "author": "李密",
       "category": "古代奏議散文",
-      "intro": "李密向晉武帝上表陳情，先敘身世孤苦與祖母相依為命，再說明朝廷徵召與祖母病重使自己進退兩難。上篇展開全文的事實根據，呈現作者如何以真情和層次分明的陳述打動君主。",
+      "intro": "李密向晉武帝上表陳情，先敘身世孤苦與祖母相依為命，再說明朝廷徵召與祖母病重使自己進退兩難；其後回應武帝疑慮，提出奉養祖母的請求，並以孝治天下、祖孫相依和日後盡忠報恩作理據。全文層層陳述，情理兼備。",
       "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E6%9C%88/%E7%AC%AC7%E5%91%A8%E6%9D%8E%E5%AF%86%E9%99%B3%E6%83%85%E8%A1%A8%E4%B8%8A",
       "type": "classical",
       "paragraphs": [
@@ -1258,19 +1258,7 @@
               "explanation": "停止侍奉並離開；「未曾廢離」指從不停止照料，也不曾離開祖母。"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "article-08",
-      "order": 8,
-      "title": "陳情表（下）",
-      "author": "李密",
-      "category": "古代奏議散文",
-      "intro": "李密進一步排除武帝對自己矜守名節、另有所圖的疑慮，提出「願乞終養」；他以朝廷孝治天下、祖孫相依、盡孝時間短而盡忠時間長等理由申請奉養祖母，並以生死報恩表明忠誠。",
-      "sourceUrl": "https://sites.google.com/qmss.edu.hk/chinesearticleperweek/%E9%A6%96%E9%A0%81/%E5%8D%81%E6%9C%88/%E7%AC%AC8%E5%91%A8%E6%9D%8E%E5%AF%86%E9%99%B3%E6%83%85%E8%A1%A8%E4%B8%8B",
-      "type": "classical",
-      "paragraphs": [
+        },
         {
           "text": "伏惟聖朝以孝治天下，凡在故老，猶蒙矜育；況臣孤苦，特為尤甚。",
           "translation": "思念本朝以孝道治理天下，凡是年老之人，尚且受到憐憫和養育；何況臣如此孤苦，處境尤其嚴重。",
@@ -1627,7 +1615,7 @@
     },
     {
       "id": "article-09",
-      "order": 9,
+      "order": 8,
       "title": "鑑賞家",
       "author": "汪曾祺",
       "category": "當代短篇小說",
@@ -1759,7 +1747,7 @@
     },
     {
       "id": "article-10",
-      "order": 10,
+      "order": 9,
       "title": "與吳質書",
       "author": "曹丕",
       "category": "魏晉書信散文",
@@ -2371,7 +2359,7 @@
     },
     {
       "id": "article-11",
-      "order": 11,
+      "order": 10,
       "title": "最後的戳記",
       "author": "張曉風",
       "category": "現代散文",
@@ -2568,7 +2556,7 @@
     },
     {
       "id": "article-12",
-      "order": 12,
+      "order": 11,
       "title": "蘭亭集序",
       "author": "王羲之",
       "category": "魏晉古典散文",
@@ -3080,7 +3068,7 @@
     },
     {
       "id": "article-13",
-      "order": 13,
+      "order": 12,
       "title": "我的四個假想敵",
       "author": "余光中",
       "category": "現代散文",
@@ -3137,7 +3125,7 @@
     },
     {
       "id": "article-14",
-      "order": 14,
+      "order": 13,
       "title": "與韓荊州書",
       "author": "李白",
       "category": "唐代書信散文",
@@ -3469,7 +3457,7 @@
     },
     {
       "id": "article-15",
-      "order": 15,
+      "order": 14,
       "title": "閻王低頭",
       "author": "林佳樺",
       "category": "當代散文",
@@ -3611,7 +3599,7 @@
     },
     {
       "id": "article-16",
-      "order": 16,
+      "order": 15,
       "title": "祭鱷魚文",
       "author": "韓愈",
       "category": "唐代古典散文",
@@ -4071,7 +4059,7 @@
     },
     {
       "id": "article-17",
-      "order": 17,
+      "order": 16,
       "title": "聽聽那冷雨",
       "author": "余光中",
       "category": "",
@@ -4082,7 +4070,7 @@
     },
     {
       "id": "article-18",
-      "order": 18,
+      "order": 17,
       "title": "至小丘西小石潭記",
       "author": "柳宗元",
       "category": "",
@@ -4093,7 +4081,7 @@
     },
     {
       "id": "article-19",
-      "order": 19,
+      "order": 18,
       "title": "竈",
       "author": "簡媜",
       "category": "",
@@ -4104,7 +4092,7 @@
     },
     {
       "id": "article-20",
-      "order": 20,
+      "order": 19,
       "title": "日喻",
       "author": "蘇軾",
       "category": "",
@@ -4115,7 +4103,7 @@
     },
     {
       "id": "article-21",
-      "order": 21,
+      "order": 20,
       "title": "送行",
       "author": "梁實秋",
       "category": "",
@@ -4126,7 +4114,7 @@
     },
     {
       "id": "article-22",
-      "order": 22,
+      "order": 21,
       "title": "墨池記",
       "author": "曾鞏",
       "category": "",
@@ -4137,7 +4125,7 @@
     },
     {
       "id": "article-23",
-      "order": 23,
+      "order": 22,
       "title": "白髮與臍帶",
       "author": "林文月",
       "category": "",
@@ -4148,7 +4136,7 @@
     },
     {
       "id": "article-24",
-      "order": 24,
+      "order": 23,
       "title": "超然臺記",
       "author": "蘇軾",
       "category": "",
@@ -4159,7 +4147,7 @@
     },
     {
       "id": "article-25",
-      "order": 25,
+      "order": 24,
       "title": "戰火在天外燃燒",
       "author": "楊牧",
       "category": "",
@@ -4170,7 +4158,7 @@
     },
     {
       "id": "article-26",
-      "order": 26,
+      "order": 25,
       "title": "答李端叔書",
       "author": "蘇軾",
       "category": "",
@@ -4181,7 +4169,7 @@
     },
     {
       "id": "article-27",
-      "order": 27,
+      "order": 26,
       "title": "開卷如開芝麻門",
       "author": "余光中",
       "category": "",
@@ -4192,7 +4180,7 @@
     },
     {
       "id": "article-28",
-      "order": 28,
+      "order": 27,
       "title": "留侯論",
       "author": "蘇軾",
       "category": "",
@@ -4203,7 +4191,7 @@
     },
     {
       "id": "article-29",
-      "order": 29,
+      "order": 28,
       "title": "莫高窟",
       "author": "余秋雨",
       "category": "",
@@ -4214,7 +4202,7 @@
     },
     {
       "id": "article-30",
-      "order": 30,
+      "order": 29,
       "title": "傷仲永",
       "author": "王安石",
       "category": "",
@@ -4225,7 +4213,7 @@
     },
     {
       "id": "article-31",
-      "order": 31,
+      "order": 30,
       "title": "寒風吹徹",
       "author": "劉亮程",
       "category": "",
@@ -4236,7 +4224,7 @@
     },
     {
       "id": "article-32",
-      "order": 32,
+      "order": 31,
       "title": "縱囚論",
       "author": "歐陽修",
       "category": "",
@@ -4247,7 +4235,7 @@
     },
     {
       "id": "article-33",
-      "order": 33,
+      "order": 32,
       "title": "麻雀樹，與夢",
       "author": "鍾怡雯",
       "category": "",
@@ -4258,7 +4246,7 @@
     },
     {
       "id": "article-34",
-      "order": 34,
+      "order": 33,
       "title": "滄浪亭記",
       "author": "歸有光",
       "category": "",
@@ -4269,7 +4257,7 @@
     },
     {
       "id": "article-35",
-      "order": 35,
+      "order": 34,
       "title": "白馬走過天亮",
       "author": "言叔夏",
       "category": "",
@@ -4280,7 +4268,7 @@
     },
     {
       "id": "article-36",
-      "order": 36,
+      "order": 35,
       "title": "項脊軒志",
       "author": "歸有光",
       "category": "",
@@ -4291,7 +4279,7 @@
     },
     {
       "id": "article-37",
-      "order": 37,
+      "order": 36,
       "title": "不散",
       "author": "楊莉敏",
       "category": "",
@@ -4302,7 +4290,7 @@
     },
     {
       "id": "article-38",
-      "order": 38,
+      "order": 37,
       "title": "深慮論",
       "author": "方孝孺",
       "category": "",
@@ -4313,7 +4301,7 @@
     },
     {
       "id": "article-39",
-      "order": 39,
+      "order": 38,
       "title": "家庭代工",
       "author": "宇文正",
       "category": "",
@@ -4324,7 +4312,7 @@
     },
     {
       "id": "article-40",
-      "order": 40,
+      "order": 39,
       "title": "西湖七月半",
       "author": "張岱",
       "category": "",
@@ -4335,7 +4323,7 @@
     },
     {
       "id": "article-41",
-      "order": 41,
+      "order": 40,
       "title": "漁季結束了",
       "author": "廖鴻基",
       "category": "",
@@ -4346,7 +4334,7 @@
     },
     {
       "id": "article-42",
-      "order": 42,
+      "order": 41,
       "title": "晚遊六橋待月記",
       "author": "袁宏道",
       "category": "",
@@ -4357,7 +4345,7 @@
     },
     {
       "id": "article-43",
-      "order": 43,
+      "order": 42,
       "title": "毒",
       "author": "徐國能",
       "category": "",
@@ -4368,7 +4356,7 @@
     },
     {
       "id": "article-44",
-      "order": 44,
+      "order": 43,
       "title": "左忠毅公逸事",
       "author": "方苞",
       "category": "",
@@ -4379,7 +4367,7 @@
     },
     {
       "id": "article-45",
-      "order": 45,
+      "order": 44,
       "title": "週間旅行",
       "author": "吳妮民",
       "category": "",
@@ -4390,7 +4378,7 @@
     },
     {
       "id": "article-46",
-      "order": 46,
+      "order": 45,
       "title": "弈喻",
       "author": "錢大昕",
       "category": "",
@@ -4401,7 +4389,7 @@
     },
     {
       "id": "article-47",
-      "order": 47,
+      "order": 46,
       "title": "就木",
       "author": "黃文鉅",
       "category": "",
@@ -4412,7 +4400,7 @@
     },
     {
       "id": "article-48",
-      "order": 48,
+      "order": 47,
       "title": "原君",
       "author": "黃宗羲",
       "category": "",
@@ -4423,7 +4411,7 @@
     },
     {
       "id": "article-49",
-      "order": 49,
+      "order": 48,
       "title": "從鬼",
       "author": "陳大為",
       "category": "",
@@ -4434,7 +4422,7 @@
     },
     {
       "id": "article-50",
-      "order": 50,
+      "order": 49,
       "title": "廉恥",
       "author": "顧炎武",
       "category": "",
@@ -4445,7 +4433,7 @@
     },
     {
       "id": "article-51",
-      "order": 51,
+      "order": 50,
       "title": "初雨（又名小同窗）",
       "author": "簡媜",
       "category": "",
@@ -4456,7 +4444,7 @@
     },
     {
       "id": "article-52",
-      "order": 52,
+      "order": 51,
       "title": "前赤壁賦",
       "author": "蘇軾",
       "category": "",
