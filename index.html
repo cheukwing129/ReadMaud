@@ -162,10 +162,18 @@ function showView(view,{updateHash=true}={}){
  });
  document.body.classList.toggle('library-view',library);
  if(library)$('#progress-bar').style.width='0%';
- if(updateHash)history.replaceState(null,'',library?'#library':'#today');
+ const nextHash=library?'#library':'#today';
+ if(updateHash&&location.hash!==nextHash)history.pushState({view},'',nextHash);
  window.scrollTo({top:0,behavior:'auto'});
  document.dispatchEvent(new Event('readerviewchange'));
 }
+function syncViewFromLocation(){
+ const view=location.hash==='#library'?'library':'today';
+ const showingLibrary=!$('#library-view').hidden;
+ if((view==='library')!==showingLibrary)showView(view,{updateHash:false});
+}
+window.addEventListener('popstate',syncViewFromLocation);
+window.addEventListener('hashchange',syncViewFromLocation);
 function render(){
  const meta=articles.find(x=>x.id===activeId)||articles[0],a=detailCache.get(activeId),complete=readyArticles();
  $('#library-number').textContent=complete.length;$('#library-intro').textContent=`篇章庫共有 ${articles.length} 篇文章，從古典到當代，找到今天想讀的一篇。`;
