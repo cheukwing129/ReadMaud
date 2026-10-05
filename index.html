@@ -13,30 +13,56 @@
 <body>
 <header class="top"><a class="brand" href="#home"><span class="mark">讀</span><span>中文延伸閱讀</span></a><nav class="nav" aria-label="主選單"><a href="#today">今日篇章</a><a href="#library">全部篇章</a></nav></header>
 <main id="home">
-<section class="today" id="today"><div class="today-copy"><p class="section-label">DAILY READING · 每日一篇</p><h1 id="daily-title">每天讀一篇，<br>慢慢讀出深意。</h1><p class="today-desc" id="daily-desc">今天抽選一篇文章，跟着段落導讀、段意總結與分析，讀懂字句背後的想法。</p><p class="today-meta" id="daily-meta"></p><div class="buttons"><button class="btn" id="start">開始閱讀</button><button class="btn secondary" id="reroll">換一篇</button></div></div><aside class="today-aside"><strong>不再按星期排列</strong><p>每日由篇章庫抽選；同一天會看到同一篇。可以隨時換一篇，或從篇章庫挑選。</p></aside></section>
-<div class="layout"><section class="reading" id="reader"><div class="reading-head"><div><p class="section-label">READ CLOSELY · 逐段細讀</p><h2 id="reader-heading">今日篇章</h2><p>每段附有導讀、段意總結和分析。</p></div></div><article class="readcard" id="article"></article></section>
-<aside class="library" id="library"><div class="library-head"><p class="section-label">THE COLLECTION</p><h2>篇章庫</h2><p class="library-intro">共 52 篇 · 不分週次，搜尋或任選一篇。</p></div><label><span class="sr">搜尋篇章或作者</span><input id="search" class="search" type="search" placeholder="搜尋篇名或作者"></label><div class="count" id="count"></div><div class="items" id="items"></div></aside></div>
-<footer class="footer"><div>中文科延伸閱讀 · 每日一篇</div><span>內容依原有篇章逐步整理；已完成示範：劉禹錫《陋室銘》。</span></footer>
+<section class="today" id="today"><div class="today-copy"><p class="section-label">DAILY READING · 每日一篇</p><h1 id="daily-title">每天讀一篇，<br>慢慢讀出深意。</h1><p class="today-desc" id="daily-desc">今天抽選一篇文章，跟着段落導讀、段意總結與分析，讀懂字句背後的想法。</p><p class="today-meta" id="daily-meta"></p><div class="buttons"><button class="btn" id="start">開始閱讀</button><button class="btn secondary" id="reroll">換一篇</button></div></div><aside class="today-aside"><strong>不再按星期排列</strong><p>每日從已完成逐段導讀的文章中抽選；同一天會看到同一篇。新增完整文章後，會自動加入選讀。</p></aside></section>
+<div class="layout"><section class="reading" id="reader"><div class="reading-head"><div><p class="section-label">READ CLOSELY · 逐段細讀</p><h2 id="reader-heading">今日篇章</h2><p>每段附有導讀、段意總結和分析。</p></div></div><article class="readcard" id="article" aria-live="polite"></article></section>
+<aside class="library" id="library"><div class="library-head"><p class="section-label">THE COLLECTION</p><h2>篇章庫</h2><p class="library-intro" id="library-intro">新增文章後會在這裡顯示。</p></div><label><span class="sr">搜尋篇章或作者</span><input id="search" class="search" type="search" placeholder="搜尋篇名或作者"></label><div class="count" id="count"></div><div class="items" id="items"></div></aside></div>
+<footer class="footer"><div>中文科延伸閱讀 · 每日一篇</div><span>管理者可在 ReadMaud 的 articles.json 新增篇章，毋須修改網頁程式。</span></footer>
 </main>
 <script>
-const titles=['劉禹錫：陋室銘','栗良平：一碗陽春麵','左傳：宮之奇諫假道','金庸：射鵰英雄傳──智鬥書生','左傳：燭之武退秦師','張曉風：月，闕也','李密：陳情表（上）','李密：陳情表（下）','汪曾祺：鑑賞家','曹丕：與吳質書','張曉風：最後的戳記','王羲之：蘭亭集序','余光中：我的四個假想敵','李白：與韓荊州書','林佳樺：閻王低頭','韓愈：祭鱷魚文','余光中：聽聽那冷雨','柳宗元：至小丘西小石潭記','簡媜：竈','蘇軾：日喻','梁實秋：送行','曾鞏：墨池記','林文月：白髮與臍帶','蘇軾：超然臺記','楊牧：戰火在天外燃燒','蘇軾：答李端叔書','余光中：開卷如開芝麻門','蘇軾：留侯論','余秋雨：莫高窟','王安石：傷仲永','劉亮程：寒風吹徹','歐陽修：縱囚論','鍾怡雯：麻雀樹，與夢','歸有光：滄浪亭記','言叔夏：白馬走過天亮','歸有光：項脊軒志','楊莉敏：不散','方孝孺：深慮論','宇文正：家庭代工','張岱：西湖七月半','廖鴻基：漁季結束了','袁宏道：晚遊六橋待月記','徐國能：毒','方苞：左忠毅公逸事','吳妮民：週間旅行','錢大昕：弈喻','黃文鉅：就木','黃宗羲：原君','陳大為：從鬼','顧炎武：廉恥','簡媜：初雨（又名小同窗）','蘇軾：前赤壁賦'];
-const articleData={1:{author:'劉禹錫',title:'陋室銘',intro:'作者借簡陋居室抒寫安貧樂道的志趣。讀時留意文章怎樣由環境、交友和日常生活，逐步寫出「陋室不陋」。',paragraphs:[
-{text:'山不在高，有仙則名。水不在深，有龍則靈。',translation:'山不在於高，有仙人居住就有盛名；水不在於深，有蛟龍潛藏就顯示神靈。',guide:'先看「山高、水深」這兩個常見的衡量標準，作者如何把它們改寫？',summary:'山水的價值不在外在大小，而在其中是否有仙、龍。',analysis:'以山、水作比，提出「環境的價值由內在精神決定」；也替下文寫居室作鋪墊。'},
-{text:'斯是陋室，惟吾德馨。',translation:'這雖然是間簡陋的小屋，但我品德高尚、德行美好。',guide:'「斯」承接前文，指眼前的居室；「惟」把重心轉到什麼？',summary:'居室雖然簡陋，作者認為自己的品德使居所充滿美好氣息。',analysis:'全文主旨句。「陋」與「馨」形成對照，說明居室的高雅不靠華麗裝潢，而由居住者的品德決定。'},
-{text:'苔痕上階綠，草色入簾青。',translation:'苔痕佈滿階石，一片翠綠；草色映入簾櫳，滿室蔥青。',guide:'留意「上」和「入」兩個動詞，景物如何越過室內外的界線？',summary:'青苔爬上石階，青草的顏色映入簾內，居室與自然相連。',analysis:'以「綠」「青」寫清幽生機；「上」「入」使景物帶有動態，呈現不經修飾的自然之美。'},
-{text:'談笑有鴻儒，往來無白丁。',translation:'往來談笑的都是博學多識之士，沒有淺薄無識之人。',guide:'作者用交往的人物，補充說明自己過着怎樣的生活。',summary:'來訪和交談的都是有學問、有修養的人。',analysis:'「鴻儒」與「白丁」對舉，凸顯作者重視精神交流和學識修養，也寫出生活圈子的清雅。'},
-{text:'可以調素琴，閱金經。',translation:'可以彈未加彩飾的琴，可以閱讀珍貴的經典。',guide:'「素」和「金」分別帶出琴與經典的什麼意味？',summary:'作者在室內彈琴、讀經，享受簡樸而充實的生活。',analysis:'「素琴」見樸素，「金經」見珍重；兩件日常活動表現清靜自足的精神生活。'},
-{text:'無絲竹之亂耳，無案牘之勞形。',translation:'沒有嘈雜的音樂聲擾亂耳朵，也沒有官府公文使身體勞累。',guide:'兩個「無」寫出作者刻意遠離哪些生活？',summary:'沒有嘈雜樂聲和繁重公務，心神與身體都不受干擾。',analysis:'以「亂耳」「勞形」寫俗務造成的煩擾，反襯陋室中的清靜自在；句式整齊，讀來有節奏。'},
-{text:'南陽諸葛廬，西蜀子雲亭。',translation:'南陽有諸葛亮的草廬，西蜀有揚雄的玄亭。',guide:'作者提到諸葛亮和揚雄，為自己的居室引入哪一類人物？',summary:'以兩位古代賢者的居所，聯想到自己的陋室。',analysis:'援引諸葛亮、揚雄自況，暗示居所雖簡，居者可以有高尚志趣與學問抱負。'},
-{text:'孔子云：「何陋之有？」',translation:'正如孔子說的：「有什麼簡陋之處呢？」',guide:'結尾引用孔子的話，如何回答篇題中的「陋」？',summary:'作者借孔子的話作結：有德者居住，便沒有真正的簡陋。',analysis:'以反問收束，語氣堅定有力；呼應「惟吾德馨」，再次點明精神品格比物質環境更重要。'}]}};
-const ranges=[['九月',1,4],['十月',5,9],['十一月',10,13],['十二月',14,17],['一月',18,21],['二月',22,25],['三月',26,30],['四月',31,34],['五月',35,38],['六月',39,43],['七月',44,47],['八月',48,52]];
-const monthFor=n=>ranges.find(([,a,b])=>n>=a&&n<=b)[0];
-const articles=titles.map((label,i)=>{let n=i+1,month=monthFor(n),slug=('第'+n+'周'+label).replace(/[：:，,、。．？！?!「」『』（）()〈〉《》──—－\s]/g,'');return{n,label,month,slug,url:`https://sites.google.com/qmss.edu.hk/chinesearticleperweek/${encodeURIComponent('首頁')}/${encodeURIComponent(month)}/${encodeURIComponent(slug)}`}});
-const $=q=>document.querySelector(q),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const dayKey=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Hong_Kong'});const dateSeed=[...dayKey].reduce((n,c)=>((n*31)+c.charCodeAt(0))>>>0,7);let active=+(localStorage.getItem('daily-reading:'+dayKey)||String((dateSeed%articles.length)+1));if(!articles.some(x=>x.n===active))active=(dateSeed%articles.length)+1;
-function chooseRandom(){const other=articles.filter(x=>x.n!==active);active=other[Math.floor(Math.random()*other.length)].n;localStorage.setItem('daily-reading:'+dayKey,String(active));render()}
-function render(){const a=articles[active-1],d=articleData[a.n];$('#daily-title').textContent=d?`${d.author}：${d.title}`:a.label;$('#daily-desc').textContent=d?d.intro:'這篇文章的逐段導讀正在整理中。你可以先從原篇章閱讀，或在篇章庫選讀已完成示範的《陋室銘》。';$('#daily-meta').textContent=`${a.month}篇章庫 · 今日選讀`;$('#reader-heading').textContent=d?d.title:a.label;$('#article').innerHTML=d?`<header class="article-head"><span class="author">${esc(d.author)} · 古典散文</span><h3>${esc(d.title)}</h3><p>${esc(d.intro)}</p></header>${d.paragraphs.map((p,i)=>`<section class="para"><span class="tag">第 ${i+1} 段</span><p class="original">${esc(p.text)}</p><p class="quote">譯文｜${esc(p.translation)}</p><div class="analysis-grid"><div class="analysis"><b>導讀</b><p>${esc(p.guide)}</p></div><div class="analysis"><b>段意總結</b><p>${esc(p.summary)}</p></div><div class="analysis"><b>分析</b><p>${esc(p.analysis)}</p></div></div></section>`).join('')}<div class="reader-foot"><span>共 ${d.paragraphs.length} 段 · 建議逐段閱讀</span><a href="${a.url}" target="_blank" rel="noopener">查看原篇章</a></div>`:`<header class="article-head"><span class="author">${esc(a.month)}篇章庫 · 原文</span><h3>${esc(a.label)}</h3><p>這篇尚未加入新版逐段教材。</p></header><div class="not-ready"><h4>逐段導讀整理中</h4><p>目前新版已完成《陋室銘》的完整逐段示範。其他篇章仍需從原網站遷移原文與注釋，再補上每段的導讀、段意總結和分析。</p><a href="${a.url}" target="_blank" rel="noopener">前往原網站閱讀篇章</a></div><div class="reader-foot"><span>文章 ${a.n} / 52</span><a href="#library">從篇章庫選讀</a></div>`;$('#start').onclick=()=>$('#reader').scrollIntoView({behavior:'smooth'});}
-function renderList(){const q=$('#search').value.trim().toLowerCase(),list=articles.filter(a=>a.label.toLowerCase().includes(q));$('#count').textContent=`顯示 ${list.length} / 52 篇`;$('#items').innerHTML=list.map(a=>`<button class="item ${active===a.n?'selected':''}" type="button" data-id="${a.n}"><span class="item-no">${String(a.n).padStart(2,'0')}</span><span class="item-title">${esc(a.label)}<small>${articleData[a.n]?'已完成逐段示範':'原篇章待遷移'}</small></span></button>`).join('');document.querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>{active=+b.dataset.id;localStorage.setItem('daily-reading:'+dayKey,String(active));render();renderList();$('#reader').scrollIntoView({behavior:'smooth'})})}
-$('#reroll').addEventListener('click',chooseRandom);$('#search').addEventListener('input',renderList);render();renderList();
+const $=q=>document.querySelector(q);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const dayKey=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Hong_Kong'});
+const storageKey=`readmaud-daily:${dayKey}`;
+let articles=[],activeId='';
+const label=a=>`${a.author||'作者未填'}：${a.title||'未命名篇章'}`;
+const isReady=a=>Boolean(a&&a.title&&a.author&&a.intro&&Array.isArray(a.paragraphs)&&a.paragraphs.length&&a.paragraphs.every(p=>p&&p.text&&p.guide&&p.summary&&p.analysis));
+const readyArticles=()=>articles.filter(isReady);
+const safeUrl=value=>{try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)?esc(u.href):''}catch{return ''}};
+function dateSeed(){return [...dayKey].reduce((n,c)=>((n*31)+c.charCodeAt(0))>>>0,7)}
+function activeArticle(){return articles.find(a=>a.id===activeId)||articles[0]}
+function render(){
+ const a=activeArticle(),complete=readyArticles();
+ $('#library-intro').textContent=`${articles.length} 篇 · 完成逐段導讀的文章會加入每日選讀`;
+ $('#daily-meta').textContent=`已整理 ${complete.length} 篇 · 篇章庫共 ${articles.length} 篇`;
+ $('#reroll').disabled=complete.length<2;
+ if(!a){$('#daily-title').textContent='新增第一篇文章';$('#daily-desc').textContent='在 articles.json 加入文章和逐段導讀後，網站便會自動顯示。';$('#reader-heading').textContent='尚未有文章';$('#article').innerHTML='<div class="not-ready"><h4>篇章庫目前是空的</h4><p>新增一篇完整文章後，就會在這裡顯示。</p></div>';return}
+ const ready=isReady(a),source=safeUrl(a.sourceUrl),category=a.category?` · ${esc(a.category)}`:'';
+ $('#daily-title').textContent=label(a);$('#daily-desc').textContent=ready?a.intro:'這篇文章的逐段內容仍在整理中。完成每段導讀、段意總結和分析後，便會加入每日隨機選讀。';
+ $('#reader-heading').textContent=a.title;
+ $('#article').innerHTML=ready?`<header class="article-head"><span class="author">${esc(a.author)}${category}</span><h3>${esc(a.title)}</h3><p>${esc(a.intro)}</p></header>${a.paragraphs.map((p,i)=>`<section class="para"><span class="tag">第 ${i+1} 段</span><p class="original">${esc(p.text)}</p>${p.translation?`<p class="quote">譯文｜${esc(p.translation)}</p>`:''}<div class="analysis-grid"><div class="analysis"><b>導讀</b><p>${esc(p.guide)}</p></div><div class="analysis"><b>段意總結</b><p>${esc(p.summary)}</p></div><div class="analysis"><b>分析</b><p>${esc(p.analysis)}</p></div></div></section>`).join('')}<div class="reader-foot"><span>共 ${a.paragraphs.length} 段 · 建議逐段閱讀</span>${source?`<a href="${source}" target="_blank" rel="noopener">查看原篇章</a>`:''}</div>`:`<header class="article-head"><span class="author">篇章庫 · 內容整理中</span><h3>${esc(a.title)}</h3><p>${esc(a.author)}</p></header><div class="not-ready"><h4>逐段導讀整理中</h4><p>這篇文章尚未補齊每段的原文、導讀、段意總結和分析；完成後會自動列入每日選讀。</p>${source?`<a href="${source}" target="_blank" rel="noopener">前往原網站閱讀篇章</a>`:''}</div><div class="reader-foot"><span>篇章 ${articles.indexOf(a)+1} / ${articles.length}</span></div>`;
+ $('#start').onclick=()=>$('#reader').scrollIntoView({behavior:'smooth'});
+}
+function renderList(){
+ const q=$('#search').value.trim().toLowerCase();
+ const list=articles.filter(a=>label(a).toLowerCase().includes(q));
+ $('#count').textContent=`顯示 ${list.length} / ${articles.length} 篇`;
+ $('#items').innerHTML=list.map(a=>`<button class="item ${activeId===a.id?'selected':''}" type="button" data-id="${esc(a.id)}"><span class="item-no">${String(articles.indexOf(a)+1).padStart(2,'0')}</span><span class="item-title">${esc(label(a))}<small>${isReady(a)?'已完成逐段導讀':'原文／導讀整理中'}</small></span></button>`).join('');
+ document.querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>{activeId=b.dataset.id;localStorage.setItem(storageKey,activeId);render();renderList();$('#reader').scrollIntoView({behavior:'smooth'})});
+}
+function showLoadError(){ $('#daily-title').textContent='篇章資料未能載入';$('#daily-desc').textContent='請重新載入頁面；如剛新增了文章，請確認 articles.json 格式正確。';$('#reader-heading').textContent='暫時無法開啟篇章';$('#article').innerHTML='<div class="not-ready"><h4>資料檔讀取失敗</h4><p>請檢查 articles.json 是否為有效 JSON，再重新部署。</p></div>'; }
+async function init(){
+ try{
+  const response=await fetch('./articles.json',{cache:'no-store'});if(!response.ok)throw new Error('articles.json request failed');
+  const data=await response.json();if(!Array.isArray(data.articles))throw new Error('articles must be an array');
+  articles=data.articles.slice().sort((a,b)=>(a.order??999999)-(b.order??999999));
+  const complete=readyArticles(),saved=localStorage.getItem(storageKey);
+  const initial=complete.find(a=>a.id===saved)||complete[dateSeed()%Math.max(complete.length,1)]||articles[0];
+  activeId=initial?.id||'';
+  $('#reroll').addEventListener('click',()=>{const pool=readyArticles().filter(x=>x.id!==activeId);if(!pool.length)return;const pick=pool[Math.floor(Math.random()*pool.length)];activeId=pick.id;localStorage.setItem(storageKey,activeId);render();renderList()});
+  $('#search').addEventListener('input',renderList);
+  render();renderList();
+ }catch(error){console.error(error);showLoadError()}
+}
+init();
 </script>
 </body></html>
