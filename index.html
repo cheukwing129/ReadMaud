@@ -61,6 +61,7 @@ main{max-width:1360px;margin:0 auto;padding:0 32px 90px}.view{animation:view-in 
 @media(max-width:390px){.reader-toolbar{gap:6px}.reader-toolbar button{padding:6px 8px;min-width:38px}.size-control output{min-width:38px}.theme-control button{padding:6px 7px}.reader-toolbar .focus-toggle{font-size:11px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
+<link rel="stylesheet" href="./reader-pages.css">
 </head>
 <body>
 <header class="top"><a class="brand" href="#today" data-view-link="today" aria-label="ReadMaud 今日選文">READMAUD<b>.</b></a><nav class="top-nav" aria-label="主選單"><a href="#today" data-view-link="today" aria-current="page">今日選文</a><a href="#library" data-view-link="library">篇章庫</a></nav><span class="top-meta">ONE STORY A DAY</span></header>
@@ -69,7 +70,7 @@ main{max-width:1360px;margin:0 auto;padding:0 32px 90px}.view{animation:view-in 
 <div class="view" id="today-view">
  <div class="edition"><span>READMAUD / DAILY READING</span><span id="daily-date"></span></div>
  <section class="hero" id="today" aria-labelledby="daily-title"><div class="hero-main"><p class="eyebrow">TODAY'S STORY / 今日選文</p><h1 id="daily-title">今天讀甚麼？</h1><p class="hero-desc" id="daily-desc">每天一篇，按自己的節奏閱讀。</p><div class="hero-meta"><span id="daily-author"></span><span class="dot"></span><span class="type" id="daily-type"></span><span class="dot"></span><span id="daily-meta"></span></div><div class="hero-actions"><button class="action primary" type="button" id="start">開始閱讀 ↓</button><button class="action" type="button" id="reroll">換一篇 ↗</button></div></div><aside class="hero-aside" aria-label="篇章序號"><small>IN THE COLLECTION</small><div class="issue-number" id="issue-number">—</div><p>從篇章庫中抽選<br>今天的一篇。</p></aside></section>
- <section class="reading-area" id="reader" aria-labelledby="reader-heading"><h2 id="reader-heading" class="sr">今日選文原文</h2><div class="reader-toolbar" role="group" aria-label="閱讀設定"><strong>READING TOOLS</strong><div class="tool-group size-control"><span class="tool-label">字級</span><button id="font-decrease" type="button" aria-label="縮小閱讀字體">A−</button><output id="font-size-display" aria-live="polite">22 px</output><button id="font-increase" type="button" aria-label="放大閱讀字體">A＋</button></div><div class="tool-group theme-control" role="group" aria-label="頁面配色"><span class="tool-label">配色</span><button type="button" data-reader-theme="paper" aria-pressed="true">紙本</button><button type="button" data-reader-theme="bright" aria-pressed="false">明亮</button><button type="button" data-reader-theme="night" aria-pressed="false">夜讀</button></div><button class="focus-toggle" id="focus-toggle" type="button" aria-pressed="false">專注模式</button></div><div class="reading-hint" id="note-hint"><b>THE TEXT</b><p>標亮字詞可點開註釋；譯文及段落分析按需展開。</p></div><article class="readcard" id="article" aria-live="polite"></article></section>
+ <section class="reading-area" id="reader" aria-labelledby="reader-heading"><h2 id="reader-heading" class="sr">今日選文原文</h2><div class="reader-toolbar" role="group" aria-label="閱讀設定"><strong>READING TOOLS</strong><div class="tool-group size-control"><span class="tool-label">字級</span><button id="font-decrease" type="button" aria-label="縮小閱讀字體">A−</button><output id="font-size-display" aria-live="polite">22 px</output><button id="font-increase" type="button" aria-label="放大閱讀字體">A＋</button></div><div class="tool-group theme-control" role="group" aria-label="頁面配色"><span class="tool-label">配色</span><button type="button" data-reader-theme="paper" aria-pressed="true">紙本</button><button type="button" data-reader-theme="bright" aria-pressed="false">明亮</button><button type="button" data-reader-theme="night" aria-pressed="false">夜讀</button></div><button class="mode-toggle" id="reading-mode-toggle" type="button" aria-pressed="false">翻頁閱讀</button><button class="focus-toggle" id="focus-toggle" type="button" aria-pressed="false">專注模式</button></div><div class="reading-hint" id="note-hint"><b>THE TEXT</b><p>標亮字詞可點開註釋；譯文及段落分析按需展開。</p></div><article class="readcard" id="article" aria-live="polite"></article></section>
 </div>
 <section class="view" id="library-view" hidden aria-labelledby="library-heading"><div class="edition"><span>READMAUD / THE INDEX</span><span>EXPLORE THE COLLECTION</span></div><div class="library-intro"><p class="eyebrow">THE COLLECTION / 篇章庫</p><h2 id="library-heading">讀什麼，自己挑。</h2><p id="library-intro">從古典到當代，找到今天想讀的一篇。</p></div><div class="library-tools"><label class="sr" for="search">搜尋篇名或作者</label><input id="search" class="search" type="search" placeholder="搜尋篇名或作者…"><div class="filters" role="group" aria-label="按文體分類"><button class="filter" type="button" data-type="all" aria-pressed="true">全部</button><button class="filter" type="button" data-type="classical" aria-pressed="false">文言文</button><button class="filter" type="button" data-type="vernacular" aria-pressed="false">白話文</button></div></div><div class="library-count"><span id="count"></span>　/　已整理 <span id="library-number">—</span> 篇</div><div class="items" id="items"></div></section>
 <footer class="footer"><b>READMAUD.</b><span>每天一篇，慢慢讀。新增文章時更新 articles.json 即可。</span></footer>
@@ -80,7 +81,7 @@ const $=q=>document.querySelector(q);
 const safeGet=key=>{try{return localStorage.getItem(key)}catch{return null}};
 const safeSet=(key,value)=>{try{localStorage.setItem(key,value)}catch{}};
 const readerSettingsKey='readmaud-reader-settings-v1';
-const readerSizes=[18,20,22,24,26,28,30];
+const readerSizes=[12,14,16,18,20,22,24,26,28,30];
 function initReaderSettings(){
  let saved={};
  try{saved=JSON.parse(safeGet(readerSettingsKey)||'{}')||{}}catch{}
@@ -92,6 +93,7 @@ function initReaderSettings(){
   $('#font-size-display').textContent=size+' px';
   $('#font-decrease').disabled=size===readerSizes[0];
   $('#font-increase').disabled=size===readerSizes[readerSizes.length-1];
+  document.dispatchEvent(new Event('readerlayoutchange'));
  };
  const updateTheme=()=>{
   document.body.dataset.theme=theme;
@@ -106,9 +108,10 @@ function initReaderSettings(){
   $('#focus-toggle').setAttribute('aria-pressed',String(active));
   $('#focus-toggle').textContent=active?'退出專注':'專注模式';
   if(active){showView('today');$('#reader').scrollIntoView({behavior:'auto',block:'start'})}
+  document.dispatchEvent(new Event('readerlayoutchange'));
  };
  $('#focus-toggle').addEventListener('click',()=>toggleFocus(!document.body.classList.contains('focus-mode')));
- document.addEventListener('keydown',event=>{if(event.key==='Escape'&&document.body.classList.contains('focus-mode'))toggleFocus(false)});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!document.querySelector('dialog[open]')&&document.body.classList.contains('focus-mode'))toggleFocus(false)});
  updateSize();updateTheme();
 }
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -147,6 +150,7 @@ function showView(view,{updateHash=true}={}){
  if(library)$('#progress-bar').style.width='0%';
  if(updateHash)history.replaceState(null,'',library?'#library':'#today');
  window.scrollTo({top:0,behavior:'auto'});
+ document.dispatchEvent(new Event('readerviewchange'));
 }
 function render(){
  const a=activeArticle(),complete=readyArticles();
@@ -175,6 +179,7 @@ function render(){
  };
  $('#article').onkeydown=e=>{if(e.key==='Escape'&&$('#article').querySelector('.annotated-word[aria-expanded="true"]')){e.stopPropagation();$('#article').querySelectorAll('.annotated-word[aria-expanded="true"]').forEach(open=>{open.setAttribute('aria-expanded','false');open.nextElementSibling.hidden=true;open.parentElement.classList.remove('note-open-left')})}};
  $('#start').onclick=()=>$('#reader').scrollIntoView({behavior:'smooth'});
+ document.dispatchEvent(new CustomEvent('readerarticlechange',{detail:a}));
 }
 let activeType='all';
 function renderList(){
@@ -209,6 +214,7 @@ window.addEventListener('scroll',()=>{
  if(progressTick)return;
  progressTick=true;
  requestAnimationFrame(()=>{
+  if(document.body.classList.contains('paged-mode')&&!document.body.classList.contains('library-view')){progressTick=false;return}
   const article=$('#article'),bar=$('#progress-bar'),box=article.getBoundingClientRect();
   const total=Math.max(1,box.height-window.innerHeight+130);
   const done=Math.max(0,Math.min(1,(130-box.top)/total));
@@ -217,4 +223,5 @@ window.addEventListener('scroll',()=>{
  });
 },{passive:true});
 </script>
+<script src="./reader-pages.js"></script>
 </body></html>
