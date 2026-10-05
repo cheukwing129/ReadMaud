@@ -2,18 +2,18 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f6f6f2"><meta name="description" content="ReadMaud：每天一篇中文文章，點開字詞註釋、譯文與逐段分析，按自己的節奏閱讀。">
+<meta name="theme-color" content="#f8f4e6"><meta name="description" content="ReadMaud：每天一篇中文文章，點開字詞註釋、譯文與逐段分析，按自己的節奏閱讀。">
 <title>ReadMaud — 今天讀甚麼？</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
- --page:#f6f6f2;--surface:#fff;--ink:#202126;--muted:#686d72;--line:#d9dbd5;
- --accent:#314ad7;--accent-text:#fff;--accent-soft:#e7eaff;--spark:#d8f06e;--annotation-ink:#202126;
+ --page:#f8f4e6;--surface:#f8f4e6;--ink:#202126;--muted:#6e625d;--line:#ddd3c3;
+ --accent:#B54434;--accent-text:#fff;--accent-soft:#f3e0d7;--spark:#fddea5;--annotation-ink:#202126;
  --reading-size:22px;--sans:"Noto Sans TC",system-ui,sans-serif;--latin:"DM Sans",Arial,sans-serif;--serif:"Noto Serif TC","Songti TC",serif;
 }
-body[data-theme="bright"]{--page:#fff;--surface:#fff;--ink:#161820;--muted:#555b63;--line:#d6d9dc;--accent:#263cc8;--accent-soft:#e7eaff;--spark:#e6f77f}
-body[data-theme="night"]{--page:#171a20;--surface:#22262d;--ink:#eef0ed;--muted:#b5bcc3;--line:#414750;--accent:#a6b4ff;--accent-text:#192142;--accent-soft:#2e3658;--spark:#d8f06e}
+body[data-theme="bright"]{--page:#fff;--surface:#fff;--ink:#161820;--muted:#555b63;--line:#d6d9dc;--accent:#B54434;--accent-soft:#f8e6df;--spark:#fddea5}
+body[data-theme="night"]{--page:#171a20;--surface:#22262d;--ink:#eef0ed;--muted:#b5bcc3;--line:#414750;--accent:#f1a99b;--accent-text:#301a15;--accent-soft:#49302b;--spark:#fddea5}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--page);color:var(--ink);font:15px/1.65 var(--sans);transition:background .22s ease,color .22s ease}
 button,input{font:inherit}button{cursor:pointer}a{color:inherit}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}[hidden]{display:none!important}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
@@ -98,7 +98,7 @@ function initReaderSettings(){
  const updateTheme=()=>{
   document.body.dataset.theme=theme;
   document.querySelectorAll('[data-reader-theme]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.readerTheme===theme)));
-  document.querySelector('meta[name="theme-color"]').content=theme==='night'?'#171a20':theme==='bright'?'#ffffff':'#f6f6f2';
+  document.querySelector('meta[name="theme-color"]').content=theme==='night'?'#171a20':theme==='bright'?'#ffffff':'#f8f4e6';
  };
  $('#font-decrease').addEventListener('click',()=>{size=readerSizes[Math.max(0,readerSizes.indexOf(size)-1)];updateSize();persist()});
  $('#font-increase').addEventListener('click',()=>{size=readerSizes[Math.min(readerSizes.length-1,readerSizes.indexOf(size)+1)];updateSize();persist()});
@@ -122,7 +122,6 @@ const label=a=>`${a.author||'作者未填'}：${a.title||'未命名篇章'}`;
 const isReady=a=>Boolean(a&&a.title&&a.author&&a.intro&&['classical','vernacular'].includes(a.type)&&Array.isArray(a.paragraphs)&&a.paragraphs.length&&a.paragraphs.every(p=>p&&p.text&&p.summary&&p.analysis&&(a.type!=='classical'||(p.translation&&Array.isArray(p.notes)&&p.notes.length))));
 const typeLabel=type=>type==='classical'?'文言文':'白話文';
 const readyArticles=()=>articles.filter(isReady);
-const safeUrl=value=>{try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)?esc(u.href):''}catch{return ''}};
 function dateSeed(){return [...dayKey].reduce((n,c)=>((n*31)+c.charCodeAt(0))>>>0,7)}
 function activeArticle(){return articles.find(a=>a.id===activeId)||articles[0]}
 function renderOriginal(p){
@@ -158,7 +157,7 @@ function render(){
  $('#daily-meta').textContent=`已整理 ${complete.length} 篇 · 篇章庫共 ${articles.length} 篇`;
  $('#reroll').disabled=complete.length<2;
  if(!a){$('#daily-title').textContent='新增第一篇文章';$('#daily-desc').textContent='在 articles.json 加入文章並完成內容整理後，網站便會自動顯示。';$('#reader-heading').textContent='尚未有文章';$('#article').innerHTML='<div class="not-ready"><h4>篇章庫目前是空的</h4><p>新增一篇完整文章後，就會在這裡顯示。</p></div>';return}
- const ready=isReady(a),source=safeUrl(a.sourceUrl),category=a.category?` · ${esc(a.category)}`:'';
+ const ready=isReady(a),category=a.category?` · ${esc(a.category)}`:'';
  $('#daily-title').textContent=a.title;
  $('#daily-desc').textContent=ready?a.intro:'這篇文章的段落內容仍在整理中；補齊後會加入每日選讀。';
  $('#daily-author').textContent=a.author;
@@ -166,18 +165,9 @@ function render(){
  $('#issue-number').textContent=String(articles.indexOf(a)+1).padStart(2,'0');
  $('#article').dataset.type=a.type;
  $('#reader-heading').textContent=a.title+'原文';
- $('#article').innerHTML=ready?`<header class="article-head sr"><h2>${esc(a.title)}</h2><p>${esc(a.author)}${category}</p></header>${a.paragraphs.map((p,i)=>`<section class="para"><span class="tag" aria-label="第 ${i+1} 段">${String(i+1).padStart(2,'0')}</span><div class="para-content"><p class="original">${renderOriginal(p)}</p>${a.type==='classical'&&p.translation?`<details class="translation"><summary>＋  顯示這一段的譯文</summary><p>${esc(p.translation)}</p></details>`:p.translation?`<p class="quote">譯文｜${esc(p.translation)}</p>`:''}<div class="analysis-grid"><details class="insight"><summary>＋  這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight"><summary>＋  深入分析</summary><p>${esc(p.analysis)}</p></details></div></div></section>`).join('')}<div class="reader-foot"><span>共 ${a.paragraphs.length} 段 · 建議逐段閱讀</span>${source?`<a href="${source}" target="_blank" rel="noopener">查看原篇章</a>`:''}</div>`:`<header class="article-head"><span class="type-chip">${typeLabel(a.type)}</span><span class="author">篇章庫 · 內容整理中</span><h3>${esc(a.title)}</h3><p>${esc(a.author)}</p></header><div class="not-ready"><h4>逐段內容整理中</h4><p>這篇文章尚未補齊內容；文言文還須填寫每段白話譯文及按語境編寫的字詞／句式注釋。完成後會自動列入每日隨機選讀。</p>${source?`<a href="${source}" target="_blank" rel="noopener">前往原網站閱讀篇章</a>`:''}</div><div class="reader-foot"><span>篇章 ${articles.indexOf(a)+1} / ${articles.length}</span></div>`;
+ $('#article').innerHTML=ready?`<header class="article-head sr"><h2>${esc(a.title)}</h2><p>${esc(a.author)}${category}</p></header>${a.paragraphs.map((p,i)=>`<section class="para"><span class="tag" aria-label="第 ${i+1} 段">${String(i+1).padStart(2,'0')}</span><div class="para-content"><p class="original">${renderOriginal(p)}</p>${a.type==='classical'&&p.translation?`<details class="translation"><summary>＋  顯示這一段的譯文</summary><p>${esc(p.translation)}</p></details>`:p.translation?`<p class="quote">譯文｜${esc(p.translation)}</p>`:''}<div class="analysis-grid"><details class="insight"><summary>＋  這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight"><summary>＋  深入分析</summary><p>${esc(p.analysis)}</p></details></div></div></section>`).join('')}<div class="reader-foot"><span>共 ${a.paragraphs.length} 段 · 建議逐段閱讀</span></div>`:`<header class="article-head"><span class="type-chip">${typeLabel(a.type)}</span><span class="author">篇章庫 · 內容整理中</span><h3>${esc(a.title)}</h3><p>${esc(a.author)}</p></header><div class="not-ready"><h4>逐段內容整理中</h4><p>這篇文章尚未補齊內容；文言文還須填寫每段白話譯文及按語境編寫的字詞／句式注釋。完成後會自動列入每日隨機選讀。</p></div><div class="reader-foot"><span>篇章 ${articles.indexOf(a)+1} / ${articles.length}</span></div>`;
  $('#note-hint').querySelector('p').textContent=a.type==='classical'?'標亮字詞可點開註釋；譯文及段落分析按需展開。':'段落總結與分析按需展開。';
- $('#article').onclick=e=>{
-  const button=e.target.closest('.annotated-word');
-  const wasOpen=button?.getAttribute('aria-expanded')==='true';
-  $('#article').querySelectorAll('.annotated-word[aria-expanded="true"]').forEach(open=>{open.setAttribute('aria-expanded','false');open.nextElementSibling.hidden=true;open.parentElement.classList.remove('note-open-left')});
-  if(button&&!wasOpen){
-   const bubble=button.nextElementSibling;button.setAttribute('aria-expanded','true');bubble.hidden=false;
-   const rect=button.getBoundingClientRect();if(rect.right>window.innerWidth-310)button.parentElement.classList.add('note-open-left');
-  }
- };
- $('#article').onkeydown=e=>{if(e.key==='Escape'&&$('#article').querySelector('.annotated-word[aria-expanded="true"]')){e.stopPropagation();$('#article').querySelectorAll('.annotated-word[aria-expanded="true"]').forEach(open=>{open.setAttribute('aria-expanded','false');open.nextElementSibling.hidden=true;open.parentElement.classList.remove('note-open-left')})}};
+ $('#article').onclick=e=>{const button=e.target.closest('.annotated-word');if(button)window.ReaderNotes.toggle(button)};
  $('#start').onclick=()=>$('#reader').scrollIntoView({behavior:'smooth'});
  document.dispatchEvent(new CustomEvent('readerarticlechange',{detail:a}));
 }
@@ -223,5 +213,6 @@ window.addEventListener('scroll',()=>{
  });
 },{passive:true});
 </script>
+<script src="./reader-notes.js"></script>
 <script src="./reader-pages.js"></script>
 </body></html>

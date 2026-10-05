@@ -4,7 +4,7 @@
  const toggle=document.querySelector('#reading-mode-toggle');
  const settingsKey='readmaud-page-mode-v1';
  let enabled=safeGet(settingsKey)==='pages',current=null,spread=0,columns=1,total=1,step=0,offset=0;
- let anchor={paragraph:0,character:0},frame=0,noteButton=null,pointer=null;
+ let anchor={paragraph:0,character:0},frame=0,pointer=null;
  const pane=document.createElement('div');
  pane.className='paged-reader';pane.hidden=true;
  pane.innerHTML='<div class="page-heading"><h3></h3><span></span></div><div class="page-window"><div class="page-flow"></div></div><div class="page-footer"><button type="button" class="page-prev" aria-label="上一頁">‹</button><button type="button" class="page-next" aria-label="下一頁">›</button><button type="button" class="page-details">譯文與分析</button><span class="page-counter" aria-live="polite" aria-atomic="true"></span></div>';
@@ -16,8 +16,14 @@
  dialog.setAttribute('aria-labelledby','page-detail-title');
  dialog.innerHTML='<div class="page-detail-head"><h3 id="page-detail-title">譯文與段落分析</h3><button type="button" aria-label="關閉譯文與分析">×</button></div><div class="page-detail-body"></div>';
  document.body.append(dialog);
- const note=document.createElement('div');note.className='paged-note';note.hidden=true;note.setAttribute('role','status');document.body.append(note);
- function closeNote(){if(noteButton)noteButton.setAttribute('aria-expanded','false');noteButton=null;note.hidden=true}
+ const closeNote=()=>window.ReaderNotes.close();
+ function updateDetailMode(){
+  const focused=document.body.classList.contains('focus-mode');
+  detailButton.hidden=focused&&current?.type!=='classical';
+  detailButton.textContent=focused?'譯文':current?.type==='classical'?'譯文與分析':'段落分析';
+  dialog.querySelector('h3').textContent=focused?'文言譯文':'譯文與段落分析';
+  if(dialog.open)dialog.close();
+ }
  function textNodes(paragraph){
   const nodes=[],walker=document.createTreeWalker(paragraph,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest('.page-tag,.note-bubble')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
   while(walker.nextNode())nodes.push(walker.currentNode);
@@ -90,9 +96,7 @@
   pane.querySelector('.page-heading h3').textContent=a.title;
   pane.querySelector('.page-heading span').textContent=a.author;
   flow.innerHTML=isReady(a)?a.paragraphs.map((p,i)=>`<p class="page-paragraph" data-paragraph="${i}"><span class="page-tag">${String(i+1).padStart(2,'0')}</span>${renderOriginal(p).replaceAll('<button class="annotated-word"','<span class="annotated-word" role="button" tabindex="0"').replaceAll(' type="button"','').replaceAll('</button>','</span>')}</p>`).join(''):'';
-  flow.querySelectorAll('.annotated-word').forEach(button=>{button.removeAttribute('aria-controls');button.setAttribute('aria-describedby','paged-note')});
-  note.id='paged-note';
-  detailButton.textContent=a.type==='classical'?'譯文與分析':'段落分析';
+  updateDetailMode();
   applyMode();
  }
  function applyMode(){
@@ -108,10 +112,12 @@
   closeNote();spread=target;updateSpread(!matchMedia('(prefers-reduced-motion: reduce)').matches);
  }
  function openDetails(){
+  const focused=document.body.classList.contains('focus-mode');
+  if(focused&&current.type!=='classical')return;
   const indices=visibleParagraphs().map(p=>Number(p.dataset.paragraph));
   dialog.querySelector('.page-detail-body').innerHTML=indices.map(i=>{
    const p=current.paragraphs[i];
-   return `<section><h4>第 ${i+1} 段</h4><p class="detail-excerpt">${esc(p.text.slice(0,48))}${p.text.length>48?'…':''}</p>${p.translation?`<details class="translation"><summary>＋ 譯文</summary><p>${esc(p.translation)}</p></details>`:''}<details class="insight"><summary>＋ 這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight"><summary>＋ 深入分析</summary><p>${esc(p.analysis)}</p></details></section>`;
+   return `<section><h4>第 ${i+1} 段</h4><p class="detail-excerpt">${esc(p.text.slice(0,48))}${p.text.length>48?'…':''}</p>${p.translation&&(!focused||current.type==='classical')?`<details class="translation"><summary>＋ 譯文</summary><p>${esc(p.translation)}</p></details>`:''}${focused?'':`<details class="insight"><summary>＋ 這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight"><summary>＋ 深入分析</summary><p>${esc(p.analysis)}</p></details>`}</section>`;
   }).join('');
   closeNote();dialog.showModal();
  }
@@ -133,21 +139,9 @@
  detailButton.addEventListener('click',openDetails);
  dialog.querySelector('button').addEventListener('click',()=>dialog.close());
  dialog.addEventListener('click',event=>{if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close()}});
- flow.addEventListener('click',event=>{
-  const button=event.target.closest('.annotated-word');if(!button)return;
-  const wasOpen=noteButton===button&&!note.hidden;closeNote();if(wasOpen)return;
-  noteButton=button;button.setAttribute('aria-expanded','true');
-  note.innerHTML=`<strong>${esc(button.textContent)}</strong>${esc(button.nextElementSibling.textContent)}`;note.hidden=false;
-  const bounds=viewport.getBoundingClientRect();
-  const rect=[...button.getClientRects()].find(r=>r.right>bounds.left&&r.left<bounds.right)||button.getBoundingClientRect();
-  const width=note.getBoundingClientRect().width,height=note.getBoundingClientRect().height;
-  note.style.left=Math.max(16,Math.min(rect.left,window.innerWidth-width-16))+'px';
-  note.style.top=Math.max(16,Math.min(rect.bottom+10,window.innerHeight-height-16))+'px';
- });
+ flow.addEventListener('click',event=>{const button=event.target.closest('.annotated-word');if(button)window.ReaderNotes.toggle(button,viewport.getBoundingClientRect())});
  flow.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&event.target.closest('.annotated-word')){event.preventDefault();event.target.closest('.annotated-word').click()}});
- document.addEventListener('click',event=>{if(!event.target.closest('.annotated-word,.paged-note'))closeNote()});
  document.addEventListener('keydown',event=>{
-  if(event.key==='Escape'&&!note.hidden){event.stopImmediatePropagation();closeNote();return}
   if(!enabled||pane.hidden||dialog.open||document.querySelector('#today-view').hidden)return;
   if(event.altKey||event.ctrlKey||event.metaKey||event.shiftKey||event.target.closest('input,textarea,select,[contenteditable],.annotated-word'))return;
   const visible=reader.getBoundingClientRect();if(visible.top>window.innerHeight||visible.bottom<0)return;
@@ -165,7 +159,7 @@
  });
  viewport.addEventListener('pointercancel',()=>{pointer=null});
  document.addEventListener('readerarticlechange',event=>build(event.detail));
- document.addEventListener('readerlayoutchange',scheduleLayout);
+ document.addEventListener('readerlayoutchange',()=>{updateDetailMode();scheduleLayout()});
  document.addEventListener('readerviewchange',()=>{closeNote();scheduleLayout()});
  window.addEventListener('resize',scheduleLayout);
  window.addEventListener('scroll',closeNote,{passive:true});
