@@ -8,12 +8,14 @@
 
 1. 在 `articles` 陣列最後加入一個新物件。可先複製 `article-template.json` 的範本。
 2. 填寫不重複的 `id`、`order`、`title`、`author` 和全篇 `intro`。
-3. 每段放進 `paragraphs`：`text`、`guide`、`summary`、`analysis` 都要填寫；`translation` 可留空。
-4. 將修改提交到 GitHub 的 `main` 分支。
+3. `type` 必須填 `classical`（文言文）或 `vernacular`（白話文）；篇章庫可按類別篩選。
+4. 每段放進 `paragraphs`：`text`、`guide`、`summary`、`analysis` 都要填寫。文言文每段另須填 `translation` 和 `notes`；白話譯文會以點擊展開方式顯示。
+5. 文言注釋請按該段實際語境撰寫，說明詞義、詞性／活用、句式或古今異義；需要時補充上下文，不要只貼通用詞典義。每項注釋格式為 `term`（詞語或句式）和 `explanation`（語境解釋）。白話文的 `translation`、`notes` 可留空。
+6. 將修改提交到 GitHub 的 `main` 分支。
 
-新文章會自動出現在篇章庫。完成全篇導讀欄位後，網站會把它加入每日隨機選讀；未完成的文章會標示「內容整理中」。Cloudflare Pages 連接 GitHub 後，`main` 有新提交便會自動重新部署。
+新文章會自動出現在篇章庫。白話文完成逐段導讀欄位後即可加入每日抽選；文言文還須每段具備譯文和至少一項注釋。未完成的文章會標示「內容整理中」。Cloudflare Pages 連接 GitHub 後，`main` 有新提交便會自動重新部署。
 
-目前篇章庫有原 Google Sites 的 52 篇目錄；劉禹錫《陋室銘》已完成逐段示範，其餘 51 篇仍待遷移和編寫。
+目前篇章庫有原 Google Sites 的 52 篇目錄，已按文言文／白話文分類；劉禹錫《陋室銘》示範包含逐段語境注釋，其餘 51 篇仍待遷移和編寫。
 
 ## Cloudflare Pages 設定
 
