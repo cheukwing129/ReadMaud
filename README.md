@@ -17,20 +17,23 @@
 
 字體與紙紋來源見 [`assets/NOTICE.md`](assets/NOTICE.md)，PDF 程式授權見 [`vendor/NOTICE.md`](vendor/NOTICE.md)。思源宋體以現有文章字元製成子集；新增文章若含未收錄字元，須重新製作字體子集，PDF 匯出會提示缺少的字元。
 
-## 新增文章
+## 文章資料結構
 
-所有文章資料集中在根目錄的 `articles.json`。新增文章時只需編輯這個 JSON 檔，不用修改 `index.html`：
+文章資料拆成「索引＋單篇檔案」，網站只在使用者開啟文章時載入該篇完整內容：
 
-1. 在 `articles` 陣列最後加入一個新物件。可先複製 `article-template.json` 的範本。
-2. 填寫不重複的 `id`、`order`、`title`、`author` 和全篇 `intro`。
-3. `type` 必須填 `classical`（文言文）或 `vernacular`（白話文）；篇章庫可按類別篩選。
-4. 每段放進 `paragraphs`：`text`、`summary`、`analysis` 都要填寫。文言文每段另須填 `translation` 和 `notes`；白話譯文會以點擊展開方式顯示。
-5. 文言注釋請按該段實際語境撰寫，說明詞義、詞性／活用、句式或古今異義；需要時補充上下文，不要只貼通用詞典義。`term` 必須是原文中實際出現的詞語或句式，網站會把它標亮並設為點擊注釋；每項再填 `explanation`（語境解釋）。段意總結和分析在一般捲動模式預設展開，在專注模式隱藏。白話文的 `translation`、`notes` 可留空。
-6. 將修改提交到 GitHub 的 `main` 分支。
+- `data/articles/index.json`：篇章列表、分類、簡介、檔案位置及是否已整理完成。首頁與篇章庫只載入此索引。
+- `data/articles/<id>.json`：每篇文章獨立存放，包含原文、譯文、注釋、段落總結及分析。
+- `article-template.json`：新增單篇文章時使用的內容範本。
 
-新文章會自動出現在篇章庫。白話文補齊各段總結和分析後即可加入每日抽選；文言文還須每段具備譯文和至少一項注釋。未完成的文章會標示「內容整理中」。Cloudflare Pages 連接 GitHub 後，`main` 有新提交便會自動重新部署。
+### 新增文章
 
-目前已完成原 Google Sites 第 1 至第 52 周的篇章整理。按要求將《陳情表（上）》與《陳情表（下）》合併為一篇，因此篇章庫共 51 篇：26 篇文言文、25 篇白話文。所有文章均已完成逐段總結與分析；文言文各段亦已補上譯文和語境注釋。全庫已核對必填欄位與注釋錨點，未發現缺漏。
+1. 複製 `article-template.json`，存成 `data/articles/<id>.json`。使用唯一且固定的 ID，例如 `article-52`；檔名須與 ID 相同。
+2. 填寫文章內容。沿用既有欄位；`schemaVersion` 固定為 `1`。不需要在文章檔手動加入 `ready`。
+3. 在 `data/articles/index.json` 的 `articles` 陣列加入一筆索引資料：`id`、`order`、`title`、`author`、`type`、`category`、`intro`、`sourceUrl`、`paragraphCount`、`ready` 和 `data`。其中 `data` 使用 `./data/articles/<id>.json`；`paragraphCount` 填段落數。
+4. 只有完成必要內容的文章才設 `ready: true`。白話文須有每段原文、總結和分析；文言文還須有每段譯文和至少一項注釋。未完成可設為 `false`，仍會列在篇章庫，但不會被每日抽選。
+5. 提交後，網站先讀索引；選取文章時才請求該篇 JSON。每篇資料會在目前頁面工作期間快取。
+
+注釋的 `term` 必須出現在相應段落原文中，並按語境解釋詞義、詞性／活用、句式或古今異義；必要時補充上下文。教育局注釋優先。內容欄位與閱讀功能沿用原有格式，無須修改 `index.html`。
 
 ## Cloudflare Pages 設定
 

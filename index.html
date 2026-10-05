@@ -73,7 +73,7 @@ main{max-width:1360px;margin:0 auto;padding:0 32px 90px}.view{animation:view-in 
  <section class="reading-area" id="reader" aria-labelledby="reader-heading"><h2 id="reader-heading" class="sr">今日選文原文</h2><div class="reader-toolbar" role="group" aria-label="閱讀設定"><strong>READING TOOLS</strong><div class="tool-group size-control"><span class="tool-label">字級</span><button id="font-decrease" type="button" aria-label="縮小閱讀字體">A−</button><output id="font-size-display" aria-live="polite">22 px</output><button id="font-increase" type="button" aria-label="放大閱讀字體">A＋</button></div><div class="tool-group font-control"><label class="tool-label" for="reader-font">字體</label><select id="reader-font" aria-label="閱讀字體"><option value="auto">預設字體</option><option value="sourcehan">思源宋體</option></select></div><div class="tool-group theme-control" role="group" aria-label="頁面配色"><span class="tool-label">配色</span><button type="button" data-reader-theme="paper" aria-pressed="true">紙本</button><button type="button" data-reader-theme="bright" aria-pressed="false">明亮</button><button type="button" data-reader-theme="night" aria-pressed="false">夜讀</button></div><button id="export-pdf" type="button">匯出 PDF</button><button class="mode-toggle" id="reading-mode-toggle" type="button" aria-pressed="false">翻頁閱讀</button><button class="focus-toggle" id="focus-toggle" type="button" aria-pressed="false">專注模式</button></div><div id="pdf-status" class="pdf-status" role="status"></div><div class="reading-hint" id="note-hint"><b>THE TEXT</b><p>標亮字詞可點開註釋；譯文按需展開，總結及分析列於每段後。</p></div><article class="readcard" id="article" aria-live="polite"></article></section>
 </div>
 <section class="view" id="library-view" hidden aria-labelledby="library-heading"><div class="edition"><span>READMAUD / THE INDEX</span><span>EXPLORE THE COLLECTION</span></div><div class="library-intro"><p class="eyebrow">THE COLLECTION / 篇章庫</p><h2 id="library-heading">讀什麼，自己挑。</h2><p id="library-intro">從古典到當代，找到今天想讀的一篇。</p></div><div class="library-tools"><label class="sr" for="search">搜尋篇名或作者</label><input id="search" class="search" type="search" placeholder="搜尋篇名或作者…"><div class="filters" role="group" aria-label="按文體分類"><button class="filter" type="button" data-type="all" aria-pressed="true">全部</button><button class="filter" type="button" data-type="classical" aria-pressed="false">文言文</button><button class="filter" type="button" data-type="vernacular" aria-pressed="false">白話文</button></div></div><div class="library-count"><span id="count"></span>　/　已整理 <span id="library-number">—</span> 篇</div><div class="items" id="items"></div></section>
-<footer class="footer"><b>READMAUD.</b><span>每天一篇，慢慢讀。新增文章時更新 articles.json 即可。</span></footer>
+<footer class="footer"><b>READMAUD.</b><span>每天一篇，慢慢讀。新增文章時在索引登記，並新增單篇資料檔。</span></footer>
 </main>
 <nav class="mobile-nav" aria-label="手機導覽"><a href="#today" data-view-link="today" aria-current="page">今日</a><a href="#library" data-view-link="library">篇章庫</a><button type="button" id="mobile-reroll">換一篇 ↗</button></nav>
 <script>
@@ -125,12 +125,14 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const dayKey=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Hong_Kong'});
 const storageKey=`readmaud-daily:${dayKey}`;
 let articles=[],activeId='';
+const detailCache=new Map();
+let activeLoadToken=0;
 const label=a=>`${a.author||'作者未填'}：${a.title||'未命名篇章'}`;
-const isReady=a=>Boolean(a&&a.title&&a.author&&a.intro&&['classical','vernacular'].includes(a.type)&&Array.isArray(a.paragraphs)&&a.paragraphs.length&&a.paragraphs.every(p=>p&&p.text&&p.summary&&p.analysis&&(a.type!=='classical'||(p.translation&&Array.isArray(p.notes)&&p.notes.length))));
+const isReady=a=>Boolean(a&&a.ready===true);
 const typeLabel=type=>type==='classical'?'文言文':'白話文';
 const readyArticles=()=>articles.filter(isReady);
 function dateSeed(){return [...dayKey].reduce((n,c)=>((n*31)+c.charCodeAt(0))>>>0,7)}
-function activeArticle(){return articles.find(a=>a.id===activeId)||articles[0]}
+function activeArticle(){return detailCache.get(activeId)||articles.find(a=>a.id===activeId)||articles[0]}
 function renderOriginal(p){
  const notes=(p.notes||[]).filter(n=>n&&n.term&&n.explanation).slice().sort((a,b)=>b.term.length-a.term.length);
  if(!notes.length)return esc(p.text);
@@ -159,20 +161,25 @@ function showView(view,{updateHash=true}={}){
  document.dispatchEvent(new Event('readerviewchange'));
 }
 function render(){
- const a=activeArticle(),complete=readyArticles();
- $('#library-number').textContent=complete.length;$('#library-intro').textContent=`${articles.length} 篇文章，從古典到當代，找到今天想讀的一篇。`;
+ const meta=articles.find(x=>x.id===activeId)||articles[0],a=detailCache.get(activeId),complete=readyArticles();
+ $('#library-number').textContent=complete.length;$('#library-intro').textContent=`篇章庫共有 ${articles.length} 篇文章，從古典到當代，找到今天想讀的一篇。`;
  $('#daily-meta').textContent=`已整理 ${complete.length} 篇 · 篇章庫共 ${articles.length} 篇`;
  $('#reroll').disabled=complete.length<2;
- if(!a){$('#daily-title').textContent='新增第一篇文章';$('#daily-desc').textContent='在 articles.json 加入文章並完成內容整理後，網站便會自動顯示。';$('#reader-heading').textContent='尚未有文章';$('#article').innerHTML='<div class="not-ready"><h4>篇章庫目前是空的</h4><p>新增一篇完整文章後，就會在這裡顯示。</p></div>';return}
- const ready=isReady(a),category=a.category?` · ${esc(a.category)}`:'';
- $('#daily-title').textContent=a.title;
- $('#daily-desc').textContent=ready?a.intro:'這篇文章的段落內容仍在整理中；補齊後會加入每日選讀。';
- $('#daily-author').textContent=a.author;
- $('#daily-type').textContent=typeLabel(a.type);
- $('#issue-number').textContent=String(articles.indexOf(a)+1).padStart(2,'0');
- $('#article').dataset.type=a.type;
- $('#reader-heading').textContent=a.title+'原文';
- $('#article').innerHTML=ready?`<header class="article-head sr"><h2>${esc(a.title)}</h2><p>${esc(a.author)}${category}</p></header>${a.paragraphs.map((p,i)=>`<section class="para"><span class="tag" aria-label="第 ${i+1} 段">${String(i+1).padStart(2,'0')}</span><div class="para-content"><p class="original">${renderOriginal(p)}</p>${a.type==='classical'&&p.translation?`<details class="translation"><summary>＋  顯示這一段的譯文</summary><p>${esc(p.translation)}</p></details>`:p.translation?`<p class="quote">譯文｜${esc(p.translation)}</p>`:''}<div class="analysis-grid"><details class="insight" open><summary>＋  這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight" open><summary>＋  深入分析</summary><p>${esc(p.analysis)}</p></details></div></div></section>`).join('')}<div class="reader-foot"><span>共 ${a.paragraphs.length} 段 · 建議逐段閱讀</span></div>`:`<header class="article-head"><span class="type-chip">${typeLabel(a.type)}</span><span class="author">篇章庫 · 內容整理中</span><h3>${esc(a.title)}</h3><p>${esc(a.author)}</p></header><div class="not-ready"><h4>逐段內容整理中</h4><p>這篇文章尚未補齊內容；文言文還須填寫每段白話譯文及按語境編寫的字詞／句式注釋。完成後會自動列入每日隨機選讀。</p></div><div class="reader-foot"><span>篇章 ${articles.indexOf(a)+1} / ${articles.length}</span></div>`;
+ if(!meta){$('#daily-title').textContent='新增第一篇文章';$('#daily-desc').textContent='在 data/articles/index.json 登記文章，並新增單篇資料檔。';$('#reader-heading').textContent='尚未有文章';$('#article').innerHTML='<div class="not-ready"><h4>篇章庫目前是空的</h4><p>新增一篇完整文章後，就會在這裡顯示。</p></div>';return}
+ $('#daily-title').textContent=meta.title;
+ $('#daily-desc').textContent=meta.intro|| (meta.ready?'':'這篇文章的段落內容仍在整理中；補齊後會加入每日選讀。');
+ $('#daily-author').textContent=meta.author;
+ $('#daily-type').textContent=typeLabel(meta.type);
+ $('#issue-number').textContent=String(articles.indexOf(meta)+1).padStart(2,'0');
+ $('#article').dataset.type=meta.type;
+ $('#reader-heading').textContent=meta.title+'原文';
+ if(!a){
+  $('#article').innerHTML='<div class="not-ready" role="status"><h4>正在載入文章</h4><p>請稍候。</p></div>';
+  $('#note-hint').querySelector('p').textContent=meta.type==='classical'?'標亮字詞可點開註釋；譯文按需展開，總結及分析列於每段後。':'每段後顯示總結與分析；開啟專注模式可隱藏。';
+  return;
+ }
+ const category=meta.category?` · ${esc(meta.category)}`:'';
+ $('#article').innerHTML=isReady(a)?`<header class="article-head sr"><h2>${esc(a.title)}</h2><p>${esc(a.author)}${category}</p></header>${a.paragraphs.map((p,i)=>`<section class="para"><span class="tag" aria-label="第 ${i+1} 段">${String(i+1).padStart(2,'0')}</span><div class="para-content"><p class="original">${renderOriginal(p)}</p>${a.type==='classical'&&p.translation?`<details class="translation"><summary>＋  顯示這一段的譯文</summary><p>${esc(p.translation)}</p></details>`:p.translation?`<p class="quote">譯文｜${esc(p.translation)}</p>`:''}<div class="analysis-grid"><details class="insight" open><summary>＋  這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight" open><summary>＋  深入分析</summary><p>${esc(p.analysis)}</p></details></div></div></section>`).join('')}<div class="reader-foot"><span>共 ${a.paragraphs.length} 段 · 建議逐段閱讀</span></div>`:`<header class="article-head"><span class="type-chip">${typeLabel(a.type)}</span><span class="author">篇章庫 · 內容整理中</span><h3>${esc(a.title)}</h3><p>${esc(a.author)}</p></header><div class="not-ready"><h4>逐段內容整理中</h4><p>這篇文章尚未補齊內容；文言文還須填寫每段白話譯文及按語境編寫的字詞／句式注釋。完成後會自動列入每日隨機選讀。</p></div><div class="reader-foot"><span>篇章 ${articles.indexOf(meta)+1} / ${articles.length}</span></div>`;
  $('#note-hint').querySelector('p').textContent=a.type==='classical'?'標亮字詞可點開註釋；譯文按需展開，總結及分析列於每段後。':'每段後顯示總結與分析；開啟專注模式可隱藏。';
  $('#article').onclick=e=>{const button=e.target.closest('.annotated-word');if(button)window.ReaderNotes.toggle(button)};
  $('#start').onclick=()=>$('#reader').scrollIntoView({behavior:'smooth'});
@@ -184,24 +191,42 @@ function renderList(){
  const list=articles.filter(a=>(activeType==='all'||a.type===activeType)&&label(a).toLowerCase().includes(q));
  $('#count').textContent=`顯示 ${list.length} / ${articles.length} 篇`;
  $('#items').innerHTML=list.map(a=>`<button class="item ${activeId===a.id?'selected':''}" type="button" data-id="${esc(a.id)}"><span class="item-no">${String(articles.indexOf(a)+1).padStart(2,'0')}</span><span class="item-title">${esc(a.title)}<small>${esc(a.author)} · ${typeLabel(a.type)} · ${isReady(a)?'可閱讀':'整理中'}</small></span><span class="item-type">${typeLabel(a.type)}</span><span class="item-arrow" aria-hidden="true">↗</span></button>`).join('');
- document.querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>{activeId=b.dataset.id;safeSet(storageKey,activeId);render();renderList();showView('today');$('#reader').scrollIntoView({behavior:'smooth'})});
+ document.querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>{activateArticle(b.dataset.id);showView('today');$('#reader').scrollIntoView({behavior:'smooth'})});
 }
-function showLoadError(){ $('#daily-title').textContent='篇章資料未能載入';$('#daily-desc').textContent='請重新載入頁面；如剛新增了文章，請確認 articles.json 格式正確。';$('#reader-heading').textContent='暫時無法開啟篇章';$('#article').innerHTML='<div class="not-ready"><h4>資料檔讀取失敗</h4><p>請檢查 articles.json 是否為有效 JSON，再重新部署。</p></div>'; }
+function showLoadError(){ $('#daily-title').textContent='篇章資料未能載入';$('#daily-desc').textContent='請重新載入頁面；如剛新增了文章，請確認索引或單篇資料檔格式正確。';$('#reader-heading').textContent='暫時無法開啟篇章';$('#article').innerHTML='<div class="not-ready"><h4>資料檔讀取失敗</h4><p>請檢查 data/articles/index.json 和相應的單篇文章檔，再重新部署。</p></div>'; }
+async function activateArticle(id){
+ const meta=articles.find(x=>x.id===id);if(!meta)return;
+ activeId=id;safeSet(storageKey,activeId);renderList();
+ const token=++activeLoadToken;render();
+ if(detailCache.has(id)){render();return}
+ try{
+  const response=await fetch(meta.data);if(!response.ok)throw new Error('article request failed');
+  const article=await response.json();
+  if(article.id!==id||!Array.isArray(article.paragraphs))throw new Error('article data does not match index');
+  detailCache.set(id,article);
+  if(token===activeLoadToken&&activeId===id)render();
+ }catch(error){
+  console.error(error);
+  if(token===activeLoadToken&&activeId===id){
+   $('#article').innerHTML='<div class="not-ready" role="alert"><h4>文章未能載入</h4><p>請檢查這篇文章的資料檔是否存在及格式正確，然後重新載入。</p></div>';
+  }
+ }
+}
 async function init(){
  try{
-  const response=await fetch('./articles.json',{cache:'no-store'});if(!response.ok)throw new Error('articles.json request failed');
-  const data=await response.json();if(!Array.isArray(data.articles))throw new Error('articles must be an array');
+  const response=await fetch('./data/articles/index.json',{cache:'no-store'});if(!response.ok)throw new Error('article index request failed');
+  const data=await response.json();if(data.schemaVersion!==1||!Array.isArray(data.articles))throw new Error('invalid article index');
   articles=data.articles.slice().sort((a,b)=>(a.order??999999)-(b.order??999999));
   const complete=readyArticles(),saved=safeGet(storageKey);
   const initial=complete.find(a=>a.id===saved)||complete[dateSeed()%Math.max(complete.length,1)]||articles[0];
-  activeId=initial?.id||'';
-  $('#reroll').addEventListener('click',()=>{const pool=readyArticles().filter(x=>x.id!==activeId);if(!pool.length)return;const pick=pool[Math.floor(Math.random()*pool.length)];activeId=pick.id;safeSet(storageKey,activeId);render();renderList()});
+  $('#reroll').addEventListener('click',()=>{const pool=readyArticles().filter(x=>x.id!==activeId);if(!pool.length)return;const pick=pool[Math.floor(Math.random()*pool.length)];activateArticle(pick.id)});
   $('#mobile-reroll').addEventListener('click',()=>{$('#reroll').click();showView('today')});
   $('#search').addEventListener('input',renderList);
   document.querySelectorAll('[data-type]').forEach(b=>b.addEventListener('click',()=>{activeType=b.dataset.type;document.querySelectorAll('[data-type]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderList()}));
   $('#daily-date').textContent=new Intl.DateTimeFormat('zh-HK',{timeZone:'Asia/Hong_Kong',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
   document.querySelectorAll('[data-view-link]').forEach(link=>link.addEventListener('click',e=>{e.preventDefault();showView(link.dataset.viewLink)}));
-  render();renderList();showView(location.hash==='#library'?'library':'today',{updateHash:false});
+  renderList();showView(location.hash==='#library'?'library':'today',{updateHash:false});
+  if(initial)await activateArticle(initial.id);else render();
  }catch(error){console.error(error);showLoadError()}
 }
 initReaderSettings();
