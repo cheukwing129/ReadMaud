@@ -2,53 +2,79 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#143c37"><meta name="description" content="ReadMaud 中文閱讀：每日一篇，逐段細讀。文言文譯文、字詞註釋、總結與分析按需展開。">
-<title>ReadMaud｜每日一篇，慢慢讀</title>
+<meta name="theme-color" content="#f6f6f2"><meta name="description" content="ReadMaud：每天一篇中文文章，點開字詞註釋、譯文與逐段分析，按自己的節奏閱讀。">
+<title>ReadMaud — 今天讀甚麼？</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#f4f1ea;--surface:#fffdf8;--ink:#202c2a;--muted:#65706b;--forest:#204d45;--forest-fill:#204d45;--deep:#143c37;--accent:#d74f35;--line:#d8d8cc;--note:#f9e5a3;--annotation-ink:#202c2a;--sage:#e6ede4;--reading-size:22px;--serif:"Noto Serif TC","Songti TC","PMingLiU",serif;--sans:"Noto Sans TC",system-ui,sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--sans)}button,input{font:inherit}button{cursor:pointer}a{color:inherit}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.top{height:76px;background:var(--deep);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,calc((100vw - 1300px)/2));position:sticky;top:0;z-index:20}.brand{font:600 22px var(--serif);text-decoration:none;white-space:nowrap}.nav{display:flex;gap:38px;align-items:center}.nav a{font-size:13px;text-decoration:none;opacity:.82}.nav a:hover,.nav a:focus-visible{opacity:1;color:var(--note)}.mobile-nav{display:none}
-main{max-width:1440px;margin:auto;padding:0 5% 60px}.eyebrow,.section-label{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--accent);margin:0}.today{display:grid;grid-template-columns:minmax(0,1fr) 316px;gap:60px;padding:48px 0 44px;border-bottom:1px solid var(--line)}.today-copy{align-self:center}.today h1{font:600 clamp(42px,4.2vw,58px)/1.25 var(--serif);letter-spacing:-.04em;max-width:740px;margin:23px 0 18px}.today-desc{color:var(--muted);font-size:16px;margin:0}.today-meta{font-size:12px;color:var(--muted);margin:20px 0 0}.today-aside{background:var(--sage);padding:26px 28px;min-height:226px;display:flex;flex-direction:column;align-items:flex-start}.today-aside small{font-size:12px;color:var(--forest);font-weight:700;letter-spacing:.07em}.today-aside strong{font:400 104px/1.1 var(--serif);color:var(--forest);letter-spacing:-.08em}.today-aside span{font-size:14px;font-weight:500;color:var(--forest)}
-.selection-bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0 21px}.selection-bar .section-label{margin:0}.selection-bar .section-label span{color:var(--muted);font-weight:400;margin-left:18px}.buttons{display:flex;gap:10px}.btn{background:var(--surface);border:1px solid var(--line);border-radius:22px;color:var(--forest);padding:8px 17px;font-size:13px;font-weight:700;transition:background .2s ease,transform .2s ease}.btn:hover{background:var(--sage);transform:translateY(-2px)}.btn:focus-visible,.filter:focus-visible,.item:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.btn.primary{background:var(--forest);color:#fff;border-color:var(--forest)}.btn.primary:hover{background:var(--deep)}
-.reader-shell{display:grid;grid-template-columns:220px minmax(0,722px) minmax(210px,282px);gap:clamp(20px,3.3vw,48px);align-items:start}.reading-rail{position:sticky;top:110px;padding-top:10px;color:var(--muted);font-size:14px}.reading-rail strong,.note-panel h2{font-size:12px;letter-spacing:.08em;color:var(--forest)}.reading-rail ol{list-style:none;padding:16px 0;margin:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.reading-rail li{padding:10px 0}.reading-rail li:first-child{color:var(--forest);font-weight:700}.reading-rail p{font-size:12px;line-height:1.7;max-width:190px}.reading-head{position:absolute;width:1px;height:1px;overflow:hidden}.readcard{background:var(--surface);border:1px solid var(--line);padding:clamp(28px,3.4vw,48px);min-width:0}.article-head{border-bottom:1px solid var(--line);padding-bottom:32px;margin-bottom:26px}.author{font-size:13px;color:var(--accent);font-weight:700}.article-head h3{font:600 clamp(32px,3.2vw,48px)/1.35 var(--serif);letter-spacing:-.035em;margin:22px 0 16px}.article-head p{font-size:15px;color:var(--muted);margin:0}.para{padding:16px 0 36px;border-bottom:1px solid var(--line);margin:0 0 28px}.tag{display:block;font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.08em;margin-bottom:18px}.original{font:400 clamp(20px,1.55vw,22px)/2.03 var(--serif);letter-spacing:.015em;margin:0 0 28px}.translation,.insight{margin:0 0 10px;background:var(--paper)}.translation{background:var(--sage)}summary{list-style:none;cursor:pointer;padding:14px 18px;color:var(--forest);font-size:14px;font-weight:500;min-height:50px}summary::-webkit-details-marker{display:none}details[open] summary{border-bottom:1px solid var(--line)}.translation p,.insight p{padding:17px 19px 20px;margin:0;font-size:15px;line-height:1.85}.translation p{font-family:var(--serif)}.analysis-grid{display:block}.annotated-word{background:var(--note);border:0;border-radius:2px;padding:1px 2px;color:inherit;font:inherit;line-height:inherit}.annotated-word:hover,.annotated-word:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.annotation-anchor{position:relative;display:inline}.note-bubble{display:none}.reader-foot{display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:12px;margin-top:18px}.reader-foot a{color:var(--forest)}.not-ready{padding:25px;background:var(--sage)}.not-ready h4{margin:0}.not-ready p{margin-bottom:0}
-.note-panel{position:sticky;top:110px;background:var(--sage);padding:24px;min-height:280px}.note-panel h2{margin:0 0 18px;padding-bottom:16px;border-bottom:1px solid var(--line)}.note-panel strong{font:600 28px var(--serif)}.note-panel p{font-size:14px;line-height:1.8;margin-top:17px}.note-panel small{display:block;border-top:1px solid var(--line);margin-top:30px;padding-top:15px;color:var(--forest);font-size:12px}.note-panel.has-note{animation:reveal .25s ease both}
-.library{padding:100px 0 30px}.library-top{display:flex;align-items:end;justify-content:space-between;gap:20px}.library h2{font:600 clamp(38px,4vw,58px)/1.25 var(--serif);margin:20px 0}.library-intro{color:var(--muted);font-size:16px;margin:0}.library-total{font:400 84px/1 var(--serif);color:var(--forest);text-align:right}.library-total small{display:block;font:500 13px var(--sans)}.library-tools{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);margin-top:35px;padding:30px 0 15px}.search{width:min(100%,620px);height:52px;border:1px solid var(--line);background:var(--surface);padding:0 18px;border-radius:3px;outline:none}.search:focus{border-color:var(--forest);box-shadow:0 0 0 3px #204d4522}.filters{display:flex;gap:10px;align-items:flex-start}.filter{border:1px solid var(--line);background:var(--surface);color:var(--forest);padding:7px 19px;border-radius:20px;font-size:13px}.filter[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:#fff}.count{color:var(--muted);font-size:12px;margin:20px 0 8px}.items{display:block}.item{width:100%;display:grid;grid-template-columns:60px minmax(0,1fr) 110px 30px;align-items:center;gap:20px;text-align:left;border:0;border-top:1px solid var(--line);background:transparent;padding:19px 0;color:var(--ink);transition:background .2s ease,padding .2s ease}.item:hover{background:var(--sage);padding-left:12px}.item.selected .item-title{color:var(--forest)}.item-no{color:var(--accent);font-size:12px;font-weight:700}.item-title{font:600 22px/1.35 var(--serif)}.item small{display:block;font:400 12px/1.6 var(--sans);color:var(--muted);margin-top:6px}.item-type{font-size:13px;color:var(--forest)}.item-arrow{color:var(--accent);font-size:20px}.footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:20px}
-@keyframes reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}details[open]>p{animation:reveal .22s ease both}
-@media(max-width:1100px){.reader-shell{grid-template-columns:minmax(0,1fr) 255px}.reading-rail{display:none}.today{gap:32px}}
-@media(max-width:760px){.top{height:62px;padding:0 20px}.brand{font-size:17px}.nav{display:none}main{padding:0 20px 94px}.today{display:block;padding:31px 0 27px}.today h1{font-size:38px;margin:16px 0}.today-desc{font-size:14px}.today-meta{margin-top:12px}.today-aside{display:none}.selection-bar{padding:16px 0;align-items:center}.selection-bar .section-label span{display:none}.buttons .primary{display:none}.reader-shell{display:block;margin:0 -20px}.readcard{padding:25px 20px;border-left:0;border-right:0}.article-head{padding-bottom:26px}.article-head h3{font-size:37px}.article-head p{font-size:14px}.para{padding:12px 0 28px}.original{font-size:21px;line-height:2.05}.note-panel{display:none}.note-bubble{position:absolute;z-index:8;top:calc(100% + 8px);left:0;display:block;width:max-content;max-width:min(330px,calc(100vw - 40px));background:var(--sage);color:var(--ink);border:1px solid var(--line);padding:14px 16px;box-shadow:0 15px 32px #143c3722;border-radius:3px;font:14px/1.65 var(--sans)}.note-bubble[hidden]{display:none}.note-open-left .note-bubble{left:auto;right:0}.library{padding:66px 0 10px}.library h2{font-size:38px}.library-intro{font-size:14px}.library-total{display:none}.library-tools{display:block;margin-top:28px;padding:21px 0}.search{width:100%}.filters{margin-top:18px;gap:7px}.filter{padding:7px 15px}.item{grid-template-columns:28px minmax(0,1fr) 25px;gap:10px;padding:17px 0}.item-type{display:none}.item-title{font-size:20px}.item small{font-size:12px}.footer{display:block}.footer span{display:block;margin-top:8px}.mobile-nav{display:flex;position:fixed;z-index:25;bottom:0;left:0;right:0;height:70px;background:var(--deep);color:#fff;align-items:center;justify-content:space-around}.mobile-nav a,.mobile-nav button{color:#fff;text-decoration:none;background:none;border:0;font-size:13px;padding:15px 8px}}
+:root{
+ --page:#f6f6f2;--surface:#fff;--ink:#202126;--muted:#686d72;--line:#d9dbd5;
+ --accent:#314ad7;--accent-text:#fff;--accent-soft:#e7eaff;--spark:#d8f06e;--annotation-ink:#202126;
+ --reading-size:22px;--sans:"Noto Sans TC",system-ui,sans-serif;--latin:"DM Sans",Arial,sans-serif;--serif:"Noto Serif TC","Songti TC",serif;
+}
+body[data-theme="bright"]{--page:#fff;--surface:#fff;--ink:#161820;--muted:#555b63;--line:#d6d9dc;--accent:#263cc8;--accent-soft:#e7eaff;--spark:#e6f77f}
+body[data-theme="night"]{--page:#171a20;--surface:#22262d;--ink:#eef0ed;--muted:#b5bcc3;--line:#414750;--accent:#a6b4ff;--accent-text:#192142;--accent-soft:#2e3658;--spark:#d8f06e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--page);color:var(--ink);font:15px/1.65 var(--sans);transition:background .22s ease,color .22s ease}
+button,input{font:inherit}button{cursor:pointer}a{color:inherit}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.top{height:72px;border-bottom:1px solid var(--line);background:var(--page);display:flex;align-items:center;justify-content:space-between;padding:0 max(32px,calc((100vw - 1360px)/2));position:sticky;top:0;z-index:30}
+.brand{font:700 25px/1 var(--latin);letter-spacing:-.075em;text-decoration:none;white-space:nowrap}.brand b{color:var(--accent);font-weight:700}.top-nav{height:100%;display:flex;gap:38px;align-items:center}
+.top-nav a{height:100%;display:flex;align-items:center;text-decoration:none;font-weight:600;font-size:14px;color:var(--muted);border-bottom:3px solid transparent;padding-top:3px}
+.top-nav a:hover,.top-nav a[aria-current="page"]{color:var(--ink);border-color:var(--accent)}.top-meta{font:600 11px var(--latin);letter-spacing:.12em;color:var(--muted)}
+.progress-track{position:fixed;top:72px;left:0;right:0;height:2px;z-index:31;pointer-events:none}.progress-bar{height:100%;width:0;background:var(--accent);transition:width .12s linear}
+main{max-width:1360px;margin:0 auto;padding:0 32px 90px}.view{animation:view-in .3s ease both}
+.edition{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding:25px 0 16px;font:700 12px var(--latin);letter-spacing:.13em;text-transform:uppercase}.edition span:last-child{color:var(--muted)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 188px;gap:48px;padding:58px 0 58px;border-bottom:1px solid var(--line)}
+.hero-main{max-width:900px}.eyebrow{font:700 12px var(--latin);letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:0 0 24px}
+.hero h1{font:700 clamp(52px,7.2vw,104px)/1.16 var(--sans);letter-spacing:-.075em;margin:0;max-width:950px;overflow-wrap:anywhere}
+.hero-desc{font:400 clamp(16px,1.45vw,19px)/1.8 var(--sans);color:var(--muted);max-width:680px;margin:26px 0 0}
+.hero-meta{display:flex;flex-wrap:wrap;gap:11px;align-items:center;margin-top:34px;font-size:13px;font-weight:600}.hero-meta .dot{width:5px;height:5px;border-radius:50%;background:var(--accent)}.hero-meta .type{color:var(--accent)}
+.hero-actions{display:flex;gap:12px;align-items:center;margin-top:36px}.action{min-height:48px;border:1px solid var(--ink);padding:10px 21px;background:transparent;color:var(--ink);font-size:13px;font-weight:700;transition:transform .18s ease,background .18s ease,color .18s ease}
+.action:hover{transform:translateY(-2px)}.action.primary{background:var(--ink);color:var(--page)}.action.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-text)}
+.hero-aside{border-left:1px solid var(--line);padding-left:27px;display:flex;flex-direction:column;justify-content:space-between;min-height:290px}.hero-aside small{font:700 11px var(--latin);letter-spacing:.12em;color:var(--muted)}.issue-number{font:600 118px/1 var(--latin);letter-spacing:-.1em;color:var(--accent)}.hero-aside p{font-size:12px;line-height:1.5;color:var(--muted);margin:0}
+.reading-area{max-width:940px;margin:0 auto;scroll-margin-top:74px}.reader-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:11px;min-height:72px;border-bottom:1px solid var(--line);background:var(--page);position:sticky;top:74px;z-index:20;padding:12px 0}
+.reader-toolbar>strong{font:700 11px var(--latin);letter-spacing:.12em;color:var(--muted);margin-right:auto}.tool-group{display:flex;align-items:center;gap:5px}.tool-label{font-size:12px;color:var(--muted);margin-right:5px}
+.reader-toolbar button{min-width:38px;min-height:38px;border:1px solid var(--line);background:transparent;color:var(--ink);padding:7px 11px;font-size:12px;font-weight:700}
+.reader-toolbar button:hover{background:var(--accent-soft)}.reader-toolbar button:disabled{opacity:.4;cursor:not-allowed}
+.size-control output{min-width:46px;text-align:center;font:600 12px var(--latin);font-variant-numeric:tabular-nums}.theme-control{gap:0}.theme-control button+button{border-left:0}.theme-control button[aria-pressed="true"]{background:var(--ink);color:var(--page);border-color:var(--ink)}
+.focus-toggle{margin-left:6px}.reader-toolbar .focus-toggle[aria-pressed="true"]{background:var(--accent);color:var(--accent-text);border-color:var(--accent)}
+.reading-hint{display:flex;justify-content:space-between;gap:20px;padding:28px 0 10px;font-size:12px;color:var(--muted)}.reading-hint b{font:700 11px var(--latin);letter-spacing:.12em;color:var(--accent)}.reading-hint p{margin:0}
+.readcard{width:100%;background:transparent;padding:0}.article-head{margin:0}.para{display:grid;grid-template-columns:65px minmax(0,1fr);gap:20px;padding:42px 0 53px;border-bottom:1px solid var(--line)}.tag{font:600 21px/1.5 var(--latin);color:var(--accent);padding-top:5px}
+.original{font:400 var(--reading-size)/1.95 var(--serif);letter-spacing:.015em;margin:0 0 36px;overflow-wrap:anywhere}.readcard[data-type="vernacular"] .original{font-family:var(--sans);font-weight:400;line-height:1.85;letter-spacing:0}
+.annotated-word{border:0;border-bottom:2px solid var(--accent);background:var(--spark);color:var(--annotation-ink);font:inherit;line-height:inherit;padding:0 2px}.annotated-word:hover{box-shadow:0 0 0 3px var(--spark)}
+.annotation-anchor{position:relative;display:inline}.note-bubble{position:absolute;z-index:25;display:block;top:calc(100% + 12px);left:0;width:max-content;max-width:min(340px,calc(100vw - 48px));background:var(--ink);color:var(--page);padding:15px 18px;box-shadow:6px 6px 0 var(--accent);font:14px/1.75 var(--sans);text-align:left}.note-bubble[hidden]{display:none}.note-open-left .note-bubble{left:auto;right:0}
+.translation,.insight{margin:0;border-top:1px solid var(--line)}.analysis-grid{border-bottom:1px solid var(--line)}summary{list-style:none;cursor:pointer;min-height:53px;display:flex;align-items:center;padding:10px 2px;color:var(--ink);font-size:13px;font-weight:700}summary::-webkit-details-marker{display:none}summary:hover{color:var(--accent)}details[open] summary{color:var(--accent)}
+.translation p,.insight p,.quote{font-size:clamp(14px,calc(var(--reading-size) - 6px),24px);line-height:1.9;margin:0;padding:0 2px 22px;color:var(--muted)}.translation p{font-family:var(--serif)}
+.reader-foot{display:flex;justify-content:space-between;gap:18px;color:var(--muted);font-size:12px;padding:30px 0}.reader-foot a{color:var(--accent)}
+.not-ready{border:1px solid var(--line);padding:30px}.not-ready h4{margin-top:0}
+.library-intro{padding:65px 0 44px;border-bottom:1px solid var(--ink)}.library-intro .eyebrow{margin-bottom:18px}.library-intro h2{font:700 clamp(46px,6vw,76px)/1.2 var(--sans);letter-spacing:-.07em;margin:0}.library-intro p:last-child{color:var(--muted);font-size:16px;margin:20px 0 0}
+.library-tools{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:30px 0 14px}.search{width:min(100%,580px);height:52px;border:0;border-bottom:2px solid var(--ink);border-radius:0;padding:0 4px;background:transparent;color:var(--ink);outline:none}.search:focus{border-color:var(--accent)}.search::placeholder{color:var(--muted)}
+.filters{display:flex;gap:7px}.filter{min-height:44px;border:1px solid var(--line);background:transparent;color:var(--ink);padding:8px 16px;font-size:13px}.filter:hover{border-color:var(--accent)}.filter[aria-pressed="true"]{background:var(--accent);color:var(--accent-text);border-color:var(--accent)}
+.library-count{font:600 12px var(--latin);letter-spacing:.08em;color:var(--muted);padding:14px 0 24px}.items{display:grid;grid-template-columns:1fr 1fr;column-gap:42px}.item{display:grid;grid-template-columns:41px minmax(0,1fr) 24px;align-items:start;gap:11px;width:100%;min-height:116px;padding:24px 0;border:0;border-top:1px solid var(--line);background:transparent;text-align:left;color:var(--ink);transition:padding .2s ease,color .2s ease}.item:hover{padding-left:9px;color:var(--accent)}.item-no{font:600 13px var(--latin);color:var(--accent);padding-top:7px}.item-title{font:600 clamp(21px,2vw,26px)/1.4 var(--sans);letter-spacing:-.03em}.item small{display:block;font:400 12px/1.5 var(--sans);letter-spacing:0;color:var(--muted);margin-top:9px}.item-type{display:none}.item-arrow{font:500 22px var(--latin);color:var(--accent)}
+.footer{border-top:1px solid var(--ink);margin-top:70px;padding:25px 0;display:flex;justify-content:space-between;gap:18px;color:var(--muted);font-size:11px}.footer b{font:700 14px var(--latin);letter-spacing:-.04em;color:var(--ink)}
+.mobile-nav{display:none}
+.focus-mode .top,.focus-mode .progress-track,.focus-mode .edition,.focus-mode .hero,.focus-mode .footer,.focus-mode .mobile-nav,.focus-mode .library-intro{display:none}.focus-mode main{max-width:940px;padding-top:0}.focus-mode .reader-toolbar{top:0}.focus-mode .reading-hint{padding-top:22px}
+@keyframes view-in{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}details[open]>p{animation:view-in .22s ease both}
+@media(max-width:800px){.top{padding:0 22px}.top-meta{display:none}.hero{grid-template-columns:minmax(0,1fr) 100px;gap:18px}.hero-aside{padding-left:16px}.issue-number{font-size:80px}.reader-toolbar>strong{width:100%}.items{column-gap:25px}}
+@media(max-width:620px){.top{height:60px;padding:0 18px}.brand{font-size:22px}.top-nav{display:none}.progress-track{top:60px}main{padding:0 18px 90px}.edition{padding:18px 0 12px;font-size:10px}.hero{display:block;padding:35px 0 38px}.eyebrow{font-size:11px;margin-bottom:16px}.hero h1{font-size:clamp(42px,11vw,66px);line-height:1.22;letter-spacing:-.07em}.hero-desc{font-size:15px;margin-top:19px}.hero-meta{margin-top:22px}.hero-actions{margin-top:24px}.action{min-height:46px}.hero-aside{display:none}
+.reading-area{margin:0 -18px;scroll-margin-top:60px}.reader-toolbar{top:60px;padding:10px 18px;gap:8px;min-height:0}.reader-toolbar>strong{display:none}.tool-label{display:none}.reader-toolbar button{min-height:42px;min-width:42px;padding:7px 9px}.theme-control button{padding-inline:10px}.focus-toggle{margin-left:0}.reading-hint{padding:23px 18px 12px}.readcard{padding:0 18px}.para{display:block;padding:27px 0 39px}.tag{display:block;padding:0;margin-bottom:13px;font-size:14px}.original{line-height:1.9;margin-bottom:25px}.note-bubble{max-width:min(300px,calc(100vw - 42px))}.library-intro{padding:43px 0 27px}.library-intro h2{font-size:45px}.library-intro p:last-child{font-size:14px}.library-tools{display:block;padding:21px 0 0}.search{width:100%}.filters{margin-top:20px}.library-count{padding:23px 0 12px}.items{display:block}.item{min-height:95px;padding:18px 0}.item-title{font-size:21px}.footer{display:block;margin-top:45px}.footer span{display:block;margin-top:9px}.mobile-nav{display:flex;position:fixed;z-index:32;bottom:0;left:0;right:0;min-height:64px;background:var(--ink);color:var(--page);align-items:center;justify-content:space-around;padding-bottom:env(safe-area-inset-bottom)}.mobile-nav a,.mobile-nav button{border:0;background:none;color:inherit;text-decoration:none;padding:14px 10px;font-size:12px;font-weight:700;min-height:50px}.mobile-nav a[aria-current="page"]{color:var(--page);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:7px}.focus-mode main{padding:0 0 70px}.focus-mode .reader-toolbar{top:0}.focus-mode .readcard{padding-inline:18px}}
+@media(max-width:390px){.reader-toolbar{gap:6px}.reader-toolbar button{padding:6px 8px;min-width:38px}.size-control output{min-width:38px}.theme-control button{padding:6px 7px}.reader-toolbar .focus-toggle{font-size:11px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-body[data-theme="bright"]{--paper:#fff;--surface:#fff;--ink:#172522;--muted:#52635d;--forest:#204d45;--forest-fill:#204d45;--line:#d5e0da;--note:#ffe59a;--sage:#eef5f0}
-body[data-theme="night"]{--paper:#14201e;--surface:#1c2b28;--ink:#f0eee5;--muted:#b6c5bb;--forest:#b7e0d2;--forest-fill:#315e54;--deep:#102722;--accent:#ff9a79;--line:#42564e;--note:#f6d477;--sage:#293f38}
-.reader-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:12px 16px;margin-bottom:12px;background:var(--surface);border:1px solid var(--line);font-size:13px}
-.reader-toolbar>strong{color:var(--forest);font-size:12px;letter-spacing:.04em;margin-right:auto;white-space:nowrap}
-.tool-group{display:flex;align-items:center;gap:7px;white-space:nowrap}.tool-group>span{color:var(--muted);font-size:12px}
-.reader-toolbar button{min-height:36px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:3px;padding:5px 10px;font-size:13px}
-.reader-toolbar button:hover{background:var(--sage)}.reader-toolbar button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.reader-toolbar button:disabled{opacity:.4;cursor:not-allowed}
-.size-control output{min-width:42px;text-align:center;color:var(--ink);font-variant-numeric:tabular-nums}
-.theme-control{gap:0}.theme-control button{border-radius:0;margin-left:-1px}.theme-control button:first-of-type{margin-left:3px;border-radius:18px 0 0 18px}.theme-control button:last-child{border-radius:0 18px 18px 0}
-.reader-toolbar .theme-control button[aria-pressed="true"],.reader-toolbar .focus-toggle[aria-pressed="true"]{background:var(--forest-fill);border-color:var(--forest-fill);color:#fff}
-.reader-toolbar .focus-toggle{border-radius:18px;white-space:nowrap;padding-inline:14px}
-.original{font-size:var(--reading-size)}.translation p,.insight p,.quote{font-size:clamp(14px,calc(var(--reading-size) - 6px),24px)}.annotated-word{color:var(--annotation-ink)}
-.btn.primary{background:var(--forest-fill);border-color:var(--forest-fill)}.filter[aria-pressed="true"]{background:var(--forest-fill);border-color:var(--forest-fill)}
-.focus-mode .top,.focus-mode .today,.focus-mode .selection-bar,.focus-mode .reading-rail,.focus-mode .note-panel,.focus-mode .library,.focus-mode .footer,.focus-mode .mobile-nav{display:none}
-.focus-mode main{max-width:840px;padding:16px 20px 80px}.focus-mode .reader-shell{display:block;margin:0 auto;max-width:760px}.focus-mode .reader-toolbar{position:sticky;top:0;z-index:15;box-shadow:0 8px 18px #00000012}.focus-mode .readcard{width:100%}
-.focus-mode .note-bubble{position:absolute;z-index:18;top:calc(100% + 8px);left:0;display:block;width:max-content;max-width:min(330px,calc(100vw - 40px));background:var(--sage);color:var(--ink);border:1px solid var(--line);padding:14px 16px;box-shadow:0 15px 32px #0003;border-radius:3px;font:14px/1.65 var(--sans)}.focus-mode .note-bubble[hidden]{display:none}.focus-mode .note-open-left .note-bubble{left:auto;right:0}
-@media(max-width:760px){.reader-toolbar{padding:12px 20px;gap:10px;border-left:0;border-right:0}.reader-toolbar>strong{width:100%}.tool-group>span{display:none}.reader-toolbar .theme-control button:first-of-type{margin-left:0}.reader-toolbar button{min-height:40px}.focus-mode main{padding:0 0 60px}.focus-mode .reader-toolbar{margin-bottom:0}.focus-mode .reader-toolbar>strong{display:none}.focus-mode .readcard{border-top:0}.original{font-size:var(--reading-size)}}
-@media(prefers-reduced-motion:reduce){.focus-mode .reader-toolbar{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<header class="top"><a class="brand" href="#home">讀・READMAUD</a><nav class="nav" aria-label="主選單"><a href="#today">今日選文</a><a href="#library">篇章庫</a><a href="#reader">閱讀指南</a></nav></header>
-<main id="home">
-<section class="today" id="today"><div class="today-copy"><p class="eyebrow">READ SOMETHING GOOD TODAY　 /　 每日一篇</p><h1 id="daily-title">把一篇文章，<br>讀得更深一些。</h1><p class="today-desc" id="daily-desc">古今文章，每日一篇。細讀文字，點開註釋，再慢慢理解。</p><p class="today-meta" id="daily-meta"></p></div><aside class="today-aside"><small>TODAY'S PICK</small><strong id="issue-day">—</strong><span id="issue-month"></span></aside></section>
-<div class="selection-bar"><p class="section-label">01　/　今日選文 <span>細讀原文，再按需展開</span></p><div class="buttons"><button class="btn primary" id="start" type="button">開始閱讀　↗</button><button class="btn" id="reroll" type="button">↻　再抽一篇</button></div></div>
-<div class="reader-shell" id="reader"><aside class="reading-rail" aria-label="閱讀路徑"><strong>閱讀路徑</strong><ol><li>01　原文</li><li>02　譯文</li><li>03　總結與分析</li></ol><p>點擊標亮的字詞查看註釋；按需展開每段的理解提示。</p></aside><section class="reading"><div class="reader-toolbar" role="group" aria-label="閱讀設定"><strong>閱讀設定</strong><div class="tool-group size-control"><span>字級</span><button id="font-decrease" type="button" aria-label="縮小閱讀字體">A−</button><output id="font-size-display" aria-live="polite">22 px</output><button id="font-increase" type="button" aria-label="放大閱讀字體">A＋</button></div><div class="tool-group theme-control" role="group" aria-label="頁面配色"><span>配色</span><button type="button" data-reader-theme="paper" aria-pressed="true">紙本</button><button type="button" data-reader-theme="bright" aria-pressed="false">明亮</button><button type="button" data-reader-theme="night" aria-pressed="false">夜讀</button></div><button class="focus-toggle" id="focus-toggle" type="button" aria-pressed="false">專注模式</button></div><div class="reading-head"><h2 id="reader-heading">今日選文</h2></div><article class="readcard" id="article" aria-live="polite"></article></section><aside class="note-panel" id="annotation-guide" aria-live="polite"><h2>字詞註釋</h2><strong id="note-title">點擊字詞</strong><p id="note-body">原文中標亮的字詞都有註釋。按一下，即可在這裏查看符合語境的解釋。</p><small>細讀提示　/　按 Escape 可收起註釋</small></aside></div>
-<section class="library" id="library"><div class="library-top"><div><p class="eyebrow">THE LIBRARY　 /　 按自己的節奏探索</p><h2>篇章庫</h2><p class="library-intro" id="library-intro">從古典到當代，找到今天想讀的一篇。</p></div><div class="library-total"><span id="library-number">—</span><small>篇已整理文章</small></div></div><div class="library-tools"><label class="sr" for="search">搜尋篇名、作者或關鍵詞</label><input id="search" class="search" type="search" placeholder="⌕　搜尋篇名、作者或關鍵詞"><div class="filters" role="group" aria-label="按文體分類"><button class="filter" type="button" data-type="all" aria-pressed="true">全部</button><button class="filter" type="button" data-type="classical" aria-pressed="false">文言文</button><button class="filter" type="button" data-type="vernacular" aria-pressed="false">白話文</button></div></div><div class="count" id="count"></div><div class="items" id="items"></div></section>
-<footer class="footer"><div>READMAUD　/　一天一篇，慢慢讀。</div><span>新增篇章時，只需更新 articles.json。</span></footer>
-</main><nav class="mobile-nav" aria-label="手機導覽"><a href="#today">今日</a><a href="#library">篇章庫</a><button type="button" id="mobile-reroll">再抽一篇</button></nav>
+<header class="top"><a class="brand" href="#today" data-view-link="today" aria-label="ReadMaud 今日選文">READMAUD<b>.</b></a><nav class="top-nav" aria-label="主選單"><a href="#today" data-view-link="today" aria-current="page">今日選文</a><a href="#library" data-view-link="library">篇章庫</a></nav><span class="top-meta">ONE STORY A DAY</span></header>
+<div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+<main>
+<div class="view" id="today-view">
+ <div class="edition"><span>READMAUD / DAILY READING</span><span id="daily-date"></span></div>
+ <section class="hero" id="today" aria-labelledby="daily-title"><div class="hero-main"><p class="eyebrow">TODAY'S STORY / 今日選文</p><h1 id="daily-title">今天讀甚麼？</h1><p class="hero-desc" id="daily-desc">每天一篇，按自己的節奏閱讀。</p><div class="hero-meta"><span id="daily-author"></span><span class="dot"></span><span class="type" id="daily-type"></span><span class="dot"></span><span id="daily-meta"></span></div><div class="hero-actions"><button class="action primary" type="button" id="start">開始閱讀 ↓</button><button class="action" type="button" id="reroll">換一篇 ↗</button></div></div><aside class="hero-aside" aria-label="篇章序號"><small>IN THE COLLECTION</small><div class="issue-number" id="issue-number">—</div><p>從篇章庫中抽選<br>今天的一篇。</p></aside></section>
+ <section class="reading-area" id="reader" aria-labelledby="reader-heading"><h2 id="reader-heading" class="sr">今日選文原文</h2><div class="reader-toolbar" role="group" aria-label="閱讀設定"><strong>READING TOOLS</strong><div class="tool-group size-control"><span class="tool-label">字級</span><button id="font-decrease" type="button" aria-label="縮小閱讀字體">A−</button><output id="font-size-display" aria-live="polite">22 px</output><button id="font-increase" type="button" aria-label="放大閱讀字體">A＋</button></div><div class="tool-group theme-control" role="group" aria-label="頁面配色"><span class="tool-label">配色</span><button type="button" data-reader-theme="paper" aria-pressed="true">紙本</button><button type="button" data-reader-theme="bright" aria-pressed="false">明亮</button><button type="button" data-reader-theme="night" aria-pressed="false">夜讀</button></div><button class="focus-toggle" id="focus-toggle" type="button" aria-pressed="false">專注模式</button></div><div class="reading-hint" id="note-hint"><b>THE TEXT</b><p>標亮字詞可點開註釋；譯文及段落分析按需展開。</p></div><article class="readcard" id="article" aria-live="polite"></article></section>
+</div>
+<section class="view" id="library-view" hidden aria-labelledby="library-heading"><div class="edition"><span>READMAUD / THE INDEX</span><span>EXPLORE THE COLLECTION</span></div><div class="library-intro"><p class="eyebrow">THE COLLECTION / 篇章庫</p><h2 id="library-heading">讀什麼，自己挑。</h2><p id="library-intro">從古典到當代，找到今天想讀的一篇。</p></div><div class="library-tools"><label class="sr" for="search">搜尋篇名或作者</label><input id="search" class="search" type="search" placeholder="搜尋篇名或作者…"><div class="filters" role="group" aria-label="按文體分類"><button class="filter" type="button" data-type="all" aria-pressed="true">全部</button><button class="filter" type="button" data-type="classical" aria-pressed="false">文言文</button><button class="filter" type="button" data-type="vernacular" aria-pressed="false">白話文</button></div></div><div class="library-count"><span id="count"></span>　/　已整理 <span id="library-number">—</span> 篇</div><div class="items" id="items"></div></section>
+<footer class="footer"><b>READMAUD.</b><span>每天一篇，慢慢讀。新增文章時更新 articles.json 即可。</span></footer>
+</main>
+<nav class="mobile-nav" aria-label="手機導覽"><a href="#today" data-view-link="today" aria-current="page">今日</a><a href="#library" data-view-link="library">篇章庫</a><button type="button" id="mobile-reroll">換一篇 ↗</button></nav>
 <script>
 const $=q=>document.querySelector(q);
 const safeGet=key=>{try{return localStorage.getItem(key)}catch{return null}};
@@ -70,7 +96,7 @@ function initReaderSettings(){
  const updateTheme=()=>{
   document.body.dataset.theme=theme;
   document.querySelectorAll('[data-reader-theme]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.readerTheme===theme)));
-  document.querySelector('meta[name="theme-color"]').content=theme==='night'?'#14201e':theme==='bright'?'#ffffff':'#143c37';
+  document.querySelector('meta[name="theme-color"]').content=theme==='night'?'#171a20':theme==='bright'?'#ffffff':'#f6f6f2';
  };
  $('#font-decrease').addEventListener('click',()=>{size=readerSizes[Math.max(0,readerSizes.indexOf(size)-1)];updateSize();persist()});
  $('#font-increase').addEventListener('click',()=>{size=readerSizes[Math.min(readerSizes.length-1,readerSizes.indexOf(size)+1)];updateSize();persist()});
@@ -79,7 +105,7 @@ function initReaderSettings(){
   document.body.classList.toggle('focus-mode',active);
   $('#focus-toggle').setAttribute('aria-pressed',String(active));
   $('#focus-toggle').textContent=active?'退出專注':'專注模式';
-  if(active)$('#reader').scrollIntoView({behavior:'auto',block:'start'});
+  if(active){showView('today');$('#reader').scrollIntoView({behavior:'auto',block:'start'})}
  };
  $('#focus-toggle').addEventListener('click',()=>toggleFocus(!document.body.classList.contains('focus-mode')));
  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&document.body.classList.contains('focus-mode'))toggleFocus(false)});
@@ -109,22 +135,41 @@ function renderOriginal(p){
  }
  return html;
 }
+function showView(view,{updateHash=true}={}){
+ const library=view==='library';
+ $('#today-view').hidden=library;
+ $('#library-view').hidden=!library;
+ document.querySelectorAll('[data-view-link]').forEach(link=>{
+  if(link.dataset.viewLink===view)link.setAttribute('aria-current','page');
+  else link.removeAttribute('aria-current');
+ });
+ document.body.classList.toggle('library-view',library);
+ if(library)$('#progress-bar').style.width='0%';
+ if(updateHash)history.replaceState(null,'',library?'#library':'#today');
+ window.scrollTo({top:0,behavior:'auto'});
+}
 function render(){
  const a=activeArticle(),complete=readyArticles();
- $('#library-number').textContent=complete.length;$('#library-intro').textContent=`${articles.length} 篇 · 內容整理完成的文章會加入每日選讀`;
+ $('#library-number').textContent=complete.length;$('#library-intro').textContent=`${articles.length} 篇文章，從古典到當代，找到今天想讀的一篇。`;
  $('#daily-meta').textContent=`已整理 ${complete.length} 篇 · 篇章庫共 ${articles.length} 篇`;
  $('#reroll').disabled=complete.length<2;
  if(!a){$('#daily-title').textContent='新增第一篇文章';$('#daily-desc').textContent='在 articles.json 加入文章並完成內容整理後，網站便會自動顯示。';$('#reader-heading').textContent='尚未有文章';$('#article').innerHTML='<div class="not-ready"><h4>篇章庫目前是空的</h4><p>新增一篇完整文章後，就會在這裡顯示。</p></div>';return}
  const ready=isReady(a),source=safeUrl(a.sourceUrl),category=a.category?` · ${esc(a.category)}`:'';
- $('#daily-desc').textContent=ready?'古今文章，每日一篇。細讀文字，點開註釋，再慢慢理解。':'這篇文章的段落內容仍在整理中；補齊後會加入每日選讀。';
- $('#reader-heading').textContent='今日選文';
- $('#article').innerHTML=ready?`<header class="article-head"><span class="author">${esc(a.author)} · ${typeLabel(a.type)}${category}</span><h3>${esc(a.title)}</h3><p>${esc(a.intro)}</p></header>${a.paragraphs.map((p,i)=>`<section class="para"><span class="tag">${String(i+1).padStart(2,'0')} / 原文</span><p class="original">${renderOriginal(p)}</p>${a.type==='classical'&&p.translation?`<details class="translation"><summary>＋  顯示這一段的譯文</summary><p>${esc(p.translation)}</p></details>`:p.translation?`<p class="quote">譯文｜${esc(p.translation)}</p>`:''}<div class="analysis-grid"><details class="insight"><summary>＋  這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight"><summary>＋  深入分析</summary><p>${esc(p.analysis)}</p></details></div></section>`).join('')}<div class="reader-foot"><span>共 ${a.paragraphs.length} 段 · 建議逐段閱讀</span>${source?`<a href="${source}" target="_blank" rel="noopener">查看原篇章</a>`:''}</div>`:`<header class="article-head"><span class="type-chip">${typeLabel(a.type)}</span><span class="author">篇章庫 · 內容整理中</span><h3>${esc(a.title)}</h3><p>${esc(a.author)}</p></header><div class="not-ready"><h4>逐段內容整理中</h4><p>這篇文章尚未補齊內容；文言文還須填寫每段白話譯文及按語境編寫的字詞／句式注釋。完成後會自動列入每日隨機選讀。</p>${source?`<a href="${source}" target="_blank" rel="noopener">前往原網站閱讀篇章</a>`:''}</div><div class="reader-foot"><span>篇章 ${articles.indexOf(a)+1} / ${articles.length}</span></div>`;
+ $('#daily-title').textContent=a.title;
+ $('#daily-desc').textContent=ready?a.intro:'這篇文章的段落內容仍在整理中；補齊後會加入每日選讀。';
+ $('#daily-author').textContent=a.author;
+ $('#daily-type').textContent=typeLabel(a.type);
+ $('#issue-number').textContent=String(articles.indexOf(a)+1).padStart(2,'0');
+ $('#article').dataset.type=a.type;
+ $('#reader-heading').textContent=a.title+'原文';
+ $('#article').innerHTML=ready?`<header class="article-head sr"><h2>${esc(a.title)}</h2><p>${esc(a.author)}${category}</p></header>${a.paragraphs.map((p,i)=>`<section class="para"><span class="tag" aria-label="第 ${i+1} 段">${String(i+1).padStart(2,'0')}</span><div class="para-content"><p class="original">${renderOriginal(p)}</p>${a.type==='classical'&&p.translation?`<details class="translation"><summary>＋  顯示這一段的譯文</summary><p>${esc(p.translation)}</p></details>`:p.translation?`<p class="quote">譯文｜${esc(p.translation)}</p>`:''}<div class="analysis-grid"><details class="insight"><summary>＋  這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight"><summary>＋  深入分析</summary><p>${esc(p.analysis)}</p></details></div></div></section>`).join('')}<div class="reader-foot"><span>共 ${a.paragraphs.length} 段 · 建議逐段閱讀</span>${source?`<a href="${source}" target="_blank" rel="noopener">查看原篇章</a>`:''}</div>`:`<header class="article-head"><span class="type-chip">${typeLabel(a.type)}</span><span class="author">篇章庫 · 內容整理中</span><h3>${esc(a.title)}</h3><p>${esc(a.author)}</p></header><div class="not-ready"><h4>逐段內容整理中</h4><p>這篇文章尚未補齊內容；文言文還須填寫每段白話譯文及按語境編寫的字詞／句式注釋。完成後會自動列入每日隨機選讀。</p>${source?`<a href="${source}" target="_blank" rel="noopener">前往原網站閱讀篇章</a>`:''}</div><div class="reader-foot"><span>篇章 ${articles.indexOf(a)+1} / ${articles.length}</span></div>`;
+ $('#note-hint').querySelector('p').textContent=a.type==='classical'?'標亮字詞可點開註釋；譯文及段落分析按需展開。':'段落總結與分析按需展開。';
  $('#article').onclick=e=>{
   const button=e.target.closest('.annotated-word');
   const wasOpen=button?.getAttribute('aria-expanded')==='true';
   $('#article').querySelectorAll('.annotated-word[aria-expanded="true"]').forEach(open=>{open.setAttribute('aria-expanded','false');open.nextElementSibling.hidden=true;open.parentElement.classList.remove('note-open-left')});
   if(button&&!wasOpen){
-   const bubble=button.nextElementSibling;button.setAttribute('aria-expanded','true');bubble.hidden=false;$('#note-title').textContent=button.textContent;$('#note-body').textContent=bubble.textContent;$('#annotation-guide').classList.add('has-note');
+   const bubble=button.nextElementSibling;button.setAttribute('aria-expanded','true');bubble.hidden=false;
    const rect=button.getBoundingClientRect();if(rect.right>window.innerWidth-310)button.parentElement.classList.add('note-open-left');
   }
  };
@@ -137,7 +182,7 @@ function renderList(){
  const list=articles.filter(a=>(activeType==='all'||a.type===activeType)&&label(a).toLowerCase().includes(q));
  $('#count').textContent=`顯示 ${list.length} / ${articles.length} 篇`;
  $('#items').innerHTML=list.map(a=>`<button class="item ${activeId===a.id?'selected':''}" type="button" data-id="${esc(a.id)}"><span class="item-no">${String(articles.indexOf(a)+1).padStart(2,'0')}</span><span class="item-title">${esc(a.title)}<small>${esc(a.author)} · ${typeLabel(a.type)} · ${isReady(a)?'可閱讀':'整理中'}</small></span><span class="item-type">${typeLabel(a.type)}</span><span class="item-arrow" aria-hidden="true">↗</span></button>`).join('');
- document.querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>{activeId=b.dataset.id;safeSet(storageKey,activeId);render();renderList();$('#reader').scrollIntoView({behavior:'smooth'})});
+ document.querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>{activeId=b.dataset.id;safeSet(storageKey,activeId);render();renderList();showView('today');$('#reader').scrollIntoView({behavior:'smooth'})});
 }
 function showLoadError(){ $('#daily-title').textContent='篇章資料未能載入';$('#daily-desc').textContent='請重新載入頁面；如剛新增了文章，請確認 articles.json 格式正確。';$('#reader-heading').textContent='暫時無法開啟篇章';$('#article').innerHTML='<div class="not-ready"><h4>資料檔讀取失敗</h4><p>請檢查 articles.json 是否為有效 JSON，再重新部署。</p></div>'; }
 async function init(){
@@ -149,15 +194,27 @@ async function init(){
   const initial=complete.find(a=>a.id===saved)||complete[dateSeed()%Math.max(complete.length,1)]||articles[0];
   activeId=initial?.id||'';
   $('#reroll').addEventListener('click',()=>{const pool=readyArticles().filter(x=>x.id!==activeId);if(!pool.length)return;const pick=pool[Math.floor(Math.random()*pool.length)];activeId=pick.id;safeSet(storageKey,activeId);render();renderList()});
-  $('#mobile-reroll').addEventListener('click',()=>{$('#reroll').click();$('#reader').scrollIntoView({behavior:'smooth'})});
+  $('#mobile-reroll').addEventListener('click',()=>{$('#reroll').click();showView('today')});
   $('#search').addEventListener('input',renderList);
   document.querySelectorAll('[data-type]').forEach(b=>b.addEventListener('click',()=>{activeType=b.dataset.type;document.querySelectorAll('[data-type]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderList()}));
-  $('#issue-day').textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Hong_Kong',day:'2-digit'}).format(new Date());
-  $('#issue-month').textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Hong_Kong',month:'short',year:'numeric'}).format(new Date()).toUpperCase();
-  render();renderList();
+  $('#daily-date').textContent=new Intl.DateTimeFormat('zh-HK',{timeZone:'Asia/Hong_Kong',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  document.querySelectorAll('[data-view-link]').forEach(link=>link.addEventListener('click',e=>{e.preventDefault();showView(link.dataset.viewLink)}));
+  render();renderList();showView(location.hash==='#library'?'library':'today',{updateHash:false});
  }catch(error){console.error(error);showLoadError()}
 }
 initReaderSettings();
 init();
+let progressTick=false;
+window.addEventListener('scroll',()=>{
+ if(progressTick)return;
+ progressTick=true;
+ requestAnimationFrame(()=>{
+  const article=$('#article'),bar=$('#progress-bar'),box=article.getBoundingClientRect();
+  const total=Math.max(1,box.height-window.innerHeight+130);
+  const done=Math.max(0,Math.min(1,(130-box.top)/total));
+  bar.style.width=(document.body.classList.contains('library-view')?0:done*100)+'%';
+  progressTick=false;
+ });
+},{passive:true});
 </script>
 </body></html>
