@@ -22,7 +22,7 @@ button,input{font:inherit}button{cursor:pointer}a{color:inherit}.sr{position:abs
 .top-nav a{height:100%;display:flex;align-items:center;text-decoration:none;font-weight:600;font-size:14px;color:var(--muted);border-bottom:3px solid transparent;padding-top:3px}
 .top-nav a:hover,.top-nav a[aria-current="page"]{color:var(--ink);border-color:var(--accent)}.top-meta{font:600 11px var(--latin);letter-spacing:.12em;color:var(--muted)}
 .progress-track{position:fixed;top:72px;left:0;right:0;height:2px;z-index:31;pointer-events:none}.progress-bar{height:100%;width:0;background:var(--accent);transition:width .12s linear}
-main{max-width:1360px;margin:0 auto;padding:0 32px 90px}.view{animation:view-in .3s ease both}
+main{max-width:1360px;margin:0 auto;padding:0 32px 90px}.view{animation:view-in .3s ease}
 .edition{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding:25px 0 16px;font:700 12px var(--latin);letter-spacing:.13em;text-transform:uppercase}.edition span:last-child{color:var(--muted)}
 .hero{display:grid;grid-template-columns:minmax(0,1fr) 188px;gap:48px;padding:58px 0 58px;border-bottom:1px solid var(--line)}
 .hero-main{max-width:900px}.eyebrow{font:700 12px var(--latin);letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:0 0 24px}
@@ -119,8 +119,8 @@ function initReaderSettings(){
  };
  $('#focus-toggle').addEventListener('click',()=>toggleFocus(!document.body.classList.contains('focus-mode')));
  const settingsPanel=$('#reader-settings-panel'),settingsToggle=$('#reader-settings-toggle');
- const closeSettings=(restoreFocus=false)=>{settingsPanel.hidden=true;settingsToggle.setAttribute('aria-expanded','false');if(restoreFocus)settingsToggle.focus()};
- settingsToggle.addEventListener('click',()=>{const open=settingsPanel.hidden;settingsPanel.hidden=!open;settingsToggle.setAttribute('aria-expanded',String(open))});
+ const closeSettings=(restoreFocus=false)=>{settingsPanel.hidden=true;settingsToggle.setAttribute('aria-expanded','false');document.body.classList.remove('reader-settings-open');if(restoreFocus)settingsToggle.focus()};
+ settingsToggle.addEventListener('click',()=>{const open=settingsPanel.hidden;settingsPanel.hidden=!open;settingsToggle.setAttribute('aria-expanded',String(open));document.body.classList.toggle('reader-settings-open',open)});
  $('#export-pdf').addEventListener('click',()=>closeSettings());
  document.addEventListener('click',event=>{if(!settingsPanel.hidden&&!settingsPanel.contains(event.target)&&event.target!==settingsToggle)closeSettings()});
  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!settingsPanel.hidden){closeSettings(true);event.preventDefault();return}if(event.key==='Escape'&&!document.querySelector('dialog[open]')&&document.body.classList.contains('focus-mode'))toggleFocus(false)});

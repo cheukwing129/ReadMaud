@@ -69,3 +69,4 @@ body[data-reading-font="sourcehan"] .readcard .original,body[data-reading-font="
 @media(max-width:390px){
  .reader-toolbar>.mode-toggle,.reader-toolbar>.focus-toggle,.reader-toolbar>.reader-settings-toggle{font-size:11px}
 }
+.reader-settings-open .view{transform:none!important}
