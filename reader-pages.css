@@ -46,3 +46,28 @@ body[data-reading-font="sourcehan"] .readcard .original,body[data-reading-font="
 .reader-toolbar select option{background:var(--page);color:var(--ink)}
 .pdf-status:empty{display:none}.pdf-status{font-size:13px;color:var(--muted);padding-top:10px}
 @media(max-width:620px){.reader-toolbar select{min-height:42px}.focus-mode .reading-area{margin-inline:0}}
+
+/* Keep frequent reading actions visible; group occasional settings under one menu. */
+.reader-more{position:relative;flex:0 0 auto}
+.reader-more>summary{display:flex;align-items:center;justify-content:center;min-height:38px;border:1px solid var(--line);padding:7px 12px;color:var(--ink);font-size:12px;font-weight:700;white-space:nowrap}
+.reader-more>summary::-webkit-details-marker{display:none}
+.reader-more>summary:hover,.reader-more[open]>summary{background:var(--accent-soft);color:var(--accent)}
+.reader-settings-panel{position:absolute;right:0;top:calc(100% + 9px);z-index:45;width:min(320px,calc(100vw - 36px));display:grid;gap:16px;padding:16px;background:var(--surface);border:1px solid var(--line);box-shadow:0 8px 24px #20212618}
+.reader-setting-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px}
+.reader-setting-row label,.reader-setting-label{font-size:12px;font-weight:700;color:var(--muted)}
+.reader-toolbar .reader-settings-panel select{width:150px;max-width:150px}
+.reader-settings-panel .theme-control{display:grid;grid-template-columns:1fr repeat(3,auto);align-items:center;gap:5px}
+.reader-settings-panel .theme-control button{min-width:0}
+.reader-settings-panel .export-pdf-action{width:100%;min-height:42px;background:var(--ink);color:var(--page);border-color:var(--ink)}
+.reader-settings-panel .export-pdf-action:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-text)}
+@media(max-width:620px){
+ .reader-toolbar{gap:7px}
+ .reader-toolbar .size-control{margin-right:auto}
+ .reader-more>summary{min-height:42px;padding-inline:11px}
+ .reader-settings-panel{position:fixed;top:auto;right:18px;bottom:calc(72px + env(safe-area-inset-bottom));max-height:min(70vh,420px);overflow:auto}
+}
+@media(max-width:390px){
+ .reader-toolbar .size-control{gap:3px}
+ .reader-toolbar .size-control button{min-width:36px;padding-inline:6px}
+ .reader-toolbar .size-control output{min-width:40px}
+}
