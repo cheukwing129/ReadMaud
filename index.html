@@ -203,8 +203,9 @@ function showLoadError(){ $('#daily-title').textContent='篇章資料未能載�
 async function activateArticle(id){
  const meta=articles.find(x=>x.id===id);if(!meta)return;
  activeId=id;safeSet(storageKey,activeId);renderList();
- const token=++activeLoadToken;render();
+ const token=++activeLoadToken;
  if(detailCache.has(id)){render();return}
+ render()
  try{
   const response=await fetch(meta.data);if(!response.ok)throw new Error('article request failed');
   const article=await response.json();
