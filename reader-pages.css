@@ -72,3 +72,14 @@ body[data-reading-font="sourcehan"] .readcard .original,body[data-reading-font="
 .reader-settings-open .view{transform:none!important}
 
 .reader-settings-panel.reader-settings-portal{position:fixed;top:auto;right:18px;bottom:calc(72px + env(safe-area-inset-bottom));max-height:min(70vh,420px);overflow:auto}
+
+/* Keep long article text and nested layout columns inside narrow reading screens. */
+html,body{max-width:100%;overflow-x:clip}
+main,.view,.hero,.hero-main,.reading-area,.readcard,.para,.para-content,.analysis-grid,
+.library-intro,.library-tools,.items,.item,.item-title,.reading-hint,.reader-foot{min-width:0}
+.original,.translation p,.insight p,.quote,.hero-desc,.item-title,.item small,.edition span{overflow-wrap:anywhere}
+@media(max-width:620px){
+ .edition,.reading-hint,.library-tools,.filters{min-width:0;flex-wrap:wrap}
+ .paged-reader,.page-window,.page-flow{min-width:0;max-width:100%}
+}
+
