@@ -152,7 +152,7 @@ body.header-hidden .reader-toolbar{top:0}
   background:var(--page);
   box-shadow:0 1px 3px #0003,inset 0 0 0 1px var(--accent);
   pointer-events:none;
-  transition:transform .24s cubic-bezier(.2,.75,.25,1);
+  transition:transform .28s cubic-bezier(.2,.75,.25,1);
 }
 .reader-mode-options:has(input[value="pages"]:checked)::before{transform:translateX(calc(100% + 2px))}
 
@@ -195,7 +195,7 @@ body.header-hidden .reader-toolbar{top:0}
   color:var(--ink);
   box-shadow:none;
 }
-.reader-mode-option:focus-within{outline:2px solid var(--accent);outline-offset:3px;z-index:1}
+.reader-mode-option:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:3px;z-index:2}
 .reader-mode-option:not(.is-selected){background:transparent;color:var(--muted);box-shadow:none}
 .reader-mode-option:not(.is-selected):hover{background:transparent;color:var(--accent)}
 .reader-mode-option:has(input:disabled){opacity:.48;cursor:not-allowed}
@@ -236,7 +236,7 @@ body.header-hidden .reader-toolbar{top:0}
   background:var(--line);
   font-size:0;
   line-height:0;
-  transition:background .18s ease;
+  transition:background .28s cubic-bezier(.2,.75,.25,1);
 }
 .focus-mode-status::after{
   content:"";
@@ -248,7 +248,7 @@ body.header-hidden .reader-toolbar{top:0}
   border-radius:50%;
   background:var(--page);
   box-shadow:0 1px 2px #0002;
-  transition:transform .18s ease,background .18s ease;
+  transition:transform .28s cubic-bezier(.2,.75,.25,1),background .28s cubic-bezier(.2,.75,.25,1);
 }
 .reader-toolbar>.focus-toggle[aria-pressed="true"] .focus-mode-status{background:var(--accent)}
 .reader-toolbar>.focus-toggle[aria-pressed="true"] .focus-mode-status::after{
