@@ -6,7 +6,7 @@
 .page-heading h3{font-size:16px;font-weight:600;margin:0;overflow-wrap:anywhere}
 .page-heading span{font-size:12px;color:var(--muted);max-width:40%;overflow-wrap:anywhere}
 .page-window{overflow:hidden;position:relative;isolation:isolate;touch-action:pan-y pinch-zoom}
-.page-flow{height:100%;column-count:var(--page-columns,1);column-gap:var(--page-gap,40px);column-fill:auto;transform:translateX(0);will-change:transform}
+.page-flow{column-count:auto;column-gap:var(--page-gap,40px);column-fill:auto;transform:translateX(0);will-change:transform}
 .page-flow.reflowing{transition:none}
 .page-paragraph{margin:0 0 36px;padding:0}
 .page-paragraph .page-original{font:400 var(--reading-size)/1.95 var(--serif);letter-spacing:.015em;overflow-wrap:anywhere;orphans:2;widows:2;margin:0 0 18px;padding:0}
