@@ -29,7 +29,7 @@
 
 1. 複製 `article-template.json`，存成 `data/articles/<id>.json`。使用唯一且固定的 ID，例如 `article-52`；檔名須與 ID 相同。
 2. 填寫文章內容。沿用既有欄位；`schemaVersion` 固定為 `1`。不需要在文章檔手動加入 `ready`。
-3. 在 `data/articles/index.json` 的 `articles` 陣列加入一筆索引資料：`id`、`order`、`title`、`author`、`type`、`category`、`intro`、`sourceUrl`、`paragraphCount`、`ready` 和 `data`。其中 `data` 使用 `./data/articles/<id>.json`；`paragraphCount` 填段落數。
+3. 在 `data/articles/index.json` 的 `articles` 陣列加入一筆索引資料：`id`、`order`、`title`、`author`、`type`、`category`、`intro`、`sourceUrl`、`paragraphCount`、`ready`、`dailyFrom` 和 `data`。其中 `data` 使用 `./data/articles/<id>.json`；`paragraphCount` 填段落數。`ready: true` 的文章須有 `dailyFrom`（YYYY-MM-DD），表示開始參與每日抽選的香港日期。新增文章或把文章改為 ready 時，請把 `dailyFrom` 設為下一個香港日期，避免當日的抽選名單因文章變動而改變。
 4. 只有完成必要內容的文章才設 `ready: true`。白話文須有每段原文、總結和分析；文言文還須有每段譯文和至少一項注釋。未完成可設為 `false`，仍會列在篇章庫，但不會被每日抽選。
 5. 提交後，網站先讀索引；選取文章時才請求該篇 JSON。每篇資料會在目前頁面工作期間快取。
 
