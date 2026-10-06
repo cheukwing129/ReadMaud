@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">閱讀萬花筒</title>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset="1" stop-color="#f1e8d6"/>
+    </linearGradient>
+    <linearGradient id="facet1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9955b"/>
+      <stop offset="1" stop-color="#b54434"/>
+    </linearGradient>
+    <linearGradient id="facet2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d35e45"/>
+      <stop offset="1" stop-color="#9c352d"/>
+    </linearGradient>
+    <linearGradient id="facet3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a83d31"/>
+      <stop offset="1" stop-color="#e68152"/>
+    </linearGradient>
+    <linearGradient id="facet4" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#edac68"/>
+      <stop offset="1" stop-color="#b54434"/>
+    </linearGradient>
+    <linearGradient id="facet5" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b54434"/>
+      <stop offset="1" stop-color="#87302b"/>
+    </linearGradient>
+    <linearGradient id="facet6" x1="1" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#e9955b"/>
+      <stop offset="1" stop-color="#ad3c30"/>
+    </linearGradient>
+    <linearGradient id="facet7" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#8f302b"/>
+      <stop offset="1" stop-color="#d96d4b"/>
+    </linearGradient>
+    <linearGradient id="facet8" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#b54434"/>
+      <stop offset="1" stop-color="#f0b16a"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff9ed"/>
+      <stop offset="1" stop-color="#e4b46f"/>
+    </linearGradient>
+    <clipPath id="lens">
+      <path d="M32 7.5 49.3 14.7 56.5 32 49.3 49.3 32 56.5 14.7 49.3 7.5 32 14.7 14.7Z"/>
+    </clipPath>
+  </defs>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="15" fill="url(#paper)"/>
+  <path d="M32 7.5 49.3 14.7 56.5 32 49.3 49.3 32 56.5 14.7 49.3 7.5 32 14.7 14.7Z" fill="#b54434"/>
+  <g clip-path="url(#lens)" stroke="#f8f4e6" stroke-opacity=".52" stroke-width=".75" stroke-linejoin="round">
+    <path d="M32 32 32 7.5 49.3 14.7Z" fill="url(#facet1)"/>
+    <path d="M32 32 49.3 14.7 56.5 32Z" fill="url(#facet2)"/>
+    <path d="M32 32 56.5 32 49.3 49.3Z" fill="url(#facet3)"/>
+    <path d="M32 32 49.3 49.3 32 56.5Z" fill="url(#facet4)"/>
+    <path d="M32 32 32 56.5 14.7 49.3Z" fill="url(#facet5)"/>
+    <path d="M32 32 14.7 49.3 7.5 32Z" fill="url(#facet6)"/>
+    <path d="M32 32 7.5 32 14.7 14.7Z" fill="url(#facet7)"/>
+    <path d="M32 32 14.7 14.7 32 7.5Z" fill="url(#facet8)"/>
+  </g>
+  <path d="M32 21.5 35.2 28.8 42.5 32 35.2 35.2 32 42.5 28.8 35.2 21.5 32 28.8 28.8Z" fill="url(#core)" stroke="#f8f4e6" stroke-width="1"/>
+  <path d="m32 28.5 3.5 3.5-3.5 3.5-3.5-3.5Z" fill="#b54434"/>
+</svg>
