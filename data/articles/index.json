@@ -1036,6 +1036,20 @@
       "ready": true,
       "data": "./data/articles/article-75.json",
       "dailyFrom": "2026-10-07"
+    },
+    {
+      "id": "article-76",
+      "order": 75,
+      "title": "麻雀",
+      "author": "梁實秋",
+      "category": "散文",
+      "intro": "梁實秋以童年對麻將的誤解、留學時的見聞及友人牌局，寫出麻將帶來的趣味與誘惑。文章後半從自嘲轉向警惕，描寫賭局如何逐步加碼、傷害友誼，也體諒有人沉迷或許是為了逃避生活中的痛苦。",
+      "sourceUrl": "https://www.thenewslens.com/article/252983",
+      "type": "vernacular",
+      "paragraphCount": 10,
+      "ready": true,
+      "data": "./data/articles/article-76.json",
+      "dailyFrom": "2026-10-07"
     }
   ]
 }
