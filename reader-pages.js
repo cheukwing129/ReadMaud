@@ -71,10 +71,7 @@
   const chrome=top+toolbar.getBoundingClientRect().height+pane.querySelector('.page-heading').getBoundingClientRect().height+pane.querySelector('.page-footer').getBoundingClientRect().height+72+bottom;
   viewport.style.height=Math.max(120,window.innerHeight-chrome)+'px';
   step=(viewport.clientWidth+gap)/columns;
-  const last=flow.querySelector('.page-paragraph:last-child');
-  const lastRects=last?[...last.getClientRects()]:[];
-  const endX=lastRects.length?Math.max(...lastRects.map(rect=>rect.right)):viewport.getBoundingClientRect().left+1;
-  total=Math.max(1,Math.ceil(Math.max(0,endX-viewport.getBoundingClientRect().left-1)/step));
+  total=Math.max(1,Math.ceil(Math.max(0,flow.scrollWidth-1)/step));
   const p=flow.querySelector(`[data-paragraph="${savedAnchor.paragraph}"]`);
   spread=p?Math.floor(Math.max(0,characterX(p,savedAnchor.character))/step/columns):0;
   updateSpread();
