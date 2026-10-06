@@ -14,6 +14,7 @@
  const flow=pane.querySelector('.page-flow'),viewport=pane.querySelector('.page-window');
  const previous=pane.querySelector('.page-prev'),next=pane.querySelector('.page-next');
  const counter=pane.querySelector('.page-counter');
+ const debugPages=new URLSearchParams(location.search).get('debugPages')==='1';
  const closeNote=()=>window.ReaderNotes.close();
  function textNodes(paragraph){
   const root=paragraph.querySelector('.page-original')||paragraph;
@@ -48,6 +49,7 @@
   previous.disabled=spread===0;next.disabled=(spread+1)*columns>=total;
   const start=spread*columns+1,end=Math.min(total,start+columns-1);
   counter.innerHTML=`第 <strong>${start===end?start:start+'–'+end}</strong> / ${total} 頁`;
+  if(debugPages)counter.append(document.createTextNode(` [vp ${viewport.clientWidth}×${viewport.clientHeight} | flow ${flow.clientWidth}×${flow.clientHeight} | sc ${flow.scrollWidth}×${flow.scrollHeight}]`));
   document.querySelector('#progress-bar').style.width=(end/total*100)+'%';
   rememberAnchor();
   const bounds=viewport.getBoundingClientRect();
@@ -73,7 +75,7 @@
   const savedAnchor={...anchor};
   columns=window.innerWidth>window.innerHeight?2:1;
   const gap=window.innerWidth<700?24:40;
-  flow.classList.add('reflowing');flow.style.setProperty('--page-columns',columns);flow.style.setProperty('--page-gap',gap+'px');
+  flow.classList.add('reflowing');flow.style.setProperty('--page-gap',gap+'px');flow.style.columnCount='auto';flow.style.columnGap=gap+'px';flow.style.columnFill='auto';
   viewport.scrollLeft=0;viewport.scrollTop=0;offset=0;flow.style.transform='translateX(0)';
   const toolbar=reader.querySelector('.reader-toolbar');
   const top=parseFloat(getComputedStyle(toolbar).top)||0;
@@ -81,7 +83,10 @@
   const bottom=getComputedStyle(mobile).display==='none'?0:mobile.getBoundingClientRect().height;
   const chrome=top+toolbar.getBoundingClientRect().height+pane.querySelector('.page-heading').getBoundingClientRect().height+pane.querySelector('.page-footer').getBoundingClientRect().height+72+bottom;
   viewport.style.height=Math.max(120,window.innerHeight-chrome)+'px';
-  step=(viewport.clientWidth+gap)/columns;
+  const width=viewport.clientWidth,height=viewport.clientHeight;
+  const columnWidth=Math.floor((width-gap*(columns-1))/columns);
+  flow.style.width=width+'px';flow.style.height=height+'px';flow.style.columnWidth=columnWidth+'px';
+  step=columnWidth+gap;
   total=Math.max(1,Math.ceil(Math.max(0,contentExtent()-1)/step));
   const p=flow.querySelector(`[data-paragraph="${savedAnchor.paragraph}"]`);
   spread=p?Math.floor(Math.max(0,characterX(p,savedAnchor.character))/step/columns):0;
