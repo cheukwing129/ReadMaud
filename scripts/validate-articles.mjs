@@ -64,7 +64,7 @@ export function validateArticleData(index, articleFiles, readArticle) {
     }
     if (entry.ready === true) {
       const dailyFrom = entry.dailyFrom;
-      const parsedDate = typeof dailyFrom === 'string' && /^\\d{4}-\\d{2}-\\d{2}$/.test(dailyFrom)
+      const parsedDate = typeof dailyFrom === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(dailyFrom)
         ? new Date(dailyFrom + 'T00:00:00Z') : null;
       if (!parsedDate || Number.isNaN(parsedDate.getTime()) || parsedDate.toISOString().slice(0, 10) !== dailyFrom) {
         fail(id, 'ready 文章必須提供有效的 dailyFrom（YYYY-MM-DD）。');
