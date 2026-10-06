@@ -1,4 +1,4 @@
-name: Validate article data
+name: Validate articles and share previews
 
 on:
   push:
@@ -7,11 +7,21 @@ on:
     paths:
       - 'data/articles/**'
       - 'scripts/validate-articles.mjs'
+      - 'scripts/test-share-page.mjs'
+      - 'functions/share/**'
+      - '_routes.json'
+      - 'index.html'
+      - 'main.css'
       - '.github/workflows/validate-articles.yml'
   pull_request:
     paths:
       - 'data/articles/**'
       - 'scripts/validate-articles.mjs'
+      - 'scripts/test-share-page.mjs'
+      - 'functions/share/**'
+      - '_routes.json'
+      - 'index.html'
+      - 'main.css'
       - '.github/workflows/validate-articles.yml'
   workflow_dispatch:
 
@@ -28,3 +38,5 @@ jobs:
           node-version: 24
       - name: Validate article data
         run: node scripts/validate-articles.mjs
+      - name: Test share previews
+        run: node scripts/test-share-page.mjs
