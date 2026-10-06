@@ -1,5 +1,6 @@
 /* PDF output is built from article text, independently of the reading DOM. */
 ((root)=>{
+ const app=root.ReadMaudApp;if(!app)throw new Error('ReadMaudApp is unavailable');
  const closing=new Set([... '，。！？；：、）》」』】〕〉〗〙〛…,.!?;:)]}']);
  const opening=new Set([... '（《「『【〔〈〖〘〚([{']);
  function wrapText(text,font,size,width,indent=0){
@@ -73,7 +74,7 @@
  }
  const button=document.querySelector('#export-pdf'),status=document.querySelector('#pdf-status');
  button.addEventListener('click',async()=>{
-  const article=activeArticle();if(busy||!article?.paragraphs?.length)return;
+  const article=app.activeArticle();if(busy||!article?.paragraphs?.length)return;
   busy=true;
   button.disabled=true;button.textContent='正在製作…';status.textContent='正在製作原文 PDF…';
   try{
@@ -83,8 +84,8 @@
    document.body.append(link);link.click();link.remove();
    setTimeout(()=>URL.revokeObjectURL(url),60000);status.textContent='原文 PDF 已製作完成。';
   }catch(error){console.error(error);status.textContent='PDF 匯出未完成，請稍後重試。'+(error.message.startsWith('匯出字體')?error.message:'');}
-  finally{busy=false;button.disabled=!activeArticle()?.paragraphs?.length;button.textContent='匯出 PDF'}
+  finally{busy=false;button.disabled=!app.activeArticle()?.paragraphs?.length;button.textContent='匯出 PDF'}
  });
- const sync=()=>{button.disabled=busy||!activeArticle()?.paragraphs?.length;if(!busy)status.textContent=''};
+ const sync=()=>{button.disabled=busy||!app.activeArticle()?.paragraphs?.length;if(!busy)status.textContent=''};
  document.addEventListener('readerarticlechange',sync);sync();
 })(typeof window!=='undefined'?window:globalThis);
