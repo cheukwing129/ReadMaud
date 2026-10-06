@@ -4,6 +4,7 @@
  const {safeGet,safeSet,esc,isReady,activeArticle,renderOriginal}=app;
  const reader=document.querySelector('#reader'),article=document.querySelector('#article');
  const toggle=document.querySelector('#reading-mode-toggle');
+ const scrollToggle=document.querySelector('#scroll-mode-toggle');
  const settingsKey='readmaud-page-mode-v1';
  let enabled=safeGet(settingsKey)==='pages',current=null,spread=0,columns=1,total=1,step=0,offset=0;
  let anchor={paragraph:0,character:0},frame=0,pointer=null,touchPointer=null,suppressSwipeClickUntil=0;
@@ -113,28 +114,32 @@
   const ready=Boolean(current&&isReady(current));
   document.body.classList.toggle('paged-mode',enabled&&ready);
   pane.hidden=!enabled||!ready;article.hidden=enabled&&ready;
-  toggle.setAttribute('aria-pressed',String(enabled));toggle.textContent=enabled?'捲動閱讀':'翻頁閱讀';
-  toggle.disabled=!ready;
+  toggle.checked=enabled;scrollToggle.checked=!enabled;
+  toggle.closest('.reader-mode-option').classList.toggle('is-selected',enabled);
+  scrollToggle.closest('.reader-mode-option').classList.toggle('is-selected',!enabled);
+  toggle.disabled=!ready;scrollToggle.disabled=!ready;
   if(enabled&&ready)scheduleLayout();
  }
  function turn(direction){
   const target=spread+direction;if(target<0||target>=Math.ceil(total/columns))return;
   closeNote();spread=target;updateSpread(!matchMedia('(prefers-reduced-motion: reduce)').matches);
  }
- toggle.addEventListener('click',()=>{
-  if(!current)return;
-  if(!enabled){
+ const changeMode=nextEnabled=>{
+  if(!current||!isReady(current)||nextEnabled===enabled)return;
+  if(nextEnabled){
    const originals=[...article.querySelectorAll('.para')];
    const top=reader.querySelector('.reader-toolbar').getBoundingClientRect().bottom;
    const index=originals.findIndex(p=>p.getBoundingClientRect().bottom>top);
    anchor={paragraph:Math.max(0,index),character:0};
   }
-  enabled=!enabled;safeSet(settingsKey,enabled?'pages':'scroll');closeNote();applyMode();
+  enabled=nextEnabled;safeSet(settingsKey,enabled?'pages':'scroll');closeNote();applyMode();
   reader.scrollIntoView({behavior:'auto',block:'start'});
   if(!enabled){const target=article.querySelectorAll('.para')[anchor.paragraph];if(target)requestAnimationFrame(()=>{
    const toolbar=reader.querySelector('.reader-toolbar');window.scrollTo({top:window.scrollY+target.getBoundingClientRect().top-toolbar.getBoundingClientRect().bottom-12,behavior:'auto'});
   })}
- });
+ };
+ scrollToggle.addEventListener('change',()=>{if(scrollToggle.checked)changeMode(false)});
+ toggle.addEventListener('change',()=>{if(toggle.checked)changeMode(true)});
  previous.addEventListener('click',()=>turn(-1));next.addEventListener('click',()=>turn(1));
  flow.addEventListener('click',event=>{if(Date.now()<suppressSwipeClickUntil){suppressSwipeClickUntil=0;event.preventDefault();event.stopPropagation();return}const summary=event.target.closest('.page-paragraph details>summary');if(summary){rememberAnchor(summary.closest('.page-paragraph'));closeNote()}const button=event.target.closest('.annotated-word');if(button)window.ReaderNotes.toggle(button,viewport.getBoundingClientRect())});
  flow.addEventListener('toggle',event=>{if(event.target.matches('.page-translation,.page-insight'))scheduleLayout()},true);
