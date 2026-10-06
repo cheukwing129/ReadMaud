@@ -265,7 +265,7 @@ function updateHeaderVisibility(){
  previousScrollY=currentY;
  if(body.classList.contains('focus-mode')){headerScrollDirection=0;headerScrollDistance=0;return}
  if(currentY<=24){body.classList.remove('header-hidden');headerScrollDirection=0;headerScrollDistance=0;return}
- if(Math.abs(movement)<1)return;
+ if(movement===0)return;
  const direction=Math.sign(movement);
  if(direction===headerScrollDirection)headerScrollDistance+=movement;
  else{headerScrollDirection=direction;headerScrollDistance=movement}
