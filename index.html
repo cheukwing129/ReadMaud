@@ -245,7 +245,7 @@ async function activateArticle(id){
 }
 async function init(){
  try{
-  const response=await fetch('./data/articles/index.json',{cache:'no-store'});if(!response.ok)throw new Error('article index request failed');
+  const response=await fetch('./data/articles/index.json',{cache:'no-cache'});if(!response.ok)throw new Error('article index request failed');
   const data=await response.json();if(data.schemaVersion!==1||!Array.isArray(data.articles))throw new Error('invalid article index');
   articles=data.articles.slice().sort((a,b)=>(a.order??999999)-(b.order??999999));
   const complete=dailyArticles(),saved=safeGet(storageKey);
