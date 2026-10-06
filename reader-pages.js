@@ -9,21 +9,21 @@
  let anchor={paragraph:0,character:0},frame=0,pointer=null;
  const pane=document.createElement('div');
  pane.className='paged-reader';pane.hidden=true;
- pane.innerHTML='<div class="page-heading"><h3></h3><span></span></div><div class="page-window"><div class="page-flow"></div></div><div class="page-footer"><button type="button" class="page-prev" aria-label="上一頁">‹</button><button type="button" class="page-next" aria-label="下一頁">›</button><button type="button" class="page-details">譯文與分析</button><span class="page-counter" aria-live="polite" aria-atomic="true"></span></div>';
+ pane.innerHTML='<div class="page-heading"><h3></h3><span></span></div><div class="page-window"><div class="page-flow"></div></div><div class="page-footer"><button type="button" class="page-prev" aria-label="上一頁">‹</button><button type="button" class="page-next" aria-label="下一頁">›</button><button type="button" class="page-details">總結及分析</button><span class="page-counter" aria-live="polite" aria-atomic="true"></span></div>';
  reader.append(pane);
  const flow=pane.querySelector('.page-flow'),viewport=pane.querySelector('.page-window');
  const previous=pane.querySelector('.page-prev'),next=pane.querySelector('.page-next');
  const detailButton=pane.querySelector('.page-details'),counter=pane.querySelector('.page-counter');
  const dialog=document.createElement('dialog');dialog.className='page-detail-dialog';
  dialog.setAttribute('aria-labelledby','page-detail-title');
- dialog.innerHTML='<div class="page-detail-head"><h3 id="page-detail-title">譯文與段落分析</h3><button type="button" aria-label="關閉譯文與分析">×</button></div><div class="page-detail-body"></div>';
+ dialog.innerHTML='<div class="page-detail-head"><h3 id="page-detail-title">總結及分析</h3><button type="button" aria-label="關閉段落說明">×</button></div><div class="page-detail-body"></div>';
  document.body.append(dialog);
  const closeNote=()=>window.ReaderNotes.close();
  function updateDetailMode(){
   const focused=document.body.classList.contains('focus-mode');
   detailButton.hidden=focused&&current?.type!=='classical';
-  detailButton.textContent=focused?'譯文':current?.type==='classical'?'譯文與分析':'段落分析';
-  dialog.querySelector('h3').textContent=focused?'文言譯文':'譯文與段落分析';
+  detailButton.textContent=focused?'譯文':current?.type==='classical'?'譯文、總結及分析':'總結及分析';
+  dialog.querySelector('h3').textContent=focused?'文言譯文':current?.type==='classical'?'譯文、總結及分析':'總結及分析';
   if(dialog.open)dialog.close();
  }
  function textNodes(paragraph){
@@ -119,7 +119,7 @@
   const indices=visibleParagraphs().map(p=>Number(p.dataset.paragraph));
   dialog.querySelector('.page-detail-body').innerHTML=indices.map(i=>{
    const p=current.paragraphs[i];
-   return `<section><h4>第 ${i+1} 段</h4><p class="detail-excerpt">${esc(p.text.slice(0,48))}${p.text.length>48?'…':''}</p>${p.translation&&(!focused||current.type==='classical')?`<details class="translation"><summary>譯文</summary><p>${esc(p.translation)}</p></details>`:''}${focused?'':`<details class="insight"><summary>這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight"><summary>深入分析</summary><p>${esc(p.analysis)}</p></details>`}</section>`;
+   return `<section><h4>第 ${i+1} 段</h4><p class="detail-excerpt">${esc(p.text.slice(0,48))}${p.text.length>48?'…':''}</p>${p.translation&&(!focused||current.type==='classical')?`<details class="translation"><summary>譯文</summary><p>${esc(p.translation)}</p></details>`:''}${focused?'':`<details class="insight" open><summary>這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight" open><summary>深入分析</summary><p>${esc(p.analysis)}</p></details>`}</section>`;
   }).join('');
   closeNote();dialog.showModal();
  }
