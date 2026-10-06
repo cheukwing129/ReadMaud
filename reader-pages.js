@@ -9,25 +9,15 @@
  let anchor={paragraph:0,character:0},frame=0,pointer=null;
  const pane=document.createElement('div');
  pane.className='paged-reader';pane.hidden=true;
- pane.innerHTML='<div class="page-heading"><h3></h3><span></span></div><div class="page-window"><div class="page-flow"></div></div><div class="page-footer"><button type="button" class="page-prev" aria-label="上一頁">‹</button><button type="button" class="page-next" aria-label="下一頁">›</button><button type="button" class="page-details">總結及分析</button><span class="page-counter" aria-live="polite" aria-atomic="true"></span></div>';
+ pane.innerHTML='<div class="page-heading"><h3></h3><span></span></div><div class="page-window"><div class="page-flow"></div></div><div class="page-footer"><button type="button" class="page-prev" aria-label="上一頁">‹</button><button type="button" class="page-next" aria-label="下一頁">›</button><span class="page-counter" aria-live="polite" aria-atomic="true"></span></div>';
  reader.append(pane);
  const flow=pane.querySelector('.page-flow'),viewport=pane.querySelector('.page-window');
  const previous=pane.querySelector('.page-prev'),next=pane.querySelector('.page-next');
- const detailButton=pane.querySelector('.page-details'),counter=pane.querySelector('.page-counter');
- const dialog=document.createElement('dialog');dialog.className='page-detail-dialog';
- dialog.setAttribute('aria-labelledby','page-detail-title');
- dialog.innerHTML='<div class="page-detail-head"><h3 id="page-detail-title">總結及分析</h3><button type="button" aria-label="關閉段落說明">×</button></div><div class="page-detail-body"></div>';
- document.body.append(dialog);
+ const counter=pane.querySelector('.page-counter');
  const closeNote=()=>window.ReaderNotes.close();
- function updateDetailMode(){
-  const focused=document.body.classList.contains('focus-mode');
-  detailButton.hidden=focused&&current?.type!=='classical';
-  detailButton.textContent=focused?'譯文':current?.type==='classical'?'譯文、總結及分析':'總結及分析';
-  dialog.querySelector('h3').textContent=focused?'文言譯文':current?.type==='classical'?'譯文、總結及分析':'總結及分析';
-  if(dialog.open)dialog.close();
- }
  function textNodes(paragraph){
-  const nodes=[],walker=document.createTreeWalker(paragraph,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest('.page-tag,.note-bubble')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+  const root=paragraph.querySelector('.page-original')||paragraph;
+  const nodes=[],walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest('.note-bubble')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
   while(walker.nextNode())nodes.push(walker.currentNode);
   return nodes;
  }
@@ -82,8 +72,9 @@
   viewport.style.height=Math.max(120,window.innerHeight-chrome)+'px';
   step=(viewport.clientWidth+gap)/columns;
   const last=flow.querySelector('.page-paragraph:last-child');
-  const length=last?textNodes(last).reduce((n,node)=>n+node.length,0):0;
-  total=last&&length?Math.floor(Math.max(0,characterX(last,length-1))/step)+1:1;
+  const lastRects=last?[...last.getClientRects()]:[];
+  const endX=lastRects.length?Math.max(...lastRects.map(rect=>rect.right)):viewport.getBoundingClientRect().left+1;
+  total=Math.max(1,Math.ceil(Math.max(0,endX-viewport.getBoundingClientRect().left-1)/step));
   const p=flow.querySelector(`[data-paragraph="${savedAnchor.paragraph}"]`);
   spread=p?Math.floor(Math.max(0,characterX(p,savedAnchor.character))/step/columns):0;
   updateSpread();
@@ -91,14 +82,17 @@
  function scheduleLayout(){if(!frame)frame=requestAnimationFrame(layout)}
  function build(a){
   current=a;spread=0;offset=0;anchor={paragraph:0,character:0};closeNote();
-  if(dialog.open)dialog.close();
   flow.getAnimations().forEach(animation=>animation.cancel());
   flow.style.transform='translateX(0)';
   flow.dataset.type=a.type;
   pane.querySelector('.page-heading h3').textContent=a.title;
   pane.querySelector('.page-heading span').textContent=a.author;
-  flow.innerHTML=isReady(a)?a.paragraphs.map((p,i)=>`<p class="page-paragraph" data-paragraph="${i}"><span class="page-tag">${String(i+1).padStart(2,'0')}</span>${renderOriginal(p,i,a.id,'paged').replaceAll('<button class="annotated-word"','<span class="annotated-word" role="button" tabindex="0"').replaceAll(' type="button"','').replaceAll('</button>','</span>')}</p>`).join(''):'';
-  updateDetailMode();
+  flow.innerHTML=isReady(a)?a.paragraphs.map((p,i)=>{
+   const original=renderOriginal(p,i,a.id,'paged').replaceAll('<button class="annotated-word"','<span class="annotated-word" role="button" tabindex="0"').replaceAll(' type="button"','').replaceAll('</button>','</span>');
+   const translation=p.translation?(a.type==='classical'?'<details class="translation page-translation"><summary>顯示這一段的譯文</summary><p>'+esc(p.translation)+'</p></details>':'<p class="quote page-translation">譯文｜'+esc(p.translation)+'</p>'):'';
+   return `<section class="page-paragraph" data-paragraph="${i}"><span class="page-tag">${String(i+1).padStart(2,'0')}</span><p class="page-original">${original}</p>${translation}<details class="insight page-insight"><summary>這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight page-insight"><summary>深入分析</summary><p>${esc(p.analysis)}</p></details></section>`;
+  }).join(''):'';
+
   applyMode();
  }
  function applyMode(){
@@ -112,16 +106,6 @@
  function turn(direction){
   const target=spread+direction;if(target<0||target>=Math.ceil(total/columns))return;
   closeNote();spread=target;updateSpread(!matchMedia('(prefers-reduced-motion: reduce)').matches);
- }
- function openDetails(){
-  const focused=document.body.classList.contains('focus-mode');
-  if(focused&&current.type!=='classical')return;
-  const indices=visibleParagraphs().map(p=>Number(p.dataset.paragraph));
-  dialog.querySelector('.page-detail-body').innerHTML=indices.map(i=>{
-   const p=current.paragraphs[i];
-   return `<section><h4>第 ${i+1} 段</h4><p class="detail-excerpt">${esc(p.text.slice(0,48))}${p.text.length>48?'…':''}</p>${p.translation&&(!focused||current.type==='classical')?`<details class="translation"><summary>譯文</summary><p>${esc(p.translation)}</p></details>`:''}${focused?'':`<details class="insight" open><summary>這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight" open><summary>深入分析</summary><p>${esc(p.analysis)}</p></details>`}</section>`;
-  }).join('');
-  closeNote();dialog.showModal();
  }
  toggle.addEventListener('click',()=>{
   if(!current)return;
@@ -138,13 +122,11 @@
   })}
  });
  previous.addEventListener('click',()=>turn(-1));next.addEventListener('click',()=>turn(1));
- detailButton.addEventListener('click',openDetails);
- dialog.querySelector('button').addEventListener('click',()=>dialog.close());
- dialog.addEventListener('click',event=>{if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close()}});
- flow.addEventListener('click',event=>{const button=event.target.closest('.annotated-word');if(button)window.ReaderNotes.toggle(button,viewport.getBoundingClientRect())});
+ flow.addEventListener('click',event=>{const summary=event.target.closest('.page-paragraph details>summary');if(summary){rememberAnchor();closeNote()}const button=event.target.closest('.annotated-word');if(button)window.ReaderNotes.toggle(button,viewport.getBoundingClientRect())});
+ flow.addEventListener('toggle',event=>{if(event.target.matches('.page-translation,.page-insight'))scheduleLayout()},true);
  flow.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&event.target.closest('.annotated-word')){event.preventDefault();event.target.closest('.annotated-word').click()}});
  document.addEventListener('keydown',event=>{
-  if(!enabled||pane.hidden||dialog.open||document.querySelector('#today-view').hidden)return;
+  if(!enabled||pane.hidden||document.querySelector('#today-view').hidden)return;
   if(event.altKey||event.ctrlKey||event.metaKey||event.shiftKey||event.target.closest('input,textarea,select,[contenteditable],.annotated-word'))return;
   const visible=reader.getBoundingClientRect();if(visible.top>window.innerHeight||visible.bottom<0)return;
   if(event.key==='ArrowRight'||event.key==='PageDown'){event.preventDefault();turn(1)}
@@ -161,7 +143,7 @@
  });
  viewport.addEventListener('pointercancel',()=>{pointer=null});
  document.addEventListener('readerarticlechange',event=>build(event.detail));
- document.addEventListener('readerlayoutchange',()=>{updateDetailMode();scheduleLayout()});
+ document.addEventListener('readerlayoutchange',scheduleLayout);
  document.addEventListener('readerviewchange',()=>{closeNote();scheduleLayout()});
  window.addEventListener('resize',scheduleLayout);
  window.addEventListener('scroll',closeNote,{passive:true});

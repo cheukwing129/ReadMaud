@@ -8,8 +8,11 @@
 .page-window{overflow:hidden;position:relative;isolation:isolate;touch-action:pan-y pinch-zoom}
 .page-flow{height:100%;column-count:var(--page-columns,1);column-gap:var(--page-gap,40px);column-fill:auto;transform:translateX(0);will-change:transform}
 .page-flow.reflowing{transition:none}
-.page-paragraph{font:400 var(--reading-size)/1.95 var(--serif);letter-spacing:.015em;overflow-wrap:anywhere;orphans:2;widows:2;margin:0 0 24px;padding:0}
-.page-flow[data-type="vernacular"] .page-paragraph{font-family:var(--sans);letter-spacing:0;line-height:1.85}
+.page-paragraph{margin:0 0 36px;padding:0}
+.page-paragraph .page-original{font:400 var(--reading-size)/1.95 var(--serif);letter-spacing:.015em;overflow-wrap:anywhere;orphans:2;widows:2;margin:0 0 18px;padding:0}
+.page-flow[data-type="vernacular"] .page-paragraph .page-original{font-family:var(--sans);letter-spacing:0;line-height:1.85}
+.page-paragraph .page-translation.quote{border-bottom:0;padding:12px 2px 18px}
+.page-paragraph .page-insight:last-child{border-bottom:1px solid var(--line)}
 .page-paragraph .page-tag{display:block;font:600 12px/1.5 var(--latin);color:var(--accent);margin:0 0 10px;break-after:avoid}
 .page-flow .note-bubble{display:none!important}
 .page-flow .annotated-word{display:inline;cursor:pointer;box-decoration-break:clone;-webkit-box-decoration-break:clone}
@@ -19,29 +22,20 @@
 .page-footer button:disabled{opacity:.35;cursor:not-allowed}
 .page-counter{margin-left:auto;font:500 12px var(--sans);font-variant-numeric:tabular-nums;color:var(--muted);text-align:right}
 .page-counter strong{color:var(--ink);font-weight:600}
-.page-detail-dialog{border:1px solid var(--line);background:var(--surface);color:var(--ink);width:min(640px,calc(100vw - 32px));max-height:80dvh;padding:0}
-.page-detail-dialog::backdrop{background:rgba(0,0,0,.45)}
-.page-detail-head{display:flex;align-items:center;gap:20px;justify-content:space-between;position:sticky;top:0;z-index:1;background:var(--surface);border-bottom:1px solid var(--line);padding:16px 22px}
-.page-detail-head h3{font-size:16px;margin:0}
-.page-detail-head button{min-width:44px;min-height:44px;border:1px solid var(--line);color:var(--ink);background:transparent;font:inherit}
-.page-detail-body{padding:4px 22px 24px;font-size:clamp(14px,calc(var(--reading-size) - 6px),24px);line-height:1.9}
-.page-detail-body h4{font-size:14px;color:var(--accent);margin:24px 0 12px}
-.page-detail-body .detail-excerpt{color:var(--muted);font-size:14px;margin:0 0 12px}
-.page-detail-body p{overflow-wrap:anywhere}
 .reader-note{position:fixed;z-index:100;max-height:45dvh;overflow:auto;width:min(340px,calc(100vw - 32px));border:1px solid var(--line);background:var(--ink);color:var(--page);box-shadow:4px 4px 0 var(--accent);padding:16px 18px;font:14px/1.75 var(--sans)}
 .reader-note strong{display:block;color:inherit;margin-bottom:6px}
 .paged-mode .reader-toolbar>strong{display:none}
 @media(orientation:landscape){.paged-mode main,.focus-mode.paged-mode main{max-width:1360px}.paged-mode .reading-area{max-width:1120px;scroll-margin-top:0}.paged-mode:not(.library-view) .top,.paged-mode:not(.library-view) .mobile-nav,.paged-mode:not(.library-view) .progress-track{display:none}.paged-mode .reader-toolbar{top:0}}
-@media(max-width:620px){.paged-reader{margin:12px 12px 0;padding:14px 16px 0}.page-heading{margin-bottom:14px;padding-bottom:10px}.page-heading h3{font-size:14px}.page-footer{min-height:64px;margin-top:12px;gap:6px}.page-footer button{padding:8px;font-size:12px}.page-counter{font-size:12px}.page-detail-head{padding:12px 16px}.page-detail-body{padding-inline:16px}.paged-mode .reader-toolbar{gap:6px}.reader-toolbar .mode-toggle,.reader-toolbar .focus-toggle{font-size:12px}.focus-mode.paged-mode main{padding-bottom:12px}}
+@media(max-width:620px){.paged-reader{margin:12px 12px 0;padding:14px 16px 0}.page-heading{margin-bottom:14px;padding-bottom:10px}.page-heading h3{font-size:14px}.page-footer{min-height:64px;margin-top:12px;gap:6px}.page-footer button{padding:8px;font-size:12px}.page-counter{font-size:12px}.paged-mode .reader-toolbar{gap:6px}.reader-toolbar .mode-toggle,.reader-toolbar .focus-toggle{font-size:12px}.focus-mode.paged-mode main{padding-bottom:12px}}
 @media(prefers-reduced-motion:reduce){.page-flow{transition:none!important}}
 
-.focus-mode .analysis-grid,.focus-mode .quote,.focus-mode .reader-foot,.focus-mode .reading-hint{display:none!important}
-body,.top,.reader-toolbar,.paged-reader,.page-detail-dialog,.page-detail-head,.mobile-nav{background-image:url(./assets/paper-texture.png);background-repeat:repeat;background-size:auto}
+.focus-mode .analysis-grid,.focus-mode .quote,.focus-mode .reader-foot,.focus-mode .reading-hint,.focus-mode .paged-reader .page-insight{display:none!important}
+body,.top,.reader-toolbar,.paged-reader,.mobile-nav{background-image:url(./assets/paper-texture.png);background-repeat:repeat;background-size:auto}
 .reader-note{overflow-wrap:anywhere;overscroll-behavior:contain;box-shadow:0 5px 20px #0003}
 
 body{background-image:url(./assets/paper-gloss.png),url(./assets/paper-texture.png);background-repeat:repeat-x,repeat;background-size:auto,auto;background-attachment:fixed,fixed}
 @font-face{font-family:"ReadMaud Source Serif";src:url(./assets/source-han-serif-tc.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
-body[data-reading-font="sourcehan"] .readcard .original,body[data-reading-font="sourcehan"] .page-flow .page-paragraph,body[data-reading-font="sourcehan"] .translation p,body[data-reading-font="sourcehan"] .insight p,body[data-reading-font="sourcehan"] .page-detail-body{font-family:"ReadMaud Source Serif",var(--serif)}
+body[data-reading-font="sourcehan"] .readcard .original,body[data-reading-font="sourcehan"] .page-flow .page-original,body[data-reading-font="sourcehan"] .translation p,body[data-reading-font="sourcehan"] .insight p{font-family:"ReadMaud Source Serif",var(--serif)}
 .reader-toolbar select{min-height:38px;max-width:130px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:12px;padding:7px 10px}
 .reader-toolbar select option{background:var(--page);color:var(--ink)}
 .pdf-status:empty{display:none}.pdf-status{font-size:13px;color:var(--muted);padding-top:10px}
