@@ -137,6 +137,7 @@ const label=a=>`${a.author||'作者未填'}：${a.title||'未命名篇章'}`;
 const isReady=a=>Boolean(a&&a.ready===true);
 const typeLabel=type=>type==='classical'?'文言文':'白話文';
 const readyArticles=()=>articles.filter(isReady);
+const dailyArticles=()=>readyArticles().filter(a=>typeof a.dailyFrom==='string'&&a.dailyFrom<=dayKey).sort((a,b)=>a.id<b.id?-1:a.id>b.id?1:0);
 function dateSeed(){return [...dayKey].reduce((n,c)=>((n*31)+c.charCodeAt(0))>>>0,7)}
 function activeArticle(){return detailCache.get(activeId)||articles.find(a=>a.id===activeId)||articles[0]}
 function renderOriginal(p){
@@ -175,10 +176,10 @@ function syncViewFromLocation(){
 window.addEventListener('popstate',syncViewFromLocation);
 window.addEventListener('hashchange',syncViewFromLocation);
 function render(){
- const meta=articles.find(x=>x.id===activeId)||articles[0],a=detailCache.get(activeId),complete=readyArticles();
+ const meta=articles.find(x=>x.id===activeId)||articles[0],a=detailCache.get(activeId),complete=readyArticles(),dailyPool=dailyArticles();
  $('#library-number').textContent=complete.length;$('#library-intro').textContent=`篇章庫共有 ${articles.length} 篇文章，從古典到當代，找到今天想讀的一篇。`;
  $('#daily-meta').textContent=`已整理 ${complete.length} 篇 · 篇章庫共 ${articles.length} 篇`;
- $('#reroll').disabled=complete.length<2;
+ $('#reroll').disabled=dailyPool.length<2;
  if(!meta){$('#daily-title').textContent='新增第一篇文章';$('#daily-desc').textContent='在 data/articles/index.json 登記文章，並新增單篇資料檔。';$('#reader-heading').textContent='尚未有文章';$('#article').innerHTML='<div class="not-ready"><h4>篇章庫目前是空的</h4><p>新增一篇完整文章後，就會在這裡顯示。</p></div>';return}
  $('#daily-title').textContent=meta.title;
  $('#daily-desc').textContent=meta.intro|| (meta.ready?'':'這篇文章的段落內容仍在整理中；補齊後會加入每日選讀。');
@@ -232,9 +233,9 @@ async function init(){
   const response=await fetch('./data/articles/index.json',{cache:'no-store'});if(!response.ok)throw new Error('article index request failed');
   const data=await response.json();if(data.schemaVersion!==1||!Array.isArray(data.articles))throw new Error('invalid article index');
   articles=data.articles.slice().sort((a,b)=>(a.order??999999)-(b.order??999999));
-  const complete=readyArticles(),saved=safeGet(storageKey);
+  const complete=dailyArticles(),saved=safeGet(storageKey);
   const initial=complete.find(a=>a.id===saved)||complete[dateSeed()%Math.max(complete.length,1)]||articles[0];
-  $('#reroll').addEventListener('click',()=>{const pool=readyArticles().filter(x=>x.id!==activeId);if(!pool.length)return;const pick=pool[Math.floor(Math.random()*pool.length)];activateArticle(pick.id)});
+  $('#reroll').addEventListener('click',()=>{const pool=dailyArticles().filter(x=>x.id!==activeId);if(!pool.length)return;const pick=pool[Math.floor(Math.random()*pool.length)];activateArticle(pick.id)});
   $('#mobile-reroll').addEventListener('click',()=>{$('#reroll').click();showView('today')});
   $('#search').addEventListener('input',renderList);
   document.querySelectorAll('[data-type]').forEach(b=>b.addEventListener('click',()=>{activeType=b.dataset.type;document.querySelectorAll('[data-type]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderList()}));
