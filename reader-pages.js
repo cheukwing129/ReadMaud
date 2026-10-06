@@ -33,8 +33,8 @@
   const left=viewport.getBoundingClientRect().left;
   return [...flow.querySelectorAll('.page-paragraph')].filter(p=>[...p.getClientRects()].some(rect=>rect.right>left+1&&rect.left<left+viewport.clientWidth-1));
  }
- function rememberAnchor(){
-  const p=visibleParagraphs()[0];if(!p)return;
+ function rememberAnchor(preferred){
+  const p=preferred||visibleParagraphs()[0];if(!p)return;
   const length=textNodes(p).reduce((n,node)=>n+node.length,0);let lo=0,hi=length;
   while(lo<hi){const mid=Math.floor((lo+hi)/2);if(characterX(p,mid)<offset-1)lo=mid+1;else hi=mid}
   anchor={paragraph:Number(p.dataset.paragraph),character:Math.min(lo,Math.max(0,length-1))};
@@ -122,7 +122,7 @@
   })}
  });
  previous.addEventListener('click',()=>turn(-1));next.addEventListener('click',()=>turn(1));
- flow.addEventListener('click',event=>{const summary=event.target.closest('.page-paragraph details>summary');if(summary){rememberAnchor();closeNote()}const button=event.target.closest('.annotated-word');if(button)window.ReaderNotes.toggle(button,viewport.getBoundingClientRect())});
+ flow.addEventListener('click',event=>{const summary=event.target.closest('.page-paragraph details>summary');if(summary){rememberAnchor(summary.closest('.page-paragraph'));closeNote()}const button=event.target.closest('.annotated-word');if(button)window.ReaderNotes.toggle(button,viewport.getBoundingClientRect())});
  flow.addEventListener('toggle',event=>{if(event.target.matches('.page-translation,.page-insight'))scheduleLayout()},true);
  flow.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&event.target.closest('.annotated-word')){event.preventDefault();event.target.closest('.annotated-word').click()}});
  document.addEventListener('keydown',event=>{
