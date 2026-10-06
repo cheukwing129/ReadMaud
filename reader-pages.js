@@ -6,7 +6,7 @@
  const toggle=document.querySelector('#reading-mode-toggle');
  const settingsKey='readmaud-page-mode-v1';
  let enabled=safeGet(settingsKey)==='pages',current=null,spread=0,columns=1,total=1,step=0,offset=0;
- let anchor={paragraph:0,character:0},frame=0,pointer=null;
+ let anchor={paragraph:0,character:0},frame=0,pointer=null,suppressSwipeClickUntil=0;
  const pane=document.createElement('div');
  pane.className='paged-reader';pane.hidden=true;
  pane.innerHTML='<div class="page-heading"><h3></h3><span></span></div><div class="page-window"><div class="page-flow"></div></div><div class="page-footer"><button type="button" class="page-prev" aria-label="上一頁">‹</button><button type="button" class="page-next" aria-label="下一頁">›</button><span class="page-counter" aria-live="polite" aria-atomic="true"></span></div>';
@@ -122,7 +122,7 @@
   })}
  });
  previous.addEventListener('click',()=>turn(-1));next.addEventListener('click',()=>turn(1));
- flow.addEventListener('click',event=>{const summary=event.target.closest('.page-paragraph details>summary');if(summary){rememberAnchor(summary.closest('.page-paragraph'));closeNote()}const button=event.target.closest('.annotated-word');if(button)window.ReaderNotes.toggle(button,viewport.getBoundingClientRect())});
+ flow.addEventListener('click',event=>{if(Date.now()<suppressSwipeClickUntil){suppressSwipeClickUntil=0;event.preventDefault();event.stopPropagation();return}const summary=event.target.closest('.page-paragraph details>summary');if(summary){rememberAnchor(summary.closest('.page-paragraph'));closeNote()}const button=event.target.closest('.annotated-word');if(button)window.ReaderNotes.toggle(button,viewport.getBoundingClientRect())});
  flow.addEventListener('toggle',event=>{if(event.target.matches('.page-translation,.page-insight'))scheduleLayout()},true);
  flow.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&event.target.closest('.annotated-word')){event.preventDefault();event.target.closest('.annotated-word').click()}});
  document.addEventListener('keydown',event=>{
@@ -133,13 +133,14 @@
   if(event.key==='ArrowLeft'||event.key==='PageUp'){event.preventDefault();turn(-1)}
  },{capture:true});
  viewport.addEventListener('pointerdown',event=>{
-  if(event.pointerType!=='touch'||!event.isPrimary||event.target.closest('button,.annotated-word'))return;
+  if(suppressSwipeClickUntil)suppressSwipeClickUntil=0;
+  if(event.pointerType!=='touch'||!event.isPrimary||event.target.closest('button'))return;
   pointer={id:event.pointerId,x:event.clientX,y:event.clientY};
  });
  viewport.addEventListener('pointerup',event=>{
   if(!pointer||pointer.id!==event.pointerId)return;
   const dx=event.clientX-pointer.x,dy=event.clientY-pointer.y;pointer=null;
-  if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5&&window.getSelection()?.isCollapsed)turn(dx<0?1:-1);
+  if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5&&window.getSelection()?.isCollapsed){if(event.cancelable)event.preventDefault();suppressSwipeClickUntil=Date.now()+350;turn(dx<0?1:-1)}
  });
  viewport.addEventListener('pointercancel',()=>{pointer=null});
  document.addEventListener('readerarticlechange',event=>build(event.detail));
