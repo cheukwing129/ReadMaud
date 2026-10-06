@@ -150,6 +150,12 @@
   if(event.target.closest('button')){touchPointer=null;return}
   touchPointer={id:touch.identifier,x:touch.clientX,y:touch.clientY};
  },{passive:true});
+ viewport.addEventListener('touchmove',event=>{
+  if(!touchPointer||event.touches.length!==1)return;
+  const touch=Array.from(event.touches).find(item=>item.identifier===touchPointer.id);if(!touch)return;
+  const dx=touch.clientX-touchPointer.x,dy=touch.clientY-touchPointer.y;
+  if(Math.abs(dx)>8&&Math.abs(dx)>Math.abs(dy)*1.5&&window.getSelection()?.isCollapsed&&event.cancelable)event.preventDefault();
+ },{passive:false});
  viewport.addEventListener('touchend',event=>{
   if(!touchPointer)return;
   const touch=Array.from(event.changedTouches).find(item=>item.identifier===touchPointer.id);if(!touch)return;
