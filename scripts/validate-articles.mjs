@@ -1,10 +1,20 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, URL } from 'node:url';
 
 export function validateArticleData(index, articleFiles, readArticle) {
   const errors = [];
   const fail = (where, message) => errors.push(where + '：' + message);
+  const nonEmptyText = value => typeof value === 'string' && value.trim().length > 0;
+  const validHttpsUrl = value => {
+    if (typeof value !== 'string') return false;
+    try {
+      const url = new URL(value);
+      return url.protocol === 'https:' && Boolean(url.hostname);
+    } catch {
+      return false;
+    }
+  };
 
   if (!index || index.schemaVersion !== 1 || !Array.isArray(index.articles)) {
     return ['data/articles/index.json：索引格式錯誤，預期 schemaVersion 為 1，且 articles 為陣列。'];
@@ -15,6 +25,7 @@ export function validateArticleData(index, articleFiles, readArticle) {
   );
   const referencedFiles = new Set();
   const seenIds = new Set();
+  const seenOrders = new Set();
 
   for (const [position, entry] of index.articles.entries()) {
     const where = '索引第 ' + (position + 1) + ' 項';
@@ -30,6 +41,27 @@ export function validateArticleData(index, articleFiles, readArticle) {
     const id = entry.id;
     if (seenIds.has(id)) fail(where, 'id「' + id + '」重複。');
     seenIds.add(id);
+
+    if (!Number.isInteger(entry.order) || entry.order < 1) {
+      fail(id, 'order 必須是正整數。');
+    } else if (seenOrders.has(entry.order)) {
+      fail(id, 'order「' + entry.order + '」重複。');
+    } else {
+      seenOrders.add(entry.order);
+    }
+    for (const field of ['title', 'author', 'intro']) {
+      if (!nonEmptyText(entry[field])) fail(id, '索引的 ' + field + ' 不可留空。');
+    }
+    if (!['classical', 'vernacular'].includes(entry.type)) {
+      fail(id, 'type 必須是 classical 或 vernacular。');
+    }
+    if (typeof entry.ready !== 'boolean') fail(id, 'ready 必須是布林值。');
+    if (entry.category !== undefined && entry.category !== null && typeof entry.category !== 'string') {
+      fail(id, 'category 必須是字串或留空。');
+    }
+    if (entry.sourceUrl !== undefined && entry.sourceUrl !== null && entry.sourceUrl !== '' && !validHttpsUrl(entry.sourceUrl)) {
+      fail(id, 'sourceUrl 必須是有效的 HTTPS 網址或留空。');
+    }
 
     const expectedData = './data/articles/' + id + '.json';
     if (entry.data !== expectedData) {
@@ -55,6 +87,12 @@ export function validateArticleData(index, articleFiles, readArticle) {
     if (!article || article.id !== id) {
       fail(id, '單篇檔案的 id 應為「' + id + '」，目前是「' + (article?.id ?? '') + '」。');
     }
+    if (article?.schemaVersion !== 1) fail(id, '單篇檔案 schemaVersion 必須是 1。');
+    for (const field of ['title', 'author', 'type', 'category', 'intro', 'sourceUrl', 'order']) {
+      if ((article?.[field] ?? '') !== (entry[field] ?? '')) {
+        fail(id, '單篇檔案的 ' + field + ' 與索引不一致。');
+      }
+    }
     if (!Array.isArray(article?.paragraphs)) {
       fail(id, '單篇檔案缺少 paragraphs 陣列。');
       continue;
@@ -63,6 +101,7 @@ export function validateArticleData(index, articleFiles, readArticle) {
       fail(id, 'paragraphCount 為 ' + (entry.paragraphCount ?? '未填') + '，但實際有 ' + article.paragraphs.length + ' 段。');
     }
     if (entry.ready === true) {
+      if (article.paragraphs.length === 0) fail(id, 'ready 文章至少要有一段原文。');
       const dailyFrom = entry.dailyFrom;
       const parsedDate = typeof dailyFrom === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(dailyFrom)
         ? new Date(dailyFrom + 'T00:00:00Z') : null;
@@ -73,13 +112,24 @@ export function validateArticleData(index, articleFiles, readArticle) {
 
     for (const [paragraphIndex, paragraph] of article.paragraphs.entries()) {
       const paragraphLabel = id + ' 第 ' + (paragraphIndex + 1) + ' 段';
-      if (!paragraph || typeof paragraph.text !== 'string') {
-        fail(paragraphLabel, '原文 text 必須是字串。');
+      if (!paragraph || !nonEmptyText(paragraph.text)) {
+        fail(paragraphLabel, '原文 text 不可留空。');
         continue;
       }
       if (paragraph.notes !== undefined && !Array.isArray(paragraph.notes)) {
         fail(paragraphLabel, 'notes 必須是陣列。');
         continue;
+      }
+      if (entry.ready === true) {
+        for (const field of ['summary', 'analysis']) {
+          if (!nonEmptyText(paragraph[field])) fail(paragraphLabel, field + ' 不可留空。');
+        }
+        if (entry.type === 'classical') {
+          if (!nonEmptyText(paragraph.translation)) fail(paragraphLabel, '文言文 translation 不可留空。');
+          if (paragraph.notes === undefined || (Array.isArray(paragraph.notes) && paragraph.notes.length === 0)) {
+            fail(paragraphLabel, '文言文 ready 文章每段至少要有一項注釋。');
+          }
+        }
       }
       for (const [noteIndex, note] of (paragraph.notes || []).entries()) {
         const noteLabel = paragraphLabel + ' 第 ' + (noteIndex + 1) + ' 則注釋';
