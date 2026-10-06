@@ -1022,6 +1022,20 @@
       "ready": true,
       "data": "./data/articles/article-74.json",
       "dailyFrom": "2026-10-07"
+    },
+    {
+      "id": "article-75",
+      "order": 74,
+      "title": "成為靜物",
+      "author": "阿布",
+      "category": "散文",
+      "intro": "阿布以精神科急性病房的導覽和約束帶示範為線索，反思精神醫療如何在自由、安全與權力之間作出選擇。文章既呈現約束作為保護措施的臨床理由，也追問它可能造成的創傷；結尾以空無一人的治療區，留下對醫療規範與人性尊嚴的思考。",
+      "sourceUrl": "",
+      "type": "vernacular",
+      "paragraphCount": 12,
+      "ready": true,
+      "data": "./data/articles/article-75.json",
+      "dailyFrom": "2026-10-07"
     }
   ]
 }
