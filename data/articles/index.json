@@ -1050,20 +1050,6 @@
       "ready": true,
       "data": "./data/articles/article-76.json",
       "dailyFrom": "2026-10-07"
-    },
-    {
-      "id": "article-77",
-      "order": 76,
-      "title": "進學解",
-      "author": "韓愈",
-      "category": "唐代古典散文",
-      "intro": "《進學解》借國子先生教導學生、學生反問、先生再作解答的三段對話，寫勤學修德、才華與仕途失意的落差。學生列舉先生讀書、尊儒、作文及為人的成就，卻追問他何以仍窮困不遇；先生最後以工匠、醫師和宰相各用其材作比，帶出人才須按才器任用，也隱含對取才制度的諷刺。",
-      "sourceUrl": "https://zh.wikisource.org/zh-hant/%E9%80%B2%E5%AD%B8%E8%A7%A3",
-      "type": "classical",
-      "paragraphCount": 3,
-      "ready": true,
-      "data": "./data/articles/article-77.json",
-      "dailyFrom": "2026-10-07"
     }
   ]
 }
