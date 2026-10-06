@@ -62,6 +62,14 @@ export function validateArticleData(index, articleFiles, readArticle) {
     if (!Number.isInteger(entry.paragraphCount) || entry.paragraphCount !== article.paragraphs.length) {
       fail(id, 'paragraphCount 為 ' + (entry.paragraphCount ?? '未填') + '，但實際有 ' + article.paragraphs.length + ' 段。');
     }
+    if (entry.ready === true) {
+      const dailyFrom = entry.dailyFrom;
+      const parsedDate = typeof dailyFrom === 'string' && /^\\d{4}-\\d{2}-\\d{2}$/.test(dailyFrom)
+        ? new Date(dailyFrom + 'T00:00:00Z') : null;
+      if (!parsedDate || Number.isNaN(parsedDate.getTime()) || parsedDate.toISOString().slice(0, 10) !== dailyFrom) {
+        fail(id, 'ready 文章必須提供有效的 dailyFrom（YYYY-MM-DD）。');
+      }
+    }
 
     for (const [paragraphIndex, paragraph] of article.paragraphs.entries()) {
       const paragraphLabel = id + ' 第 ' + (paragraphIndex + 1) + ' 段';
