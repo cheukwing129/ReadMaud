@@ -78,6 +78,7 @@
  }
  function scheduleLayout(){if(!frame)frame=requestAnimationFrame(layout)}
  function build(a){
+  if(!isReady(a)||!Array.isArray(a.paragraphs)){current=null;closeNote();flow.innerHTML='';applyMode();return}
   current=a;spread=0;offset=0;anchor={paragraph:0,character:0};closeNote();
   flow.getAnimations().forEach(animation=>animation.cancel());
   flow.style.transform='translateX(0)';
