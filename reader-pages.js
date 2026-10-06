@@ -117,7 +117,7 @@
   const indices=visibleParagraphs().map(p=>Number(p.dataset.paragraph));
   dialog.querySelector('.page-detail-body').innerHTML=indices.map(i=>{
    const p=current.paragraphs[i];
-   return `<section><h4>第 ${i+1} 段</h4><p class="detail-excerpt">${esc(p.text.slice(0,48))}${p.text.length>48?'…':''}</p>${p.translation&&(!focused||current.type==='classical')?`<details class="translation"><summary>＋ 譯文</summary><p>${esc(p.translation)}</p></details>`:''}${focused?'':`<details class="insight"><summary>＋ 這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight"><summary>＋ 深入分析</summary><p>${esc(p.analysis)}</p></details>`}</section>`;
+   return `<section><h4>第 ${i+1} 段</h4><p class="detail-excerpt">${esc(p.text.slice(0,48))}${p.text.length>48?'…':''}</p>${p.translation&&(!focused||current.type==='classical')?`<details class="translation"><summary>譯文</summary><p>${esc(p.translation)}</p></details>`:''}${focused?'':`<details class="insight"><summary>這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight"><summary>深入分析</summary><p>${esc(p.analysis)}</p></details>`}</section>`;
   }).join('');
   closeNote();dialog.showModal();
  }
