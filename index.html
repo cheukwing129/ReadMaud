@@ -116,6 +116,7 @@ function renderOriginal(p,paragraphIndex,articleId){
  }
  return html;
 }
+window.ReadMaudApp=Object.freeze({safeGet,safeSet,esc,isReady,activeArticle,renderOriginal});
 function showView(view,{updateHash=true}={}){
  const library=view==='library';
  $('#today-view').hidden=library;
