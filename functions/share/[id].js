@@ -15,9 +15,9 @@ function escapeHtml(value) {
 }
 
 function errorResponse(status, title, message) {
-  const html = '<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>' +
-    escapeHtml(title) + '</title></head><body><main><h1>' + escapeHtml(title) +
-    '</h1><p>' + escapeHtml(message) + '</p><a href="/">返回 ReadMaud</a></main></body></html>';
+  const html = '<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>閱讀萬花筒｜' +
+    escapeHtml(title) + ' · ReadMaud</title></head><body><main><h1>' + escapeHtml(title) +
+    '</h1><p>' + escapeHtml(message) + '</p><a href="/">返回閱讀萬花筒</a></main></body></html>';
   return new Response(html, {
     status,
     headers: {
@@ -83,23 +83,24 @@ export async function onRequest({ request, env, params }) {
       return errorResponse(503, "分享頁暫時無法使用", "網站頁面格式不正確。");
     }
 
-    const title = (article.title || "今天讀甚麼？") + "｜" +
-      (article.author || "ReadMaud") + " · ReadMaud";
-    const description = article.intro || (article.author || "ReadMaud") +
-      "：《" + (article.title || "今天讀甚麼？") + "》";
+    const articleTitle = article.title || "今天讀甚麼？";
+    const author = article.author || "作者未詳";
+    const pageTitle = "閱讀萬花筒｜" + articleTitle + " · ReadMaud";
+    const shareTitle = articleTitle + "｜" + author + " · 閱讀萬花筒";
+    const description = article.intro || author + "：《" + articleTitle + "》";
     const requestUrl = new URL(request.url);
     const shareUrl = new URL("/share/" + encodeURIComponent(article.id), requestUrl.origin).href;
     const shareImageUrl = new URL("/assets/share-card.jpg", requestUrl.origin).href;
-    const imageAlt = "ReadMaud 書頁插畫分享封面";
+    const imageAlt = "閱讀萬花筒書頁插畫分享封面";
 
     html = html.replace(/<title\b[^>]*>[\s\S]*?<\/title>/i, () =>
-      '<title>' + escapeHtml(title) + '</title>');
+      '<title>' + escapeHtml(pageTitle) + '</title>');
     const metadata = [
       ["name", "description", description],
       ["property", "og:type", "article"],
       ["property", "og:locale", "zh_HK"],
-      ["property", "og:site_name", "ReadMaud"],
-      ["property", "og:title", title],
+      ["property", "og:site_name", "閱讀萬花筒｜ReadMaud"],
+      ["property", "og:title", shareTitle],
       ["property", "og:description", description],
       ["property", "og:url", shareUrl],
       ["property", "og:image", shareImageUrl],
@@ -108,9 +109,9 @@ export async function onRequest({ request, env, params }) {
       ["property", "og:image:width", "1200"],
       ["property", "og:image:height", "630"],
       ["property", "og:image:alt", imageAlt],
-      ["property", "article:author", article.author || "ReadMaud"],
+      ["property", "article:author", author],
       ["name", "twitter:card", "summary_large_image"],
-      ["name", "twitter:title", title],
+      ["name", "twitter:title", shareTitle],
       ["name", "twitter:description", description],
       ["name", "twitter:image", shareImageUrl],
       ["name", "twitter:image:alt", imageAlt]
