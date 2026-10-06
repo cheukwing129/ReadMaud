@@ -154,3 +154,9 @@ body.header-hidden .reader-toolbar{top:0}
  .reader-mode-current{font-size:9px}
  .reader-toolbar>.reader-settings-toggle{font-size:10px}
 }
+
+.reader-settings-panel button,.reader-settings-panel select{min-height:44px}
+@media(max-width:390px){
+ .reader-toolbar>.focus-toggle{gap:6px;padding-inline:6px!important;font-size:11px}
+ .focus-mode-status{min-width:34px;padding-inline:4px}
+}
