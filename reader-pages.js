@@ -97,7 +97,7 @@
   flow.dataset.type=a.type;
   pane.querySelector('.page-heading h3').textContent=a.title;
   pane.querySelector('.page-heading span').textContent=a.author;
-  flow.innerHTML=isReady(a)?a.paragraphs.map((p,i)=>`<p class="page-paragraph" data-paragraph="${i}"><span class="page-tag">${String(i+1).padStart(2,'0')}</span>${renderOriginal(p,i,a.id).replaceAll('<button class="annotated-word"','<span class="annotated-word" role="button" tabindex="0"').replaceAll(' type="button"','').replaceAll('</button>','</span>')}</p>`).join(''):'';
+  flow.innerHTML=isReady(a)?a.paragraphs.map((p,i)=>`<p class="page-paragraph" data-paragraph="${i}"><span class="page-tag">${String(i+1).padStart(2,'0')}</span>${renderOriginal(p,i,a.id,'paged').replaceAll('<button class="annotated-word"','<span class="annotated-word" role="button" tabindex="0"').replaceAll(' type="button"','').replaceAll('</button>','</span>')}</p>`).join(''):'';
   updateDetailMode();
   applyMode();
  }
