@@ -966,6 +966,20 @@
       "ready": true,
       "data": "./data/articles/article-70.json",
       "dailyFrom": "2026-10-07"
+    },
+    {
+      "id": "article-71",
+      "order": 70,
+      "title": "物之索隱",
+      "author": "簡媜",
+      "category": "散文",
+      "intro": "簡媜以整理亡者遺物的「刺客」視角，描寫物件如何承載親情記憶、個人生命與時代經歷。文章從喪後整理逐步讀出老人家的家庭責任、遷徙經驗和身份傷痛，最後以一疊舊鈔揭開整理者與亡者之間的情感連結。",
+      "sourceUrl": "",
+      "type": "vernacular",
+      "paragraphCount": 26,
+      "ready": true,
+      "data": "./data/articles/article-71.json",
+      "dailyFrom": "2026-10-07"
     }
   ]
 }
