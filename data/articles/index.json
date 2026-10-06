@@ -980,6 +980,20 @@
       "ready": true,
       "data": "./data/articles/article-71.json",
       "dailyFrom": "2026-10-07"
+    },
+    {
+      "id": "article-72",
+      "order": 71,
+      "title": "彩店",
+      "author": "胡燕青",
+      "category": "散文",
+      "intro": "胡燕青以香港舊街上一間紮作店為中心，寫紙紮祭品、花燈與日常街景如何連起生死、記憶和城市變遷。文章由童年觀看逐步寫到紙紮大宅帶來的驚惶，最後回到舊樓的人間煙火，呈現對死亡的敬畏與對現世生活的眷戀。",
+      "sourceUrl": "",
+      "type": "vernacular",
+      "paragraphCount": 11,
+      "ready": true,
+      "data": "./data/articles/article-72.json",
+      "dailyFrom": "2026-10-07"
     }
   ]
 }
