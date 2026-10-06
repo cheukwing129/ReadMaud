@@ -113,8 +113,8 @@ body.header-hidden .reader-toolbar{top:0}
 /* Reader controls: editorial grouping, quiet state cues, and comfortable touch targets. */
 .reader-toolbar{
   gap:0;
-  min-height:48px;
-  padding:4px 0;
+  min-height:44px;
+  padding:3px 0;
   border-top:1px solid var(--line);
 }
 .reader-toolbar>strong{
@@ -132,12 +132,30 @@ body.header-hidden .reader-toolbar{top:0}
   display:inline-flex;
   align-items:center;
   gap:2px;
-  padding:2px;
+  height:32px;
+  box-sizing:border-box;
+  padding:1px;
   border:1px solid var(--line);
   border-radius:999px;
   background:color-mix(in srgb,var(--line) 28%,var(--page));
   box-shadow:inset 0 1px 3px #0002;
 }
+.reader-mode-options::before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  top:1px;
+  bottom:1px;
+  left:1px;
+  width:calc((100% - 4px)/2);
+  border-radius:999px;
+  background:var(--page);
+  box-shadow:0 1px 3px #0003,inset 0 0 0 1px var(--accent);
+  pointer-events:none;
+  transition:transform .24s cubic-bezier(.2,.75,.25,1);
+}
+.reader-mode-options:has(input[value="pages"]:checked)::before{transform:translateX(calc(100% + 2px))}
+
 .reader-mode-options::before{
   content:"";
   position:absolute;
@@ -163,9 +181,9 @@ body.header-hidden .reader-toolbar{top:0}
   justify-content:center;
   gap:3px;
   min-width:64px;
-  min-height:32px;
+  min-height:28px;
   box-sizing:border-box;
-  padding:2px 6px;
+  padding:1px 6px;
   border:0!important;
   border-radius:999px;
   background:transparent;
@@ -404,7 +422,7 @@ body.focus-mode .reader-settings-panel button,body.focus-mode .reader-settings-p
     gap:2px;
     width:100%;
     box-sizing:border-box;
-    min-height:36px;
+    min-height:34px;
     padding:2px 4px;
   }
   .reader-toolbar>strong{display:none}
@@ -426,15 +444,16 @@ body.focus-mode .reader-settings-panel button,body.focus-mode .reader-settings-p
     width:100%;
     min-width:0;
     box-sizing:border-box;
+    height:28px;
     gap:1px;
-    padding:2px;
+    padding:1px;
   }
-  .reader-mode-options::before{width:calc((100% - 5px)/2)}
+  .reader-mode-options::before{top:1px;bottom:1px;left:1px;width:calc((100% - 3px)/2)}
   .reader-mode-options:has(input[value="pages"]:checked)::before{transform:translateX(calc(100% + 1px))}
   .reader-mode-option{
     flex:1 1 0;
     min-width:0;
-    min-height:28px;
+    min-height:24px;
     box-sizing:border-box;
     gap:0;
     padding:1px 2px;
@@ -443,7 +462,7 @@ body.focus-mode .reader-settings-panel button,body.focus-mode .reader-settings-p
   .reader-toolbar>.focus-toggle{
     justify-self:center;
     min-width:0;
-    min-height:30px;
+    min-height:28px;
     margin:0;
     padding:0 3px!important;
     border:0!important;
@@ -460,6 +479,7 @@ body.focus-mode .reader-settings-panel button,body.focus-mode .reader-settings-p
     flex:0 0 28px;
     width:28px;
     min-width:28px;
+    height:28px;
     min-height:28px;
     box-sizing:border-box;
     margin:0;
@@ -479,6 +499,7 @@ body.focus-mode .reader-settings-panel button,body.focus-mode .reader-settings-p
   .reader-toolbar>.reader-settings-toggle::after{font-size:10px}
   .reader-toolbar>.reader-settings-toggle[aria-expanded="true"]{
     width:28px;
+    height:28px;
     min-height:28px;
     padding:0!important;
     border:1px solid var(--accent)!important;
@@ -494,7 +515,7 @@ body.focus-mode .reader-settings-panel button,body.focus-mode .reader-settings-p
     padding:2px 4px;
   }
   body.focus-mode .reader-toolbar>.focus-toggle{
-    min-height:30px;
+    min-height:28px;
     padding:0 3px!important;
     font-size:9px;
   }
@@ -502,6 +523,7 @@ body.focus-mode .reader-settings-panel button,body.focus-mode .reader-settings-p
     flex:0 0 28px;
     width:28px;
     min-width:28px;
+    height:28px;
     min-height:28px;
     padding:0!important;
     font-size:0;
