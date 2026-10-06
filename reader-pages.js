@@ -24,7 +24,7 @@
  function characterX(paragraph,character){
   const nodes=textNodes(paragraph);let remaining=character;
   for(const node of nodes){
-   if(remaining<node.length){const range=document.createRange();range.setStart(node,remaining);range.setEnd(node,remaining+1);const rect=range.getBoundingClientRect();return rect.left-viewport.getBoundingClientRect().left+offset}
+   if(remaining<node.length){const range=document.createRange();range.setStart(node,remaining);range.setEnd(node,remaining+1);const rect=range.getBoundingClientRect();return rect.left-viewport.getBoundingClientRect().left+offset+viewport.scrollLeft}
    remaining-=node.length;
   }
   return 0;
@@ -44,7 +44,7 @@
   flow.getAnimations().forEach(animation=>animation.cancel());
   spread=Math.max(0,Math.min(spread,Math.ceil(total/columns)-1));
   if(!animate)flow.classList.add('reflowing');
-  offset=spread*columns*step;flow.style.transform=`translateX(${-offset}px)`;
+  viewport.scrollLeft=0;viewport.scrollTop=0;offset=spread*columns*step;flow.style.transform=`translateX(${-offset}px)`;
   previous.disabled=spread===0;next.disabled=(spread+1)*columns>=total;
   const start=spread*columns+1,end=Math.min(total,start+columns-1);
   counter.innerHTML=`第 <strong>${start===end?start:start+'–'+end}</strong> / ${total} 頁`;
@@ -63,7 +63,7 @@
   columns=window.innerWidth>window.innerHeight?2:1;
   const gap=window.innerWidth<700?24:40;
   flow.classList.add('reflowing');flow.style.setProperty('--page-columns',columns);flow.style.setProperty('--page-gap',gap+'px');
-  offset=0;flow.style.transform='translateX(0)';
+  viewport.scrollLeft=0;viewport.scrollTop=0;offset=0;flow.style.transform='translateX(0)';
   const toolbar=reader.querySelector('.reader-toolbar');
   const top=parseFloat(getComputedStyle(toolbar).top)||0;
   const mobile=document.querySelector('.mobile-nav');
