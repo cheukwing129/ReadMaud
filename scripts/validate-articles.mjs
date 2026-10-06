@@ -55,6 +55,9 @@ export function validateArticleData(index, articleFiles, readArticle) {
     if (!['classical', 'vernacular'].includes(entry.type)) {
       fail(id, 'type 必須是 classical 或 vernacular。');
     }
+    if (!Number.isInteger(entry.difficultyLevel) || entry.difficultyLevel < 1 || entry.difficultyLevel > 5) {
+      fail(id, 'difficultyLevel 必須是 1 至 5 的整數。');
+    }
     if (typeof entry.ready !== 'boolean') fail(id, 'ready 必須是布林值。');
     if (entry.category !== undefined && entry.category !== null && typeof entry.category !== 'string') {
       fail(id, 'category 必須是字串或留空。');

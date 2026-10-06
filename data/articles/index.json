@@ -13,7 +13,8 @@
       "paragraphCount": 8,
       "ready": true,
       "data": "./data/articles/article-01.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 2
     },
     {
       "id": "article-02",
@@ -27,7 +28,8 @@
       "paragraphCount": 25,
       "ready": true,
       "data": "./data/articles/article-02.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 1
     },
     {
       "id": "article-03",
@@ -41,7 +43,8 @@
       "paragraphCount": 4,
       "ready": true,
       "data": "./data/articles/article-03.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-04",
@@ -55,7 +58,8 @@
       "paragraphCount": 17,
       "ready": true,
       "data": "./data/articles/article-04.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-05",
@@ -69,7 +73,8 @@
       "paragraphCount": 7,
       "ready": true,
       "data": "./data/articles/article-05.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-06",
@@ -83,7 +88,8 @@
       "paragraphCount": 19,
       "ready": true,
       "data": "./data/articles/article-06.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-07",
@@ -97,7 +103,8 @@
       "paragraphCount": 18,
       "ready": true,
       "data": "./data/articles/article-07.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-09",
@@ -111,7 +118,8 @@
       "paragraphCount": 24,
       "ready": true,
       "data": "./data/articles/article-09.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 3
     },
     {
       "id": "article-10",
@@ -125,7 +133,8 @@
       "paragraphCount": 16,
       "ready": true,
       "data": "./data/articles/article-10.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-11",
@@ -139,7 +148,8 @@
       "paragraphCount": 37,
       "ready": true,
       "data": "./data/articles/article-11.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 3
     },
     {
       "id": "article-12",
@@ -153,7 +163,8 @@
       "paragraphCount": 17,
       "ready": true,
       "data": "./data/articles/article-12.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-13",
@@ -167,7 +178,8 @@
       "paragraphCount": 9,
       "ready": true,
       "data": "./data/articles/article-13.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 2
     },
     {
       "id": "article-14",
@@ -181,7 +193,8 @@
       "paragraphCount": 5,
       "ready": true,
       "data": "./data/articles/article-14.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-15",
@@ -195,7 +208,8 @@
       "paragraphCount": 26,
       "ready": true,
       "data": "./data/articles/article-15.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-16",
@@ -209,7 +223,8 @@
       "paragraphCount": 13,
       "ready": true,
       "data": "./data/articles/article-16.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-17",
@@ -223,7 +238,8 @@
       "paragraphCount": 23,
       "ready": true,
       "data": "./data/articles/article-17.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-18",
@@ -237,7 +253,8 @@
       "paragraphCount": 4,
       "ready": true,
       "data": "./data/articles/article-18.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 3
     },
     {
       "id": "article-19",
@@ -251,7 +268,8 @@
       "paragraphCount": 21,
       "ready": true,
       "data": "./data/articles/article-19.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-20",
@@ -265,7 +283,8 @@
       "paragraphCount": 19,
       "ready": true,
       "data": "./data/articles/article-20.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-21",
@@ -279,7 +298,8 @@
       "paragraphCount": 7,
       "ready": true,
       "data": "./data/articles/article-21.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 3
     },
     {
       "id": "article-22",
@@ -293,7 +313,8 @@
       "paragraphCount": 8,
       "ready": true,
       "data": "./data/articles/article-22.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-23",
@@ -307,7 +328,8 @@
       "paragraphCount": 20,
       "ready": true,
       "data": "./data/articles/article-23.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-24",
@@ -321,7 +343,8 @@
       "paragraphCount": 14,
       "ready": true,
       "data": "./data/articles/article-24.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-25",
@@ -335,7 +358,8 @@
       "paragraphCount": 14,
       "ready": true,
       "data": "./data/articles/article-25.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-26",
@@ -349,7 +373,8 @@
       "paragraphCount": 11,
       "ready": true,
       "data": "./data/articles/article-26.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-27",
@@ -363,7 +388,8 @@
       "paragraphCount": 11,
       "ready": true,
       "data": "./data/articles/article-27.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-28",
@@ -377,7 +403,8 @@
       "paragraphCount": 14,
       "ready": true,
       "data": "./data/articles/article-28.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-29",
@@ -391,7 +418,8 @@
       "paragraphCount": 34,
       "ready": true,
       "data": "./data/articles/article-29.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-30",
@@ -405,7 +433,8 @@
       "paragraphCount": 10,
       "ready": true,
       "data": "./data/articles/article-30.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 2
     },
     {
       "id": "article-31",
@@ -419,7 +448,8 @@
       "paragraphCount": 44,
       "ready": true,
       "data": "./data/articles/article-31.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-32",
@@ -433,7 +463,8 @@
       "paragraphCount": 9,
       "ready": true,
       "data": "./data/articles/article-32.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-33",
@@ -447,7 +478,8 @@
       "paragraphCount": 30,
       "ready": true,
       "data": "./data/articles/article-33.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-34",
@@ -461,7 +493,8 @@
       "paragraphCount": 12,
       "ready": true,
       "data": "./data/articles/article-34.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-35",
@@ -475,7 +508,8 @@
       "paragraphCount": 9,
       "ready": true,
       "data": "./data/articles/article-35.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-36",
@@ -489,7 +523,8 @@
       "paragraphCount": 15,
       "ready": true,
       "data": "./data/articles/article-36.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-37",
@@ -503,7 +538,8 @@
       "paragraphCount": 12,
       "ready": true,
       "data": "./data/articles/article-37.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-38",
@@ -517,7 +553,8 @@
       "paragraphCount": 12,
       "ready": true,
       "data": "./data/articles/article-38.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-39",
@@ -531,7 +568,8 @@
       "paragraphCount": 9,
       "ready": true,
       "data": "./data/articles/article-39.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 3
     },
     {
       "id": "article-40",
@@ -545,7 +583,8 @@
       "paragraphCount": 12,
       "ready": true,
       "data": "./data/articles/article-40.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-41",
@@ -559,7 +598,8 @@
       "paragraphCount": 15,
       "ready": true,
       "data": "./data/articles/article-41.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-42",
@@ -573,7 +613,8 @@
       "paragraphCount": 8,
       "ready": true,
       "data": "./data/articles/article-42.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 3
     },
     {
       "id": "article-43",
@@ -587,7 +628,8 @@
       "paragraphCount": 14,
       "ready": true,
       "data": "./data/articles/article-43.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-44",
@@ -601,7 +643,8 @@
       "paragraphCount": 19,
       "ready": true,
       "data": "./data/articles/article-44.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-45",
@@ -615,7 +658,8 @@
       "paragraphCount": 12,
       "ready": true,
       "data": "./data/articles/article-45.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-46",
@@ -629,7 +673,8 @@
       "paragraphCount": 9,
       "ready": true,
       "data": "./data/articles/article-46.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 3
     },
     {
       "id": "article-47",
@@ -643,7 +688,8 @@
       "paragraphCount": 13,
       "ready": true,
       "data": "./data/articles/article-47.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-48",
@@ -657,7 +703,8 @@
       "paragraphCount": 6,
       "ready": true,
       "data": "./data/articles/article-48.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-49",
@@ -671,7 +718,8 @@
       "paragraphCount": 13,
       "ready": true,
       "data": "./data/articles/article-49.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-50",
@@ -685,7 +733,8 @@
       "paragraphCount": 4,
       "ready": true,
       "data": "./data/articles/article-50.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-51",
@@ -699,7 +748,8 @@
       "paragraphCount": 6,
       "ready": true,
       "data": "./data/articles/article-51.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-52",
@@ -713,7 +763,8 @@
       "paragraphCount": 5,
       "ready": true,
       "data": "./data/articles/article-52.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-53",
@@ -727,7 +778,8 @@
       "paragraphCount": 6,
       "ready": true,
       "data": "./data/articles/article-53.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 3
     },
     {
       "id": "article-54",
@@ -741,7 +793,8 @@
       "paragraphCount": 6,
       "ready": true,
       "data": "./data/articles/article-54.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 3
     },
     {
       "id": "article-55",
@@ -755,7 +808,8 @@
       "paragraphCount": 6,
       "ready": true,
       "data": "./data/articles/article-55.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-56",
@@ -769,7 +823,8 @@
       "paragraphCount": 6,
       "ready": true,
       "data": "./data/articles/article-56.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-57",
@@ -783,7 +838,8 @@
       "paragraphCount": 3,
       "ready": true,
       "data": "./data/articles/article-57.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 2
     },
     {
       "id": "article-58",
@@ -797,7 +853,8 @@
       "paragraphCount": 6,
       "ready": true,
       "data": "./data/articles/article-58.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 3
     },
     {
       "id": "article-59",
@@ -811,7 +868,8 @@
       "paragraphCount": 6,
       "ready": true,
       "data": "./data/articles/article-59.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-60",
@@ -825,7 +883,8 @@
       "paragraphCount": 10,
       "ready": true,
       "data": "./data/articles/article-60.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-61",
@@ -839,7 +898,8 @@
       "paragraphCount": 12,
       "ready": true,
       "data": "./data/articles/article-61.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-62",
@@ -853,7 +913,8 @@
       "paragraphCount": 9,
       "ready": true,
       "data": "./data/articles/article-62.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-63",
@@ -867,7 +928,8 @@
       "paragraphCount": 4,
       "ready": true,
       "data": "./data/articles/article-63.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-64",
@@ -881,7 +943,8 @@
       "paragraphCount": 3,
       "ready": true,
       "data": "./data/articles/article-64.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 3
     },
     {
       "id": "article-65",
@@ -895,7 +958,8 @@
       "paragraphCount": 6,
       "ready": true,
       "data": "./data/articles/article-65.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 5
     },
     {
       "id": "article-66",
@@ -909,7 +973,8 @@
       "paragraphCount": 9,
       "ready": true,
       "data": "./data/articles/article-66.json",
-      "dailyFrom": "2026-10-06"
+      "dailyFrom": "2026-10-06",
+      "difficultyLevel": 4
     },
     {
       "id": "article-67",
@@ -923,7 +988,8 @@
       "paragraphCount": 3,
       "ready": true,
       "data": "./data/articles/article-67.json",
-      "dailyFrom": "2026-10-07"
+      "dailyFrom": "2026-10-07",
+      "difficultyLevel": 5
     },
     {
       "id": "article-68",
@@ -937,7 +1003,8 @@
       "paragraphCount": 5,
       "ready": true,
       "data": "./data/articles/article-68.json",
-      "dailyFrom": "2026-10-07"
+      "dailyFrom": "2026-10-07",
+      "difficultyLevel": 3
     },
     {
       "id": "article-69",
@@ -951,7 +1018,8 @@
       "paragraphCount": 6,
       "ready": true,
       "data": "./data/articles/article-69.json",
-      "dailyFrom": "2026-10-07"
+      "dailyFrom": "2026-10-07",
+      "difficultyLevel": 3
     },
     {
       "id": "article-70",
@@ -965,7 +1033,8 @@
       "paragraphCount": 44,
       "ready": true,
       "data": "./data/articles/article-70.json",
-      "dailyFrom": "2026-10-07"
+      "dailyFrom": "2026-10-07",
+      "difficultyLevel": 5
     },
     {
       "id": "article-71",
@@ -979,7 +1048,8 @@
       "paragraphCount": 26,
       "ready": true,
       "data": "./data/articles/article-71.json",
-      "dailyFrom": "2026-10-07"
+      "dailyFrom": "2026-10-07",
+      "difficultyLevel": 5
     },
     {
       "id": "article-72",
@@ -993,7 +1063,8 @@
       "paragraphCount": 11,
       "ready": true,
       "data": "./data/articles/article-72.json",
-      "dailyFrom": "2026-10-07"
+      "dailyFrom": "2026-10-07",
+      "difficultyLevel": 4
     },
     {
       "id": "article-73",
@@ -1007,7 +1078,8 @@
       "paragraphCount": 7,
       "ready": true,
       "data": "./data/articles/article-73.json",
-      "dailyFrom": "2026-10-07"
+      "dailyFrom": "2026-10-07",
+      "difficultyLevel": 3
     },
     {
       "id": "article-74",
@@ -1021,7 +1093,8 @@
       "paragraphCount": 47,
       "ready": true,
       "data": "./data/articles/article-74.json",
-      "dailyFrom": "2026-10-07"
+      "dailyFrom": "2026-10-07",
+      "difficultyLevel": 4
     },
     {
       "id": "article-75",
@@ -1035,7 +1108,8 @@
       "paragraphCount": 12,
       "ready": true,
       "data": "./data/articles/article-75.json",
-      "dailyFrom": "2026-10-07"
+      "dailyFrom": "2026-10-07",
+      "difficultyLevel": 4
     },
     {
       "id": "article-76",
@@ -1049,7 +1123,8 @@
       "paragraphCount": 10,
       "ready": true,
       "data": "./data/articles/article-76.json",
-      "dailyFrom": "2026-10-07"
+      "dailyFrom": "2026-10-07",
+      "difficultyLevel": 3
     }
   ]
 }
