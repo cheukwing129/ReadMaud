@@ -89,6 +89,8 @@ export async function onRequest({ request, env, params }) {
       "：《" + (article.title || "今天讀甚麼？") + "》";
     const requestUrl = new URL(request.url);
     const shareUrl = new URL("/share/" + encodeURIComponent(article.id), requestUrl.origin).href;
+    const shareImageUrl = new URL("/assets/share-card.jpg", requestUrl.origin).href;
+    const imageAlt = "ReadMaud 書頁插畫分享封面";
 
     html = html.replace(/<title\b[^>]*>[\s\S]*?<\/title>/i, () =>
       '<title>' + escapeHtml(title) + '</title>');
@@ -100,10 +102,18 @@ export async function onRequest({ request, env, params }) {
       ["property", "og:title", title],
       ["property", "og:description", description],
       ["property", "og:url", shareUrl],
+      ["property", "og:image", shareImageUrl],
+      ["property", "og:image:secure_url", shareImageUrl],
+      ["property", "og:image:type", "image/jpeg"],
+      ["property", "og:image:width", "1200"],
+      ["property", "og:image:height", "630"],
+      ["property", "og:image:alt", imageAlt],
       ["property", "article:author", article.author || "ReadMaud"],
-      ["name", "twitter:card", "summary"],
+      ["name", "twitter:card", "summary_large_image"],
       ["name", "twitter:title", title],
-      ["name", "twitter:description", description]
+      ["name", "twitter:description", description],
+      ["name", "twitter:image", shareImageUrl],
+      ["name", "twitter:image:alt", imageAlt]
     ];
     for (const [attribute, key, value] of metadata) {
       html = upsertMeta(html, attribute, key, value);

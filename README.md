@@ -35,7 +35,7 @@
 
 注釋的 `term` 必須出現在相應段落原文中，並按語境解釋詞義、詞性／活用、句式或古今異義；必要時補充上下文。教育局注釋優先。內容欄位與閱讀功能沿用原有格式，無須修改 `index.html`。
 
-文章專屬分享頁使用 Cloudflare Pages Functions：`/share/<id>` 會直接回傳該篇文章的 Open Graph 與 Twitter 預覽資料，並在瀏覽器中開啟對應文章。部署時須保留 repo 根目錄的 `functions/` 和 `_routes.json`；目前 Function 只套用於 `/share/*`，一般頁面與靜態資產仍由 Pages 直接提供。
+文章專屬分享頁使用 Cloudflare Pages Functions：`/share/<id>` 會直接回傳該篇文章的 Open Graph 與 Twitter 預覽資料，並在瀏覽器中開啟對應文章。部署時須保留 repo 根目錄的 `functions/` 和 `_routes.json`；目前 Function 只套用於 `/share/*`，一般頁面與靜態資產仍由 Pages 直接提供。預覽圖片為全站共用的 1200 × 630 書頁插畫；標題、作者與簡介則按文章更新。封面檔案位於 `assets/share-card.jpg`。
 
 ## Cloudflare Pages 設定
 

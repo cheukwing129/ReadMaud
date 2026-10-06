@@ -4,6 +4,27 @@ import { readFile } from "node:fs/promises";
 const articlesIndex = JSON.parse(await readFile(new URL("../data/articles/index.json", import.meta.url), "utf8"));
 const appHtml = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const handlerSource = await readFile(new URL("../functions/share/[id].js", import.meta.url), "utf8");
+const shareCard = await readFile(new URL("../assets/share-card.jpg", import.meta.url));
+assert.equal(shareCard.subarray(0, 3).toString("hex"), "ffd8ff", "the share card should be a JPEG image");
+assert.equal(shareCard.subarray(-2).toString("hex"), "ffd9", "the share card should be complete");
+assert.ok(shareCard.length < 512 * 1024, "the share card should stay below 512 KB");
+function readJpegDimensions(buffer) {
+  const frameMarkers = new Set([0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf]);
+  let offset = 2;
+  while (offset < buffer.length) {
+    while (buffer[offset] === 0xff) offset += 1;
+    const marker = buffer[offset++];
+    if (marker === 0xd9 || marker === 0xda) break;
+    if (marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) continue;
+    const length = buffer.readUInt16BE(offset);
+    if (frameMarkers.has(marker)) {
+      return { height: buffer.readUInt16BE(offset + 3), width: buffer.readUInt16BE(offset + 5) };
+    }
+    offset += length;
+  }
+  throw new Error("Could not read share card dimensions");
+}
+assert.deepEqual(readJpegDimensions(shareCard), { width: 1200, height: 630 }, "the share card should be 1200 by 630 pixels");
 const { onRequest } = await import("data:text/javascript;base64," + Buffer.from(handlerSource).toString("base64"));
 
 function escapeHtml(value) {
@@ -56,6 +77,14 @@ for (const article of readyArticles) {
   assert.ok(html.includes('<meta property="og:title" content="' + escapeHtml(title) + '">'), article.id + " should have an article title");
   assert.ok(html.includes('<meta property="og:description" content="' + escapeHtml(description) + '">'), article.id + " should have an article description");
   assert.ok(html.includes('<meta property="og:type" content="article">'), article.id + " should have article OG type");
+  const imageUrl = "https://readmaud.test/assets/share-card.jpg";
+  assert.ok(html.includes('<meta property="og:image" content="' + imageUrl + '">'), article.id + " should have a share image");
+  assert.ok(html.includes('<meta property="og:image:type" content="image/jpeg">'), article.id + " should declare the image type");
+  assert.ok(html.includes('<meta property="og:image:width" content="1200">'), article.id + " should declare image width");
+  assert.ok(html.includes('<meta property="og:image:height" content="630">'), article.id + " should declare image height");
+  assert.ok(html.includes('<meta property="og:image:alt" content="ReadMaud 書頁插畫分享封面">'), article.id + " should describe the share image");
+  assert.ok(html.includes('<meta name="twitter:card" content="summary_large_image">'), article.id + " should use a large Twitter image card");
+  assert.ok(html.includes('<meta name="twitter:image" content="' + imageUrl + '">'), article.id + " should include the Twitter image");
   assert.ok(html.includes('<meta name="twitter:title" content="' + escapeHtml(title) + '">'), article.id + " should have a Twitter title");
   assert.ok(html.includes('<link rel="canonical" href="https://readmaud.test/share/' + encodeURIComponent(article.id) + '">'), article.id + " canonical URL should omit tracking parameters");
   assert.equal((html.match(/property="og:title"/g) || []).length, 1, article.id + " should not duplicate OG titles");
