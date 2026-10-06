@@ -12,7 +12,8 @@
       "type": "classical",
       "paragraphCount": 8,
       "ready": true,
-      "data": "./data/articles/article-01.json"
+      "data": "./data/articles/article-01.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-02",
@@ -25,7 +26,8 @@
       "type": "vernacular",
       "paragraphCount": 25,
       "ready": true,
-      "data": "./data/articles/article-02.json"
+      "data": "./data/articles/article-02.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-03",
@@ -38,7 +40,8 @@
       "type": "classical",
       "paragraphCount": 4,
       "ready": true,
-      "data": "./data/articles/article-03.json"
+      "data": "./data/articles/article-03.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-04",
@@ -51,7 +54,8 @@
       "type": "vernacular",
       "paragraphCount": 17,
       "ready": true,
-      "data": "./data/articles/article-04.json"
+      "data": "./data/articles/article-04.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-05",
@@ -64,7 +68,8 @@
       "type": "classical",
       "paragraphCount": 7,
       "ready": true,
-      "data": "./data/articles/article-05.json"
+      "data": "./data/articles/article-05.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-06",
@@ -77,7 +82,8 @@
       "type": "vernacular",
       "paragraphCount": 19,
       "ready": true,
-      "data": "./data/articles/article-06.json"
+      "data": "./data/articles/article-06.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-07",
@@ -90,7 +96,8 @@
       "type": "classical",
       "paragraphCount": 18,
       "ready": true,
-      "data": "./data/articles/article-07.json"
+      "data": "./data/articles/article-07.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-09",
@@ -103,7 +110,8 @@
       "type": "vernacular",
       "paragraphCount": 24,
       "ready": true,
-      "data": "./data/articles/article-09.json"
+      "data": "./data/articles/article-09.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-10",
@@ -116,7 +124,8 @@
       "type": "classical",
       "paragraphCount": 16,
       "ready": true,
-      "data": "./data/articles/article-10.json"
+      "data": "./data/articles/article-10.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-11",
@@ -129,7 +138,8 @@
       "type": "vernacular",
       "paragraphCount": 37,
       "ready": true,
-      "data": "./data/articles/article-11.json"
+      "data": "./data/articles/article-11.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-12",
@@ -142,7 +152,8 @@
       "type": "classical",
       "paragraphCount": 17,
       "ready": true,
-      "data": "./data/articles/article-12.json"
+      "data": "./data/articles/article-12.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-13",
@@ -155,7 +166,8 @@
       "type": "vernacular",
       "paragraphCount": 9,
       "ready": true,
-      "data": "./data/articles/article-13.json"
+      "data": "./data/articles/article-13.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-14",
@@ -168,7 +180,8 @@
       "type": "classical",
       "paragraphCount": 5,
       "ready": true,
-      "data": "./data/articles/article-14.json"
+      "data": "./data/articles/article-14.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-15",
@@ -181,7 +194,8 @@
       "type": "vernacular",
       "paragraphCount": 26,
       "ready": true,
-      "data": "./data/articles/article-15.json"
+      "data": "./data/articles/article-15.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-16",
@@ -194,7 +208,8 @@
       "type": "classical",
       "paragraphCount": 13,
       "ready": true,
-      "data": "./data/articles/article-16.json"
+      "data": "./data/articles/article-16.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-17",
@@ -207,7 +222,8 @@
       "type": "vernacular",
       "paragraphCount": 23,
       "ready": true,
-      "data": "./data/articles/article-17.json"
+      "data": "./data/articles/article-17.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-18",
@@ -220,7 +236,8 @@
       "type": "classical",
       "paragraphCount": 4,
       "ready": true,
-      "data": "./data/articles/article-18.json"
+      "data": "./data/articles/article-18.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-19",
@@ -233,7 +250,8 @@
       "type": "vernacular",
       "paragraphCount": 21,
       "ready": true,
-      "data": "./data/articles/article-19.json"
+      "data": "./data/articles/article-19.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-20",
@@ -246,7 +264,8 @@
       "type": "classical",
       "paragraphCount": 19,
       "ready": true,
-      "data": "./data/articles/article-20.json"
+      "data": "./data/articles/article-20.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-21",
@@ -259,7 +278,8 @@
       "type": "vernacular",
       "paragraphCount": 7,
       "ready": true,
-      "data": "./data/articles/article-21.json"
+      "data": "./data/articles/article-21.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-22",
@@ -272,7 +292,8 @@
       "type": "classical",
       "paragraphCount": 8,
       "ready": true,
-      "data": "./data/articles/article-22.json"
+      "data": "./data/articles/article-22.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-23",
@@ -285,7 +306,8 @@
       "type": "vernacular",
       "paragraphCount": 20,
       "ready": true,
-      "data": "./data/articles/article-23.json"
+      "data": "./data/articles/article-23.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-24",
@@ -298,7 +320,8 @@
       "type": "classical",
       "paragraphCount": 14,
       "ready": true,
-      "data": "./data/articles/article-24.json"
+      "data": "./data/articles/article-24.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-25",
@@ -311,7 +334,8 @@
       "type": "vernacular",
       "paragraphCount": 14,
       "ready": true,
-      "data": "./data/articles/article-25.json"
+      "data": "./data/articles/article-25.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-26",
@@ -324,7 +348,8 @@
       "type": "classical",
       "paragraphCount": 11,
       "ready": true,
-      "data": "./data/articles/article-26.json"
+      "data": "./data/articles/article-26.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-27",
@@ -337,7 +362,8 @@
       "type": "vernacular",
       "paragraphCount": 11,
       "ready": true,
-      "data": "./data/articles/article-27.json"
+      "data": "./data/articles/article-27.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-28",
@@ -350,7 +376,8 @@
       "type": "classical",
       "paragraphCount": 14,
       "ready": true,
-      "data": "./data/articles/article-28.json"
+      "data": "./data/articles/article-28.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-29",
@@ -363,7 +390,8 @@
       "type": "vernacular",
       "paragraphCount": 34,
       "ready": true,
-      "data": "./data/articles/article-29.json"
+      "data": "./data/articles/article-29.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-30",
@@ -376,7 +404,8 @@
       "type": "classical",
       "paragraphCount": 10,
       "ready": true,
-      "data": "./data/articles/article-30.json"
+      "data": "./data/articles/article-30.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-31",
@@ -389,7 +418,8 @@
       "type": "vernacular",
       "paragraphCount": 44,
       "ready": true,
-      "data": "./data/articles/article-31.json"
+      "data": "./data/articles/article-31.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-32",
@@ -402,7 +432,8 @@
       "type": "classical",
       "paragraphCount": 9,
       "ready": true,
-      "data": "./data/articles/article-32.json"
+      "data": "./data/articles/article-32.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-33",
@@ -415,7 +446,8 @@
       "type": "vernacular",
       "paragraphCount": 30,
       "ready": true,
-      "data": "./data/articles/article-33.json"
+      "data": "./data/articles/article-33.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-34",
@@ -428,7 +460,8 @@
       "type": "classical",
       "paragraphCount": 12,
       "ready": true,
-      "data": "./data/articles/article-34.json"
+      "data": "./data/articles/article-34.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-35",
@@ -441,7 +474,8 @@
       "type": "vernacular",
       "paragraphCount": 9,
       "ready": true,
-      "data": "./data/articles/article-35.json"
+      "data": "./data/articles/article-35.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-36",
@@ -454,7 +488,8 @@
       "type": "classical",
       "paragraphCount": 15,
       "ready": true,
-      "data": "./data/articles/article-36.json"
+      "data": "./data/articles/article-36.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-37",
@@ -467,7 +502,8 @@
       "type": "vernacular",
       "paragraphCount": 12,
       "ready": true,
-      "data": "./data/articles/article-37.json"
+      "data": "./data/articles/article-37.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-38",
@@ -480,7 +516,8 @@
       "type": "classical",
       "paragraphCount": 12,
       "ready": true,
-      "data": "./data/articles/article-38.json"
+      "data": "./data/articles/article-38.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-39",
@@ -493,7 +530,8 @@
       "type": "vernacular",
       "paragraphCount": 9,
       "ready": true,
-      "data": "./data/articles/article-39.json"
+      "data": "./data/articles/article-39.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-40",
@@ -506,7 +544,8 @@
       "type": "classical",
       "paragraphCount": 12,
       "ready": true,
-      "data": "./data/articles/article-40.json"
+      "data": "./data/articles/article-40.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-41",
@@ -519,7 +558,8 @@
       "type": "vernacular",
       "paragraphCount": 15,
       "ready": true,
-      "data": "./data/articles/article-41.json"
+      "data": "./data/articles/article-41.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-42",
@@ -532,7 +572,8 @@
       "type": "classical",
       "paragraphCount": 8,
       "ready": true,
-      "data": "./data/articles/article-42.json"
+      "data": "./data/articles/article-42.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-43",
@@ -545,7 +586,8 @@
       "type": "vernacular",
       "paragraphCount": 14,
       "ready": true,
-      "data": "./data/articles/article-43.json"
+      "data": "./data/articles/article-43.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-44",
@@ -558,7 +600,8 @@
       "type": "classical",
       "paragraphCount": 19,
       "ready": true,
-      "data": "./data/articles/article-44.json"
+      "data": "./data/articles/article-44.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-45",
@@ -571,7 +614,8 @@
       "type": "vernacular",
       "paragraphCount": 12,
       "ready": true,
-      "data": "./data/articles/article-45.json"
+      "data": "./data/articles/article-45.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-46",
@@ -584,7 +628,8 @@
       "type": "classical",
       "paragraphCount": 9,
       "ready": true,
-      "data": "./data/articles/article-46.json"
+      "data": "./data/articles/article-46.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-47",
@@ -597,7 +642,8 @@
       "type": "vernacular",
       "paragraphCount": 13,
       "ready": true,
-      "data": "./data/articles/article-47.json"
+      "data": "./data/articles/article-47.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-48",
@@ -610,7 +656,8 @@
       "type": "classical",
       "paragraphCount": 6,
       "ready": true,
-      "data": "./data/articles/article-48.json"
+      "data": "./data/articles/article-48.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-49",
@@ -623,7 +670,8 @@
       "type": "vernacular",
       "paragraphCount": 13,
       "ready": true,
-      "data": "./data/articles/article-49.json"
+      "data": "./data/articles/article-49.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-50",
@@ -636,7 +684,8 @@
       "type": "classical",
       "paragraphCount": 4,
       "ready": true,
-      "data": "./data/articles/article-50.json"
+      "data": "./data/articles/article-50.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-51",
@@ -649,7 +698,8 @@
       "type": "vernacular",
       "paragraphCount": 6,
       "ready": true,
-      "data": "./data/articles/article-51.json"
+      "data": "./data/articles/article-51.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-52",
@@ -662,7 +712,8 @@
       "type": "classical",
       "paragraphCount": 5,
       "ready": true,
-      "data": "./data/articles/article-52.json"
+      "data": "./data/articles/article-52.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-53",
@@ -675,7 +726,8 @@
       "type": "vernacular",
       "paragraphCount": 6,
       "ready": true,
-      "data": "./data/articles/article-53.json"
+      "data": "./data/articles/article-53.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-54",
@@ -688,7 +740,8 @@
       "type": "vernacular",
       "paragraphCount": 6,
       "ready": true,
-      "data": "./data/articles/article-54.json"
+      "data": "./data/articles/article-54.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-55",
@@ -701,7 +754,8 @@
       "type": "vernacular",
       "paragraphCount": 6,
       "ready": true,
-      "data": "./data/articles/article-55.json"
+      "data": "./data/articles/article-55.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-56",
@@ -714,7 +768,8 @@
       "type": "vernacular",
       "paragraphCount": 6,
       "ready": true,
-      "data": "./data/articles/article-56.json"
+      "data": "./data/articles/article-56.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-57",
@@ -727,7 +782,8 @@
       "type": "vernacular",
       "paragraphCount": 3,
       "ready": true,
-      "data": "./data/articles/article-57.json"
+      "data": "./data/articles/article-57.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-58",
@@ -740,7 +796,8 @@
       "type": "vernacular",
       "paragraphCount": 6,
       "ready": true,
-      "data": "./data/articles/article-58.json"
+      "data": "./data/articles/article-58.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-59",
@@ -753,7 +810,8 @@
       "type": "vernacular",
       "paragraphCount": 6,
       "ready": true,
-      "data": "./data/articles/article-59.json"
+      "data": "./data/articles/article-59.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-60",
@@ -766,7 +824,8 @@
       "type": "vernacular",
       "paragraphCount": 10,
       "ready": true,
-      "data": "./data/articles/article-60.json"
+      "data": "./data/articles/article-60.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-61",
@@ -779,7 +838,8 @@
       "type": "vernacular",
       "paragraphCount": 12,
       "ready": true,
-      "data": "./data/articles/article-61.json"
+      "data": "./data/articles/article-61.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-62",
@@ -792,7 +852,8 @@
       "type": "classical",
       "paragraphCount": 9,
       "ready": true,
-      "data": "./data/articles/article-62.json"
+      "data": "./data/articles/article-62.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-63",
@@ -805,7 +866,8 @@
       "type": "classical",
       "paragraphCount": 4,
       "ready": true,
-      "data": "./data/articles/article-63.json"
+      "data": "./data/articles/article-63.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-64",
@@ -818,7 +880,8 @@
       "type": "classical",
       "paragraphCount": 3,
       "ready": true,
-      "data": "./data/articles/article-64.json"
+      "data": "./data/articles/article-64.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-65",
@@ -831,7 +894,8 @@
       "type": "classical",
       "paragraphCount": 6,
       "ready": true,
-      "data": "./data/articles/article-65.json"
+      "data": "./data/articles/article-65.json",
+      "dailyFrom": "2026-10-06"
     },
     {
       "id": "article-66",
@@ -844,7 +908,8 @@
       "type": "vernacular",
       "paragraphCount": 9,
       "ready": true,
-      "data": "./data/articles/article-66.json"
+      "data": "./data/articles/article-66.json",
+      "dailyFrom": "2026-10-06"
     }
   ]
 }
