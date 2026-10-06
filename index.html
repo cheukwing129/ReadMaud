@@ -88,11 +88,12 @@ const readyArticles=()=>articles.filter(isReady);
 const dailyArticles=()=>readyArticles().filter(a=>typeof a.dailyFrom==='string'&&a.dailyFrom<=dayKey).sort((a,b)=>a.id<b.id?-1:a.id>b.id?1:0);
 function dateSeed(){return [...dayKey].reduce((n,c)=>((n*31)+c.charCodeAt(0))>>>0,7)}
 function activeArticle(){return detailCache.get(activeId)||articles.find(a=>a.id===activeId)||articles[0]}
-function renderOriginal(p,paragraphIndex,articleId){
+function renderOriginal(p,paragraphIndex,articleId,scope='article'){
  const notes=(p.notes||[]).filter(n=>n&&n.term&&n.explanation).slice().sort((a,b)=>b.term.length-a.term.length);
  if(!notes.length)return esc(p.text);
  let html='',i=0,noteIndex=0;
  const stableArticleId=String(articleId||'article').replace(/[^a-zA-Z0-9_-]/g,'-');
+ const idScope=String(scope||'article').replace(/[^a-zA-Z0-9_-]/g,'-');
  const root={next:new Map(),note:null};
  for(const note of notes){
   let node=root;
@@ -110,7 +111,7 @@ function renderOriginal(p,paragraphIndex,articleId){
    if(node.note){note=node.note;noteLength=j-i+1}
   }
   if(!note){html+=esc(p.text[i]);i++;continue}
-  const id=`note-${stableArticleId}-p${paragraphIndex+1}-n${++noteIndex}`;
+  const id=`note-${stableArticleId}-${idScope}-p${paragraphIndex+1}-n${++noteIndex}`;
   html+=`<span class="annotation-anchor"><button class="annotated-word" type="button" aria-expanded="false" aria-controls="${id}">${esc(note.term)}</button><span class="note-bubble" id="${id}" role="status" hidden>${esc(note.explanation)}</span></span>`;
   i+=note.term.length;
  }
