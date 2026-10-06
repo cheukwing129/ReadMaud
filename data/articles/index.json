@@ -938,6 +938,20 @@
       "ready": true,
       "data": "./data/articles/article-68.json",
       "dailyFrom": "2026-10-07"
+    },
+    {
+      "id": "article-69",
+      "order": 68,
+      "title": "不變的小事",
+      "author": "陶傑",
+      "category": "散文",
+      "intro": "文章以丹麥曲奇藍罐、大白兔奶糖糖紙和中華牌鉛筆為線索，回憶它們如何陪伴香港人的童年、跨越地域與歲月。作者由熟悉的包裝和小物，思考變化中的生活為何仍需要一些不變的記憶與情感。",
+      "sourceUrl": "",
+      "type": "vernacular",
+      "paragraphCount": 6,
+      "ready": true,
+      "data": "./data/articles/article-69.json",
+      "dailyFrom": "2026-10-07"
     }
   ]
 }
