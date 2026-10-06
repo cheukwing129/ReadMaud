@@ -952,6 +952,20 @@
       "ready": true,
       "data": "./data/articles/article-69.json",
       "dailyFrom": "2026-10-07"
+    },
+    {
+      "id": "article-70",
+      "order": 69,
+      "title": "宛如白鷺鷥",
+      "author": "簡媜",
+      "category": "散文",
+      "intro": "作者重返台大醫學院，追憶姑丈謝幸治捐贈大體及逝世後的告別儀式，也回想一位年輕時認識、後來早逝的人。文章由家人的悲痛寫到捐贈者與醫學生之間的情誼，以白鷺鷥比喻無私奉獻的大體老師，思考死亡、記憶與醫者的同理心。",
+      "sourceUrl": "",
+      "type": "vernacular",
+      "paragraphCount": 44,
+      "ready": true,
+      "data": "./data/articles/article-70.json",
+      "dailyFrom": "2026-10-07"
     }
   ]
 }
