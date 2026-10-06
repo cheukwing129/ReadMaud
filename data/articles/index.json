@@ -994,6 +994,20 @@
       "ready": true,
       "data": "./data/articles/article-72.json",
       "dailyFrom": "2026-10-07"
+    },
+    {
+      "id": "article-73",
+      "order": 72,
+      "title": "旁若無人",
+      "author": "梁實秋",
+      "category": "散文",
+      "intro": "梁實秋從電影院裡的腿部震動、公共場合欠伸、鄰居的生活聲響和高聲談話寫起，諷刺只顧自己、不顧旁人的行為。文章借叔本華的豪豬寓言指出，群居需要親近，也需要以禮貌保持適當距離，免得彼此刺傷。",
+      "sourceUrl": "",
+      "type": "vernacular",
+      "paragraphCount": 7,
+      "ready": true,
+      "data": "./data/articles/article-73.json",
+      "dailyFrom": "2026-10-07"
     }
   ]
 }
