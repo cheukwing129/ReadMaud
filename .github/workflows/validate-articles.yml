@@ -8,7 +8,8 @@ on:
       - 'data/articles/**'
       - 'scripts/validate-articles.mjs'
       - 'scripts/test-share-page.mjs'
-      - 'functions/share/**'
+      - 'scripts/test-discovery-pages.mjs'
+      - 'functions/**'
       - 'assets/share-card.jpg'
       - '_routes.json'
       - 'index.html'
@@ -19,7 +20,8 @@ on:
       - 'data/articles/**'
       - 'scripts/validate-articles.mjs'
       - 'scripts/test-share-page.mjs'
-      - 'functions/share/**'
+      - 'scripts/test-discovery-pages.mjs'
+      - 'functions/**'
       - 'assets/share-card.jpg'
       - '_routes.json'
       - 'index.html'
@@ -42,3 +44,5 @@ jobs:
         run: node scripts/validate-articles.mjs
       - name: Test share previews
         run: node scripts/test-share-page.mjs
+      - name: Test search discovery routes
+        run: node scripts/test-discovery-pages.mjs

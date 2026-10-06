@@ -1,7 +1,9 @@
 {
   "version": 1,
   "include": [
-    "/share/*"
+    "/share/*",
+    "/sitemap.xml",
+    "/robots.txt"
   ],
   "exclude": []
 }
