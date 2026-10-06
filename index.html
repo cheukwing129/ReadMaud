@@ -74,6 +74,7 @@ function initReaderSettings(){
   $('#focus-toggle').setAttribute('aria-pressed',String(active));
   $('#focus-toggle').textContent=active?'退出專注':'專注模式';
   if(active){showView('today');$('#reader').scrollIntoView({behavior:'auto',block:'start'})}
+  else document.body.classList.toggle('header-hidden',window.scrollY>24);
   document.dispatchEvent(new Event('readerlayoutchange'));
  };
  $('#focus-toggle').addEventListener('click',()=>toggleFocus(!document.body.classList.contains('focus-mode')));
@@ -256,10 +257,26 @@ async function init(){
 initReaderSettings();
 init();
 let progressTick=false;
+let previousScrollY=window.scrollY;
+let headerScrollDirection=0;
+let headerScrollDistance=0;
+function updateHeaderVisibility(){
+ const body=document.body,currentY=window.scrollY,movement=currentY-previousScrollY;
+ previousScrollY=currentY;
+ if(body.classList.contains('focus-mode')){headerScrollDirection=0;headerScrollDistance=0;return}
+ if(currentY<=24){body.classList.remove('header-hidden');headerScrollDirection=0;headerScrollDistance=0;return}
+ if(Math.abs(movement)<1)return;
+ const direction=Math.sign(movement);
+ if(direction===headerScrollDirection)headerScrollDistance+=movement;
+ else{headerScrollDirection=direction;headerScrollDistance=movement}
+ if(direction>0&&headerScrollDistance>=12&&!body.classList.contains('header-hidden'))body.classList.add('header-hidden');
+ if(direction<0&&headerScrollDistance<=-8&&body.classList.contains('header-hidden'))body.classList.remove('header-hidden');
+}
 window.addEventListener('scroll',()=>{
  if(progressTick)return;
  progressTick=true;
  requestAnimationFrame(()=>{
+  updateHeaderVisibility();
   if(document.body.classList.contains('paged-mode')&&!document.body.classList.contains('library-view')){progressTick=false;return}
   const article=$('#article'),bar=$('#progress-bar'),box=article.getBoundingClientRect();
   const total=Math.max(1,box.height-window.innerHeight+130);

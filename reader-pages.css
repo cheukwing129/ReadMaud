@@ -76,3 +76,35 @@ main,.view,.hero,.hero-main,.reading-area,.readcard,.para,.para-content,.analysi
  .paged-reader,.page-window,.page-flow{min-width:0;max-width:100%}
 }
 
+
+/* Hide the masthead while reading down the page; reveal it as the reader scrolls up. */
+.top{transition:transform .22s ease}
+body.header-hidden .top{transform:translateY(-100%)}
+body.header-hidden .top:focus-within{transform:translateY(0)}
+body.header-hidden .progress-track{top:0}
+body.header-hidden .reader-toolbar{top:0}
+
+/* Focus mode keeps reading tools available with less visual weight. */
+.focus-mode .reader-toolbar{gap:6px;min-height:52px;padding:8px 0}
+.focus-mode .reader-toolbar>strong{display:none}
+.focus-mode .reader-toolbar button,
+.focus-mode .reader-toolbar select{min-width:32px;min-height:32px;padding:4px 8px;font-size:11px}
+.focus-mode .reader-toolbar .focus-toggle{margin-left:0}
+.focus-mode .reader-toolbar .tool-group{gap:3px}
+.focus-mode .reader-toolbar .size-control output{min-width:36px;font-size:11px}
+.focus-mode .reader-settings-panel{gap:10px;padding:12px}
+.focus-mode .reader-settings-panel button,
+.focus-mode .reader-settings-panel select{min-height:32px;padding:4px 8px;font-size:11px}
+.focus-mode .page-footer{min-height:52px;margin-top:10px;padding:8px 0}
+.focus-mode .page-footer button{min-width:32px;min-height:32px;padding:4px 8px;font-size:11px}
+.focus-mode .page-counter{font-size:11px}
+@media(max-width:620px){
+ body.focus-mode .reader-toolbar{gap:5px;padding:6px 14px}
+ body.focus-mode .reader-toolbar>.mode-toggle,
+ body.focus-mode .reader-toolbar>.focus-toggle,
+ body.focus-mode .reader-toolbar>.reader-settings-toggle{min-height:36px;padding:5px 4px!important;font-size:10px}
+ body.focus-mode .reader-toolbar button,
+ body.focus-mode .reader-toolbar select{min-width:30px;min-height:30px;padding:3px 6px;font-size:10px}
+ body.focus-mode .reader-toolbar .size-control output{min-width:32px}
+}
+@media(prefers-reduced-motion:reduce){.top{transition:none}}
