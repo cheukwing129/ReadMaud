@@ -1,5 +1,7 @@
 /* Reading pages use native text columns, so words and punctuation stay intact. */
 (()=>{
+ const app=window.ReadMaudApp;if(!app)throw new Error('ReadMaudApp is unavailable');
+ const {safeGet,safeSet,esc,isReady,activeArticle,renderOriginal}=app;
  const reader=document.querySelector('#reader'),article=document.querySelector('#article');
  const toggle=document.querySelector('#reading-mode-toggle');
  const settingsKey='readmaud-page-mode-v1';
@@ -95,7 +97,7 @@
   flow.dataset.type=a.type;
   pane.querySelector('.page-heading h3').textContent=a.title;
   pane.querySelector('.page-heading span').textContent=a.author;
-  flow.innerHTML=isReady(a)?a.paragraphs.map((p,i)=>`<p class="page-paragraph" data-paragraph="${i}"><span class="page-tag">${String(i+1).padStart(2,'0')}</span>${renderOriginal(p).replaceAll('<button class="annotated-word"','<span class="annotated-word" role="button" tabindex="0"').replaceAll(' type="button"','').replaceAll('</button>','</span>')}</p>`).join(''):'';
+  flow.innerHTML=isReady(a)?a.paragraphs.map((p,i)=>`<p class="page-paragraph" data-paragraph="${i}"><span class="page-tag">${String(i+1).padStart(2,'0')}</span>${renderOriginal(p,i,a.id).replaceAll('<button class="annotated-word"','<span class="annotated-word" role="button" tabindex="0"').replaceAll(' type="button"','').replaceAll('</button>','</span>')}</p>`).join(''):'';
   updateDetailMode();
   applyMode();
  }
