@@ -910,6 +910,34 @@
       "ready": true,
       "data": "./data/articles/article-66.json",
       "dailyFrom": "2026-10-06"
+    },
+    {
+      "id": "article-67",
+      "order": 66,
+      "title": "進學解",
+      "author": "韓愈",
+      "category": "古代論說文",
+      "intro": "韓愈借國子先生與學生的問答，先勉勵勤學修德，再以學生之口自述才學與失意，最後以器物各適其用作答。閱讀時可留意文章如何在自勉與自嘲之間，寄寓對人才進退和朝廷用人的感慨。",
+      "sourceUrl": "",
+      "type": "classical",
+      "paragraphCount": 3,
+      "ready": true,
+      "data": "./data/articles/article-67.json",
+      "dailyFrom": "2026-10-07"
+    },
+    {
+      "id": "article-68",
+      "order": 67,
+      "title": "早夭",
+      "author": "陶傑",
+      "category": "散文",
+      "intro": "文章從香港學生的意外離世切入，回憶年少時同學溺斃，以及查良鏞目送同學遺體的經驗，再寫童年友情中夾雜的妒忌與互助。篇末以空桌和夾竹桃上的露珠回望死別，呈現早年失去同伴留下的長久印象。",
+      "sourceUrl": "",
+      "type": "vernacular",
+      "paragraphCount": 5,
+      "ready": true,
+      "data": "./data/articles/article-68.json",
+      "dailyFrom": "2026-10-07"
     }
   ]
 }
