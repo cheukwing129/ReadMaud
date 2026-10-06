@@ -6,7 +6,7 @@
  const toggle=document.querySelector('#reading-mode-toggle');
  const settingsKey='readmaud-page-mode-v1';
  let enabled=safeGet(settingsKey)==='pages',current=null,spread=0,columns=1,total=1,step=0,offset=0;
- let anchor={paragraph:0,character:0},frame=0,pointer=null,suppressSwipeClickUntil=0;
+ let anchor={paragraph:0,character:0},frame=0,pointer=null,touchPointer=null,suppressSwipeClickUntil=0;
  const pane=document.createElement('div');
  pane.className='paged-reader';pane.hidden=true;
  pane.innerHTML='<div class="page-heading"><h3></h3><span></span></div><div class="page-window"><div class="page-flow"></div></div><div class="page-footer"><button type="button" class="page-prev" aria-label="上一頁">‹</button><button type="button" class="page-next" aria-label="下一頁">›</button><span class="page-counter" aria-live="polite" aria-atomic="true"></span></div>';
@@ -134,7 +134,7 @@
  },{capture:true});
  viewport.addEventListener('pointerdown',event=>{
   if(suppressSwipeClickUntil)suppressSwipeClickUntil=0;
-  if(event.pointerType!=='touch'||!event.isPrimary||event.target.closest('button'))return;
+  if(event.pointerType!=='touch'||!event.isPrimary||event.target.closest('button')||('ontouchstart'in window))return;
   pointer={id:event.pointerId,x:event.clientX,y:event.clientY};
  });
  viewport.addEventListener('pointerup',event=>{
@@ -143,6 +143,21 @@
   if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5&&window.getSelection()?.isCollapsed){if(event.cancelable)event.preventDefault();suppressSwipeClickUntil=Date.now()+350;turn(dx<0?1:-1)}
  });
  viewport.addEventListener('pointercancel',()=>{pointer=null});
+ viewport.addEventListener('touchstart',event=>{
+  if(event.touches.length!==1){touchPointer=null;return}
+  const touch=event.changedTouches[0];if(!touch)return;
+  if(suppressSwipeClickUntil)suppressSwipeClickUntil=0;
+  if(event.target.closest('button')){touchPointer=null;return}
+  touchPointer={id:touch.identifier,x:touch.clientX,y:touch.clientY};
+ },{passive:true});
+ viewport.addEventListener('touchend',event=>{
+  if(!touchPointer)return;
+  const touch=Array.from(event.changedTouches).find(item=>item.identifier===touchPointer.id);if(!touch)return;
+  const start=touchPointer;touchPointer=null;
+  const dx=touch.clientX-start.x,dy=touch.clientY-start.y;
+  if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5&&window.getSelection()?.isCollapsed){if(event.cancelable)event.preventDefault();suppressSwipeClickUntil=Date.now()+350;turn(dx<0?1:-1)}
+ },{passive:false});
+ viewport.addEventListener('touchcancel',()=>{touchPointer=null},{passive:true});
  document.addEventListener('readerarticlechange',event=>build(event.detail));
  document.addEventListener('readerlayoutchange',scheduleLayout);
  document.addEventListener('readerviewchange',()=>{closeNote();scheduleLayout()});
