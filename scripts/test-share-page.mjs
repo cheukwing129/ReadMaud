@@ -72,7 +72,7 @@ for (const article of readyArticles) {
   });
   assert.equal(response.status, 200, article.id + " should return a share page");
   const html = await response.text();
-  const title = article.title + "｜" + article.author + " · ReadMaud";
+  const title = article.title + "｜" + article.author + " · 閱讀萬花筒";
   const description = article.intro || article.author + "：《" + article.title + "》";
   assert.ok(html.includes('<meta property="og:title" content="' + escapeHtml(title) + '">'), article.id + " should have an article title");
   assert.ok(html.includes('<meta property="og:description" content="' + escapeHtml(description) + '">'), article.id + " should have an article description");
@@ -82,7 +82,7 @@ for (const article of readyArticles) {
   assert.ok(html.includes('<meta property="og:image:type" content="image/jpeg">'), article.id + " should declare the image type");
   assert.ok(html.includes('<meta property="og:image:width" content="1200">'), article.id + " should declare image width");
   assert.ok(html.includes('<meta property="og:image:height" content="630">'), article.id + " should declare image height");
-  assert.ok(html.includes('<meta property="og:image:alt" content="ReadMaud 書頁插畫分享封面">'), article.id + " should describe the share image");
+  assert.ok(html.includes('<meta property="og:image:alt" content="閱讀萬花筒書頁插畫分享封面">'), article.id + " should describe the share image");
   assert.ok(html.includes('<meta name="twitter:card" content="summary_large_image">'), article.id + " should use a large Twitter image card");
   assert.ok(html.includes('<meta name="twitter:image" content="' + imageUrl + '">'), article.id + " should include the Twitter image");
   assert.ok(html.includes('<meta name="twitter:title" content="' + escapeHtml(title) + '">'), article.id + " should have a Twitter title");
