@@ -55,6 +55,17 @@
   if(animate&&oldOffset!==offset)flow.animate([{transform:`translateX(${-oldOffset}px)`},{transform:`translateX(${-offset}px)`}],{duration:200,easing:'cubic-bezier(.2,.7,.3,1)'});
   requestAnimationFrame(()=>flow.classList.remove('reflowing'));
  }
+ function contentExtent(){
+  const left=flow.getBoundingClientRect().left;let right=left;
+  const walker=document.createTreeWalker(flow,NodeFilter.SHOW_TEXT,{acceptNode:node=>node.parentElement?.closest('.note-bubble')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+  const range=document.createRange();
+  while(walker.nextNode()){
+   const node=walker.currentNode;if(!node.data.trim())continue;
+   range.selectNodeContents(node);
+   for(const rect of range.getClientRects())if(rect.width>0)right=Math.max(right,rect.right);
+  }
+  return Math.max(flow.scrollWidth,right-left);
+ }
  function layout(){
   frame=0;if(!enabled||!current||pane.hidden||document.querySelector('#today-view').hidden)return;
   closeNote();
@@ -71,7 +82,7 @@
   const chrome=top+toolbar.getBoundingClientRect().height+pane.querySelector('.page-heading').getBoundingClientRect().height+pane.querySelector('.page-footer').getBoundingClientRect().height+72+bottom;
   viewport.style.height=Math.max(120,window.innerHeight-chrome)+'px';
   step=(viewport.clientWidth+gap)/columns;
-  total=Math.max(1,Math.ceil(Math.max(0,flow.scrollWidth-1)/step));
+  total=Math.max(1,Math.ceil(Math.max(0,contentExtent()-1)/step));
   const p=flow.querySelector(`[data-paragraph="${savedAnchor.paragraph}"]`);
   spread=p?Math.floor(Math.max(0,characterX(p,savedAnchor.character))/step/columns):0;
   updateSpread();
