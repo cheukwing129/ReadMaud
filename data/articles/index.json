@@ -1470,6 +1470,36 @@
       "data": "./data/articles/article-99.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 3
+    },
+    {
+      "id": "article-100",
+      "order": 99,
+      "title": "醜石",
+      "author": "賈平凹",
+      "category": "現代散文・寓意與價值判斷",
+      "intro": "賈平凹寫一塊長年被村人嫌棄的黑石，直到天文學家認出它是隕石，眾人才發現它的珍貴。文章由外貌和用途的偏見，轉向對內在價值、忍耐與理解的思考；閱讀時可留意人們對石頭的態度如何隨認知改變。",
+      "sourceUrl": "https://docs.google.com/document/d/11yC6HMhT9JeV8X78fndzjX7n6D4zsVfS/edit",
+      "type": "vernacular",
+      "paragraphCount": 14,
+      "ready": true,
+      "data": "./data/articles/article-100.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 2
+    },
+    {
+      "id": "article-101",
+      "order": 100,
+      "title": "髻",
+      "author": "琦君",
+      "category": "散文・親情與女性處境",
+      "intro": "琦君以母親和姨娘的髮髻為線索，回憶家庭關係中的愛慕、沉默與隔閡；多年後再遇姨娘，歲月使往日恩怨淡去，敘述者以梳頭的動作表達體恤。閱讀時可留意髮髻如何映照女性處境、時間流逝和情感轉變。",
+      "sourceUrl": "https://docs.google.com/document/d/1e8SfEkCeltmfj_qPv4hKSwohWC1Ft_Se/edit",
+      "type": "vernacular",
+      "paragraphCount": 11,
+      "ready": true,
+      "data": "./data/articles/article-101.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 3
     }
   ]
 }
