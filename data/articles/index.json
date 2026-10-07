@@ -269,7 +269,7 @@
       "ready": true,
       "data": "./data/articles/article-19.json",
       "dailyFrom": "2026-10-06",
-      "difficultyLevel": 4
+      "difficultyLevel": 3
     },
     {
       "id": "article-20",
@@ -629,7 +629,7 @@
       "ready": true,
       "data": "./data/articles/article-43.json",
       "dailyFrom": "2026-10-06",
-      "difficultyLevel": 4
+      "difficultyLevel": 5
     },
     {
       "id": "article-44",
@@ -854,7 +854,7 @@
       "ready": true,
       "data": "./data/articles/article-58.json",
       "dailyFrom": "2026-10-06",
-      "difficultyLevel": 3
+      "difficultyLevel": 4
     },
     {
       "id": "article-59",
