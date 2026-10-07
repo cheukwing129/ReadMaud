@@ -1350,6 +1350,36 @@
       "data": "./data/articles/article-91.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-92",
+      "order": 91,
+      "title": "飲酒（其五）（結廬在人境）",
+      "author": "陶潛",
+      "category": "東晉田園詩・《飲酒》選篇",
+      "intro": "陶潛《飲酒》組詩其五寫歸隱後的生活心境。詩人身居人群之中，卻因心遠世俗而自覺清靜；他由採菊、見山、歸鳥體會自然真意，最後以「忘言」寫出難以言傳的領悟。",
+      "sourceUrl": "https://drive.google.com/file/d/1E80XgrgEQLLeTqpivNPgE_93QWy-J8iD/view?usp=drivesdk",
+      "type": "classical",
+      "paragraphCount": 2,
+      "ready": true,
+      "data": "./data/articles/article-92.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
+    },
+    {
+      "id": "article-93",
+      "order": 92,
+      "title": "大學（節錄）",
+      "author": "《禮記》",
+      "category": "儒家修身論說・《大學》節錄",
+      "intro": "本文節錄自《禮記・大學》，提出「明明德、親民、止於至善」三項綱領，並以「格物、致知、誠意、正心、修身、齊家、治國、平天下」說明由修身推展至治國平天下的次序，強調修身是根本。",
+      "sourceUrl": "https://drive.google.com/file/d/1HspF0jqJtiNsXQVEoMcfJPOB0s2Nx3nK/view?usp=drivesdk",
+      "type": "classical",
+      "paragraphCount": 4,
+      "ready": true,
+      "data": "./data/articles/article-93.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
     }
   ]
 }
