@@ -59,6 +59,7 @@ export function validateArticleData(index, articleFiles, readArticle) {
       fail(id, 'difficultyLevel 必須是 1 至 5 的整數。');
     }
     if (typeof entry.ready !== 'boolean') fail(id, 'ready 必須是布林值。');
+    if (entry.translationMode !== undefined && entry.translationMode !== 'none') fail(id, 'translationMode 只可為 none 或省略。');
     if (entry.category !== undefined && entry.category !== null && typeof entry.category !== 'string') {
       fail(id, 'category 必須是字串或留空。');
     }
@@ -91,7 +92,7 @@ export function validateArticleData(index, articleFiles, readArticle) {
       fail(id, '單篇檔案的 id 應為「' + id + '」，目前是「' + (article?.id ?? '') + '」。');
     }
     if (article?.schemaVersion !== 1) fail(id, '單篇檔案 schemaVersion 必須是 1。');
-    for (const field of ['title', 'author', 'type', 'category', 'intro', 'sourceUrl', 'order']) {
+    for (const field of ['title', 'author', 'type', 'category', 'intro', 'sourceUrl', 'order', 'translationMode']) {
       if ((article?.[field] ?? '') !== (entry[field] ?? '')) {
         fail(id, '單篇檔案的 ' + field + ' 與索引不一致。');
       }
@@ -128,7 +129,11 @@ export function validateArticleData(index, articleFiles, readArticle) {
           if (!nonEmptyText(paragraph[field])) fail(paragraphLabel, field + ' 不可留空。');
         }
         if (entry.type === 'classical') {
-          if (!nonEmptyText(paragraph.translation)) fail(paragraphLabel, '文言文 translation 不可留空。');
+          if (entry.translationMode === 'none') {
+            if (paragraph.translation !== '') fail(paragraphLabel, '此篇不顯示譯文，translation 應為空字串。');
+          } else if (!nonEmptyText(paragraph.translation)) {
+            fail(paragraphLabel, '文言文 translation 不可留空。');
+          }
           if (paragraph.notes === undefined || (Array.isArray(paragraph.notes) && paragraph.notes.length === 0)) {
             fail(paragraphLabel, '文言文 ready 文章每段至少要有一項注釋。');
           }
