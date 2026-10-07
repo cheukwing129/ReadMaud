@@ -1515,6 +1515,36 @@
       "data": "./data/articles/article-102.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-103",
+      "order": 102,
+      "title": "毛巾該換了",
+      "author": "蔡玉萱",
+      "category": "當代散文・親情與生命記憶",
+      "intro": "蔡玉萱從一條發霉的毛巾寫起，對照母親的節儉與祖父母家中由告別式留下的毛巾，逐漸帶出衰老、離別與陪伴。結尾她在祖父離世後替奶奶掛上一條毛巾，讓日常物件成為有人相伴的象徵；閱讀時可留意毛巾意義的層層轉變。",
+      "sourceUrl": "https://drive.google.com/file/d/1T3t8WGlPn1eRWl6Ihp77OyRJOPPJ9nxe/view",
+      "type": "vernacular",
+      "paragraphCount": 7,
+      "ready": true,
+      "data": "./data/articles/article-103.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 3
+    },
+    {
+      "id": "article-104",
+      "order": 103,
+      "title": "失眠",
+      "author": "田威寧",
+      "category": "當代散文・氣味與身體記憶",
+      "intro": "田威寧因家中浴廁整修，暫住一間狹小套房。樓梯喚起舊日的身體記憶，房間殘留的狗味則令一向容易入睡的敘述者整夜失眠。次晨鼻塞使敘述者聞不到氣味，願望以帶病的方式實現。閱讀時可留意鐵梯、氣味與身體感官如何推動回憶和焦慮，結尾又怎樣形成反諷。",
+      "sourceUrl": "https://drive.google.com/file/d/1EFKW7oaalVEBa8L83mDmX9gquzvraGJZ/view",
+      "type": "vernacular",
+      "paragraphCount": 9,
+      "ready": true,
+      "data": "./data/articles/article-104.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
     }
   ]
 }
