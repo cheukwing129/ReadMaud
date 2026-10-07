@@ -103,7 +103,7 @@
   pane.querySelector('.page-heading h3').textContent=a.title;
   pane.querySelector('.page-heading span').textContent=a.author;
   flow.innerHTML=isReady(a)?a.paragraphs.map((p,i)=>{
-   const original=renderOriginal(p,i,a.id,'paged').replaceAll('<button class="annotated-word"','<span class="annotated-word" role="button" tabindex="0"').replaceAll(' type="button"','').replaceAll('</button>','</span>');
+   const original=renderOriginal(p,i,a.id,'paged',a.type==='vernacular').replaceAll('<button class="annotated-word"','<span class="annotated-word" role="button" tabindex="0"').replaceAll(' type="button"','').replaceAll('</button>','</span>');
    const translation=p.translation?(a.type==='classical'?'<details class="translation page-translation"><summary>顯示這一段的譯文</summary><p>'+esc(p.translation)+'</p></details>':'<p class="quote page-translation">譯文｜'+esc(p.translation)+'</p>'):'';
    return `<section class="page-paragraph" data-paragraph="${i}"><span class="page-tag">${String(i+1).padStart(2,'0')}</span><p class="page-original">${original}</p>${translation}<details class="insight page-insight"><summary>這段說了甚麼？</summary><p>${esc(p.summary)}</p></details><details class="insight page-insight"><summary>深入分析</summary><p>${esc(p.analysis)}</p></details></section>`;
   }).join(''):'';
