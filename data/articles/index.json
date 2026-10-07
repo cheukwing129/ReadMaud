@@ -1230,6 +1230,36 @@
       "data": "./data/articles/article-83.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 3
+    },
+    {
+      "id": "article-84",
+      "order": 83,
+      "title": "慈烏夜啼",
+      "author": "白居易",
+      "category": "唐代五言古詩",
+      "intro": "白居易借慈烏失母後長守故林、夜半哀鳴的形象，寄託思母之情；又以吳起不奔母喪作反襯，讚美慈烏的孝心。閱讀時可留意詩歌如何由鳥的哀鳴轉入人倫議論，並以曾參作比收束。",
+      "sourceUrl": "https://drive.google.com/file/d/13o8qAcJEXeUHPw86vL7W-aKRV99ec0bd/view?usp=drivesdk",
+      "type": "classical",
+      "paragraphCount": 5,
+      "ready": true,
+      "data": "./data/articles/article-84.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 3
+    },
+    {
+      "id": "article-85",
+      "order": 84,
+      "title": "送杜少府之任蜀州",
+      "author": "王勃",
+      "category": "初唐五言律詩",
+      "intro": "王勃在長安送別即將赴蜀州任職的杜少府。詩由京城與蜀地的遙望，寫到同是宦遊者的共感，再以「海內存知己，天涯若比鄰」勸慰友人，表現開闊豁達的離別情懷。",
+      "sourceUrl": "https://drive.google.com/file/d/1N36zyJINN5ejhiKOiMTq0zhQ_SxzbzSG/view?usp=drivesdk",
+      "type": "classical",
+      "paragraphCount": 4,
+      "ready": true,
+      "data": "./data/articles/article-85.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 3
     }
   ]
 }
