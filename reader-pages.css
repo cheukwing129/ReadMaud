@@ -17,7 +17,7 @@
 .page-flow .note-bubble{display:none!important}
 .page-flow .annotated-word{display:inline;cursor:pointer;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .page-footer{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-height:68px;border-top:1px solid var(--line);margin-top:18px;padding:12px 0}
-.page-footer button{min-height:44px;min-width:44px;border:1px solid var(--line);background:transparent;color:var(--ink);padding:8px 12px;font-size:13px}
+.page-footer button{-webkit-appearance:none;appearance:none;min-height:44px;min-width:44px;border:1px solid var(--line);background:transparent!important;color:var(--ink);padding:8px 12px;font-size:13px}
 .page-footer button:hover{background:var(--accent-soft)}
 .page-footer button:disabled{opacity:.35;cursor:not-allowed}
 .page-counter{margin-left:auto;font:500 12px var(--sans);font-variant-numeric:tabular-nums;color:var(--muted);text-align:right}
@@ -265,7 +265,7 @@ body.header-hidden .reader-toolbar{top:0}
   min-width:0;
   min-height:32px;
   margin:0 0 0 10px;
-  padding:0 0 0 10px!important;
+  padding:0 10px 0 10px!important;
   border:0!important;
   border-left:1px solid var(--line)!important;
   border-radius:0;
@@ -307,7 +307,7 @@ body.header-hidden .reader-toolbar{top:0}
 .reader-toolbar>.reader-settings-toggle:hover{color:var(--accent)!important}
 .reader-toolbar>.reader-settings-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .focus-mode .reader-toolbar>.focus-toggle,.focus-mode .reader-toolbar>.reader-settings-toggle{min-height:32px;font-size:10px}
-.focus-mode .reader-toolbar>.reader-settings-toggle{padding:0 0 0 10px!important}
+.focus-mode .reader-toolbar>.reader-settings-toggle{padding:0 10px 0 10px!important}
 
 .reader-settings-panel{
   position:absolute;
