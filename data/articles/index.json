@@ -1440,6 +1440,36 @@
       "data": "./data/articles/article-97.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 5
+    },
+    {
+      "id": "article-98",
+      "order": 97,
+      "title": "地圖的閱讀",
+      "author": "董啟章",
+      "category": "散文・城市與記憶",
+      "intro": "董啟章從地圖的線條和符號談起，指出地圖既是對空間的簡化呈現，也是保存城市時間與記憶的媒介。文章由舊地圖與城市變遷，延伸至個人記憶中的生命地圖；閱讀時可留意「地圖」意象如何由地理工具轉為記憶圖表。",
+      "sourceUrl": "https://docs.google.com/document/d/1FougE_pSwBlP7xTkuThSxOFiTdtsbyhc/edit",
+      "type": "vernacular",
+      "paragraphCount": 6,
+      "ready": true,
+      "data": "./data/articles/article-98.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
+    },
+    {
+      "id": "article-99",
+      "order": 98,
+      "title": "隱身衣",
+      "author": "楊絳",
+      "category": "散文・自我安頓與專注",
+      "intro": "楊絳先寫人面對廣闊世界時想隱藏自己的願望，再回憶童年穿隱身衣探索世界的幻想。成年後，她把「隱身」重新理解為專心做事、沉浸閱讀、保持內心寧靜的狀態，並指出真正寶貴的隱身衣是不受名利和世俗牽制的平靜心境。",
+      "sourceUrl": "https://docs.google.com/document/d/1YniI6FlGBYlp6VsoUdUCavQeCulLUeEe/edit",
+      "type": "vernacular",
+      "paragraphCount": 8,
+      "ready": true,
+      "data": "./data/articles/article-99.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 3
     }
   ]
 }
