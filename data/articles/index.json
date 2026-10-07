@@ -1635,6 +1635,21 @@
       "data": "./data/articles/article-110.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 5
+    },
+    {
+      "id": "article-111",
+      "order": 110,
+      "title": "林青霞：愛情路上的苦，終將成為如煙往事",
+      "author": "董成瑜",
+      "category": "人物特寫・電影、寫作與愛情",
+      "intro": "董成瑜從林青霞的電影生涯、書面訪問、舊電視片段與娛樂雜誌出發，探看她如何從演員轉向寫作者，以及求完美、愛情和母親陪伴如何交織。文章多次呈現作者的推想與當事人的沉默，最後以林青霞談昔日情苦的話收束。閱讀時可分辨當事人引語、舊媒體材料和作者的詮釋，留意「掌控」與「如煙往事」的呼應。",
+      "sourceUrl": "https://drive.google.com/file/d/1drglmJH8PtDm8T9VIeHHZXEmQnzlj-a1/view",
+      "type": "vernacular",
+      "paragraphCount": 31,
+      "ready": true,
+      "data": "./data/articles/article-111.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
     }
   ]
 }
