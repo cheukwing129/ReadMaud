@@ -1500,6 +1500,21 @@
       "data": "./data/articles/article-101.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 3
+    },
+    {
+      "id": "article-102",
+      "order": 101,
+      "title": "烤神仙",
+      "author": "蔡怡",
+      "category": "現代散文・父女親情與記憶",
+      "intro": "蔡怡以父親病榻前的〈奇異恩典〉開篇，回憶父親的記憶逐漸倒退，從抗戰求學歲月一路退回童年。父親離世後，作者前往許家莊尋訪已變遷的故鄉，才明白父親把一生最珍貴的記憶託付給她。文章以蟬的「羽化」呼應父親的離去，寫親情、失去與記憶傳承；閱讀時可留意倒敘安排、父女角色的顛倒，以及「神仙」意象的轉變。",
+      "sourceUrl": "https://drive.google.com/file/d/1HXBF66J08oyS5y8tVVmqZcFpA0RzeTyM/view?usp=drivesdk",
+      "type": "vernacular",
+      "paragraphCount": 26,
+      "ready": true,
+      "data": "./data/articles/article-102.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
     }
   ]
 }
