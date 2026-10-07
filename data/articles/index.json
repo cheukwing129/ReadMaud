@@ -1200,6 +1200,36 @@
       "data": "./data/articles/article-81.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-82",
+      "order": 81,
+      "title": "滿江紅（怒髮衝冠）",
+      "author": "岳飛（傳）",
+      "category": "宋詞・豪放詞",
+      "intro": "此詞傳統上題為岳飛作，作者歸屬亦有爭議；以下按常見教材版本整理。上片由憑欄雨歇寫到自勉珍惜光陰，下片追述靖康之恥並表達收復山河的壯志。閱讀時可留意短句、典故和誇張如何推高情感。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hant/%E6%BB%BF%E6%B1%9F%E7%B4%85_%28%E6%80%92%E9%AB%AE%E8%A1%9D%E5%86%A0%29",
+      "type": "classical",
+      "paragraphCount": 2,
+      "ready": true,
+      "data": "./data/articles/article-82.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
+    },
+    {
+      "id": "article-83",
+      "order": 82,
+      "title": "燕詩",
+      "author": "白居易",
+      "category": "唐代五言古詩",
+      "intro": "白居易先以序文交代一位老人因兒子離去而悲傷，再借雙燕辛勤育雛、雛燕長成後離巢的故事，勸人設身處地體會父母養育子女的心情。閱讀時可留意詩中由溫馨轉為悲涼的情緒變化，以及結尾把燕子故事轉回人事的勸諭。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hant/%E7%87%95%E8%A9%A9%E7%A4%BA%E5%8A%89%E5%8F%9F",
+      "type": "classical",
+      "paragraphCount": 7,
+      "ready": true,
+      "data": "./data/articles/article-83.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 3
     }
   ]
 }
