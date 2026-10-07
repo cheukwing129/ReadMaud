@@ -1260,6 +1260,36 @@
       "data": "./data/articles/article-85.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 3
+    },
+    {
+      "id": "article-86",
+      "order": 85,
+      "title": "兵車行",
+      "author": "杜甫",
+      "category": "唐代歌行・新題樂府",
+      "intro": "杜甫借送行場面和役夫自述，寫頻繁徵兵、長期戍邊、農田荒蕪與士卒傷亡，揭示邊戰對民生的沉重摧殘。詩中借「武皇」指涉當朝統治者；閱讀時可留意敘事如何轉入控訴，以及開首的人哭與結尾的鬼哭如何呼應。",
+      "sourceUrl": "https://drive.google.com/file/d/1KkfyA4evc2kINqESwqNr6zaluxUn0vcy/view?usp=drivesdk",
+      "type": "classical",
+      "paragraphCount": 4,
+      "ready": true,
+      "data": "./data/articles/article-86.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
+    },
+    {
+      "id": "article-87",
+      "order": 86,
+      "title": "古詩十九首（選二）",
+      "author": "佚名",
+      "category": "漢代五言古詩",
+      "intro": "《古詩十九首》收錄於《昭明文選》，作者並非一人，作品多寫遊子懷鄉與閨人怨別。本文選讀〈行行重行行〉和〈迢迢牽牛星〉：前者寫遠別中的思念與等待，後者借牛郎、織女的形象描寫隔河相望的愁苦。",
+      "sourceUrl": "https://drive.google.com/file/d/1GJWCTWroL2ZuYLK83iCWwl3X3WgdPc_2/view?usp=drivesdk",
+      "type": "classical",
+      "paragraphCount": 2,
+      "ready": true,
+      "data": "./data/articles/article-87.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
     }
   ]
 }
