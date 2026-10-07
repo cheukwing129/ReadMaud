@@ -1590,6 +1590,36 @@
       "data": "./data/articles/article-107.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 3
+    },
+    {
+      "id": "article-108",
+      "order": 107,
+      "title": "孔乙己",
+      "author": "魯迅",
+      "category": "現代小說・科舉與人情冷漠",
+      "intro": "魯迅透過鹹亨酒店小夥計的回憶，寫一個穿長衫卻站着喝酒的落魄讀書人。孔乙己既有好吃懶做、偷書和自欺的一面，也會還酒錢、教字、分豆給孩子；眾人只以取笑對待他，直到他被打斷腿後消失。閱讀時可留意長衫與短衣、反覆出現的笑聲，以及「大約孔乙己的確死了」的矛盾語氣。",
+      "sourceUrl": "https://drive.google.com/file/d/1BuFJYVKkjWqp3Z7WRfCsJYSC3o8LCZ8p/view",
+      "type": "vernacular",
+      "paragraphCount": 14,
+      "ready": true,
+      "data": "./data/articles/article-108.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
+    },
+    {
+      "id": "article-109",
+      "order": 108,
+      "title": "被老師讀作文的時候",
+      "author": "畢淑敏",
+      "category": "當代散文・成長與校園人際",
+      "intro": "畢淑敏回憶童年作文屢受老師朗讀，自己雖高興，卻遭同學取笑和孤立。她先故意寫得平淡，後來請老師匿名讀作文，才兼顧寫作與友誼；長大後又反思這做法的機智、妥協與侷限。閱讀時可留意表揚為何會變成壓力，以及結尾如何把兒時選擇與成年理想並置。",
+      "sourceUrl": "https://drive.google.com/file/d/11OElWAYmybmyCUooODjINsRRwrejsUoU/view",
+      "type": "vernacular",
+      "paragraphCount": 30,
+      "ready": true,
+      "data": "./data/articles/article-109.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 2
     }
   ]
 }
