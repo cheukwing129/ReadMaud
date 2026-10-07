@@ -1575,6 +1575,21 @@
       "data": "./data/articles/article-106.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-107",
+      "order": 106,
+      "title": "笨蛋",
+      "author": "朱少璋",
+      "category": "當代散文・親情與生活智慧",
+      "intro": "朱少璋兒時嘲笑母親先把雞蛋打進小碗的「笨蛋」習慣；成家後自己把壞蛋直接打進蒸盤，才明白母親是在防範一隻壞蛋毀掉整盤蛋液。文章以幽默的雙關和親身經驗，寫出對母親多年細心照料的遲來理解。閱讀時可留意前後態度如何翻轉，以及結尾如何回扣篇題。",
+      "sourceUrl": "https://drive.google.com/file/d/1QjvC-mo-nZ0JiR_HVDu_52wLwzjSYeaK/view",
+      "type": "vernacular",
+      "paragraphCount": 5,
+      "ready": true,
+      "data": "./data/articles/article-107.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 3
     }
   ]
 }
