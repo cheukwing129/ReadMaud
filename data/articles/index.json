@@ -1290,6 +1290,36 @@
       "data": "./data/articles/article-87.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-88",
+      "order": 87,
+      "title": "鄒忌諷齊王納諫",
+      "author": "戰國策（編者不詳）",
+      "category": "戰國策・策士遊說散文",
+      "intro": "鄒忌以自己被妻、妾、客奉承的經歷作類比，指出齊威王身邊的人也可能因偏愛、畏懼或有所求而不敢直言。齊王因而設下進諫賞則，朝中意見由踴躍漸至無可再諫，最後「戰勝於朝廷」。閱讀時可留意比喻、對話和詳略安排如何使勸諫委婉而有力。",
+      "sourceUrl": "https://drive.google.com/file/d/1l8yd0dqxy9YUKHqwywQJwVu7-3HuKMBP/view?usp=drivesdk",
+      "type": "classical",
+      "paragraphCount": 3,
+      "ready": true,
+      "data": "./data/articles/article-88.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
+    },
+    {
+      "id": "article-89",
+      "order": 88,
+      "title": "愚公移山",
+      "author": "列子（傳）",
+      "category": "先秦寓言散文",
+      "intro": "本文出自《列子・湯問》，以愚公率家人移山的故事，寫出面對阻礙時的行動與信念。愚公和智叟的對話形成「目光短淺」與「着眼長遠」的對照；故事既常被解讀為持之以恆，也可引發對愚與智、有限生命與世代力量的思考。",
+      "sourceUrl": "https://drive.google.com/file/d/1Q-tMgeAzkBx5dElgNmhpYR3CjDhhx-Uc/view?usp=drivesdk",
+      "type": "classical",
+      "paragraphCount": 4,
+      "ready": true,
+      "data": "./data/articles/article-89.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
     }
   ]
 }
