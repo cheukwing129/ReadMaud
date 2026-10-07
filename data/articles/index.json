@@ -1320,6 +1320,36 @@
       "data": "./data/articles/article-89.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-90",
+      "order": 89,
+      "title": "大同與小康",
+      "author": "《禮記》",
+      "category": "儒家政治論說・《禮運》節選",
+      "intro": "本文節錄自《禮記・禮運》，篇名《大同與小康》為後人所加。孔子先追憶理想中的「大同」社會，再描述大道隱沒後的「小康」秩序，藉兩者對照呈現儒家的政治理想與治世原則。",
+      "sourceUrl": "https://drive.google.com/file/d/112Ro6gGrrQJsfbEJ18gCgtzL4erUbRkU/view?usp=drivesdk",
+      "type": "classical",
+      "paragraphCount": 3,
+      "ready": true,
+      "data": "./data/articles/article-90.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
+    },
+    {
+      "id": "article-91",
+      "order": 90,
+      "title": "四塊玉・閒適（南畝耕）",
+      "author": "關漢卿",
+      "category": "元代散曲・小令",
+      "intro": "關漢卿《四塊玉・閒適》組曲共四首，本文選讀第四首。作者借「南畝耕」「東山臥」寫歸隱生活，說自己經歷世態人情後，已不願再爭名辯是非；曲中淡泊自嘲，也帶有對世俗爭競的反諷。",
+      "sourceUrl": "https://drive.google.com/file/d/1AHEx9duohug3o6iym-Y-B5dur9O_as8u/view?usp=drivesdk",
+      "type": "classical",
+      "paragraphCount": 1,
+      "ready": true,
+      "data": "./data/articles/article-91.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
     }
   ]
 }
