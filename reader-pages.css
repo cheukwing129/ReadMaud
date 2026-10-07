@@ -34,7 +34,7 @@ body,.top,.reader-toolbar,.paged-reader,.mobile-nav{background-image:url(./asset
 
 body{background-image:url(./assets/paper-gloss.png),url(./assets/paper-texture.png);background-repeat:repeat-x,repeat;background-size:auto,auto;background-attachment:fixed,fixed}
 @font-face{font-family:"ReadMaud Source Serif";src:url(./assets/source-han-serif-tc.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
-body[data-reading-font="sourcehan"] .readcard .original,body[data-reading-font="sourcehan"] .page-flow .page-original,body[data-reading-font="sourcehan"] .translation p,body[data-reading-font="sourcehan"] .insight p{font-family:"ReadMaud Source Serif",var(--serif)}
+body[data-reading-font="sourcehan"] .readcard .original,body[data-reading-font="sourcehan"] .page-flow[data-type] .page-paragraph .page-original,body[data-reading-font="sourcehan"] .translation p,body[data-reading-font="sourcehan"] .page-flow .page-translation,body[data-reading-font="sourcehan"] .insight p{font-family:"ReadMaud Source Serif",var(--serif)}
 .reader-toolbar select{min-height:38px;max-width:130px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:12px;padding:7px 10px}
 .reader-toolbar select option{background:var(--page);color:var(--ink)}
 .pdf-status:empty{display:none}.pdf-status{font-size:13px;color:var(--muted);padding-top:10px}
@@ -524,3 +524,9 @@ body.focus-mode .reader-settings-panel button,body.focus-mode .reader-settings-p
 @media(prefers-reduced-motion:reduce){
   .reader-mode-option,.reader-mode-options::before,.focus-mode-status,.focus-mode-status::after,.reader-toolbar>.reader-settings-toggle::after{transition:none}
 }
+
+
+/* Traditional Chinese Source Han Sans subset; one rare missing glyph falls back to the existing serif subset. */
+@font-face{font-family:"ReadMaud Source Sans";src:url(./assets/source-han-sans-tc.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"ReadMaud Source Sans Fallback";src:url(./assets/source-han-serif-tc.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+9B3D}
+body[data-reading-font="sourcehansans"] .readcard .original,body[data-reading-font="sourcehansans"] .page-flow[data-type] .page-paragraph .page-original,body[data-reading-font="sourcehansans"] .translation p,body[data-reading-font="sourcehansans"] .page-flow .page-translation,body[data-reading-font="sourcehansans"] .insight p{font-family:"ReadMaud Source Sans","ReadMaud Source Sans Fallback",var(--sans)}
