@@ -1410,6 +1410,36 @@
       "data": "./data/articles/article-95.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-96",
+      "order": 95,
+      "title": "兩本存摺",
+      "author": "龍應台",
+      "category": "散文・親情與時間",
+      "intro": "龍應台以「時間存摺」和「情感存摺」比喻人生時間與親情陪伴的消長，提醒人在父母仍在身邊時及時關心，避免留下不能彌補的遺憾。閱讀時可留意存摺比喻如何把抽象時間和情感具體化，並推進至結尾的呼籲。",
+      "sourceUrl": "https://docs.google.com/document/d/1iy65h6STCjrZyRQFquoWxyN2UgkekVP5/edit",
+      "type": "vernacular",
+      "paragraphCount": 10,
+      "ready": true,
+      "data": "./data/articles/article-96.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 2
+    },
+    {
+      "id": "article-97",
+      "order": 96,
+      "title": "子王（節錄）",
+      "author": "呂政達",
+      "category": "當代散文・親子與自閉症",
+      "intro": "呂政達以父親回想陪伴有自閉症的兒子的日常，從地下道、語言迷宮和宇宙意象，寫出溝通、養育焦慮與相互牽引。文章坦白呈現父親一度想離開兒子的念頭，並連結自身童年被遺棄的記憶；結尾以孩子說出「你是爸爸，我是子王」回應兩人的關係。閱讀時可留意敘事如何在現實、童話想像和回憶間轉換。",
+      "sourceUrl": "https://docs.google.com/document/d/1jxgOwenpyZr2HD9U_CR2Ns8568jLhJbQ/edit",
+      "type": "vernacular",
+      "paragraphCount": 8,
+      "ready": true,
+      "data": "./data/articles/article-97.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 5
     }
   ]
 }
