@@ -1650,6 +1650,21 @@
       "data": "./data/articles/article-111.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-112",
+      "order": 111,
+      "title": "論便當",
+      "author": "焦桐",
+      "category": "當代飲食散文・鐵路與生活記憶",
+      "intro": "焦桐由難吃的會議便當寫起，回憶母親送飯與火車月台叫賣，繼而比較台灣和日本的鐵路便當，討論菜色、製作、餐盒與地方特色。文章末段回到家製便當和旅途中的簡單食物，指出滋味也來自關係、景色與記憶。閱讀時可留意幽默誇張的評論口吻，以及懷舊與創新的兩條線索。",
+      "sourceUrl": "https://drive.google.com/file/d/1yebP2gjfT6ogFJjnbtE9jkGyI-qAxp_8/view",
+      "type": "vernacular",
+      "paragraphCount": 51,
+      "ready": true,
+      "data": "./data/articles/article-112.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
     }
   ]
 }
