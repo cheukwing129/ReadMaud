@@ -1380,6 +1380,36 @@
       "data": "./data/articles/article-93.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-94",
+      "order": 93,
+      "title": "曹劌論戰",
+      "author": "《左傳》",
+      "category": "先秦編年史・戰爭敘事",
+      "intro": "本文節錄自《左傳・莊公十年》，記述曹劌在長勺之戰前分析取信於民的條件，戰時把握進攻和追擊時機，戰後再解釋制勝原因。文章以精簡對話和詳略安排，突顯曹劌的遠見、沉着與謀略。",
+      "sourceUrl": "https://drive.google.com/file/d/1WkzyI0CYlLx77p4puIK8U7cxCkAx4YUY/view?usp=drivesdk",
+      "type": "classical",
+      "paragraphCount": 4,
+      "ready": true,
+      "data": "./data/articles/article-94.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
+    },
+    {
+      "id": "article-95",
+      "order": 94,
+      "title": "國風・關雎",
+      "author": "佚名",
+      "category": "《詩經・周南》・國風",
+      "intro": "《關雎》是《詩經》首篇，寫君子由雎鳩和鳴聯想到心儀的淑女，經歷求而不得的思念，最後想像以琴瑟、鐘鼓親近她。傳統詩教曾以后妃之德解讀此詩，近代多視為男女相慕的情歌；閱讀時可留意起興、重章疊句和情感推展。",
+      "sourceUrl": "https://drive.google.com/file/d/1HeKuRwVSpZHEETqoZv5eFITv8UQztyOm/view?usp=drivesdk",
+      "type": "classical",
+      "paragraphCount": 3,
+      "ready": true,
+      "data": "./data/articles/article-95.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
     }
   ]
 }
