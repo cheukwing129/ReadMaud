@@ -1170,6 +1170,36 @@
       "data": "./data/articles/article-79.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 3
+    },
+    {
+      "id": "article-80",
+      "order": 79,
+      "title": "貓捕雀",
+      "author": "薛福成",
+      "category": "清代寓言散文",
+      "intro": "薛福成先敘述幼雀追逐傷害雀母的貓，再由憐憫轉入議論，借動物相殘諷刺倚仗權勢、殘害百姓的人。閱讀時可留意動作和聲音如何推高悲劇感，以及末段由物及人的反問。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E8%B2%93%E6%8D%95%E9%9B%80",
+      "type": "classical",
+      "paragraphCount": 3,
+      "ready": true,
+      "data": "./data/articles/article-80.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 3
+    },
+    {
+      "id": "article-81",
+      "order": 80,
+      "title": "賣柑者言",
+      "author": "劉基",
+      "category": "明代寓言・諷刺散文",
+      "intro": "劉基借買賣柑橘的對話，寫賣柑者如何以「金玉其外，敗絮其中」反諷外表顯赫、實則失職的官員。閱讀時可留意柑橘的外表與內質如何成為全篇比喻，以及賣者的詭辯如何把小事引向政治批判。",
+      "sourceUrl": "https://zh.wikisource.org/zh/%E8%B3%A3%E6%9F%91%E8%80%85%E8%A8%80",
+      "type": "classical",
+      "paragraphCount": 7,
+      "ready": true,
+      "data": "./data/articles/article-81.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
     }
   ]
 }
