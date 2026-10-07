@@ -1545,6 +1545,36 @@
       "data": "./data/articles/article-104.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-105",
+      "order": 104,
+      "title": "母親的餐桌──穿過味覺的記憶",
+      "author": "朱天衣",
+      "category": "當代散文・飲食與家庭記憶",
+      "intro": "朱天衣從旁人稱讚母親廚藝、女兒卻記得大鍋家常菜的落差寫起，回想兒時逛市場、宴客菜與各人不同的口味。自己成為掌廚者後，她逐漸體會母親要餵飽眾人、兼顧喜好的辛勞，並重新理解餐桌上的愛與招待。閱讀時可留意菜餚細節如何帶出人物性格，以及前後兩代掌廚經驗的呼應。",
+      "sourceUrl": "https://drive.google.com/file/d/14yOwekDEmg21fEN1DHcHWICqdfSVHp0w/view",
+      "type": "vernacular",
+      "paragraphCount": 18,
+      "ready": true,
+      "data": "./data/articles/article-105.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
+    },
+    {
+      "id": "article-106",
+      "order": 105,
+      "title": "市場",
+      "author": "崔舜華",
+      "category": "當代散文・市集與日常生活",
+      "intro": "崔舜華從早醒散步寫到逛清晨市場，觀察買家挑選食物、攤販叫賣與零碼衣攤的熱鬧，並在選購中看見多種生活方式。結尾把市場中的需求、匱乏和每日更新的願望連在一起。閱讀時可留意豐富的感官描寫，以及文章如何由逛街樂趣走向對生活的思考。",
+      "sourceUrl": "https://drive.google.com/file/d/1NLgq9RgvEp8vJIstnHSdwCZrLWvY0i0q/view",
+      "type": "vernacular",
+      "paragraphCount": 11,
+      "ready": true,
+      "data": "./data/articles/article-106.json",
+      "dailyFrom": "2026-10-08",
+      "difficultyLevel": 4
     }
   ]
 }
