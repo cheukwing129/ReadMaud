@@ -24,7 +24,8 @@
 .page-counter strong{color:var(--ink);font-weight:600}
 .reader-note{position:fixed;z-index:100;max-height:45dvh;overflow:auto;width:min(340px,calc(100vw - 32px));border:1px solid var(--line);background:var(--ink);color:var(--page);box-shadow:4px 4px 0 var(--accent);padding:16px 18px;font:14px/1.75 var(--sans)}
 .reader-note strong{display:block;color:inherit;margin-bottom:6px}
-@media(orientation:landscape){.paged-mode main,.focus-mode.paged-mode main{max-width:1360px}.paged-mode .reading-area{max-width:1120px;scroll-margin-top:0}.paged-mode:not(.library-view) .top,.paged-mode:not(.library-view) .mobile-nav,.paged-mode:not(.library-view) .progress-track{display:none}.paged-mode .reader-toolbar{top:0}}
+@media(orientation:landscape){.paged-mode main,.focus-mode.paged-mode main{max-width:1360px}.paged-mode .reading-area{max-width:1120px;scroll-margin-top:0}.paged-mode:not(.library-view) .mobile-nav,.paged-mode:not(.library-view) .progress-track{display:none}.paged-mode .reader-toolbar{top:0}}
+@media(orientation:landscape) and (max-width:620px){.paged-mode:not(.library-view):not(.focus-mode) .top-nav{display:flex;gap:16px}.paged-mode:not(.library-view) .top-nav a{font-size:12px}}
 @media(max-width:620px){.paged-reader{margin:12px 12px 0;padding:14px 16px 0}.page-heading{margin-bottom:14px;padding-bottom:10px}.page-heading h3{font-size:14px}.page-footer{min-height:64px;margin-top:12px;gap:6px}.page-footer button{padding:8px;font-size:12px}.page-counter{font-size:12px}.paged-mode .reader-toolbar{gap:6px}.reader-toolbar .mode-toggle,.reader-toolbar .focus-toggle{font-size:12px}.focus-mode.paged-mode main{padding-bottom:12px}}
 @media(prefers-reduced-motion:reduce){.page-flow{transition:none!important}}
 
