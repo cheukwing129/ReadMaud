@@ -9,7 +9,7 @@
 <link rel="icon" type="image/png" sizes="256x256" href="./assets/favicon.png">
 <link rel="apple-touch-icon" sizes="256x256" href="./assets/favicon.png">
 <link rel="stylesheet" href="./main.css">
-<link rel="stylesheet" href="./reader-pages.css?v=source-sans-20261007">
+<link rel="stylesheet" href="./reader-pages.css?v=landscape-header-20261008">
 </head>
 <body>
 <header class="top"><a class="brand" href="#today" data-view-link="today" aria-label="閱讀萬花筒｜ReadMaud｜今日選文"><span class="brand-name">閱讀萬花<span class="brand-mark">筒</span></span><span class="brand-subtitle">ReadMaud</span></a><nav class="top-nav" aria-label="主選單"><a href="#today" data-view-link="today" aria-current="page">今日選文</a><a href="#library" data-view-link="library">篇章庫</a></nav><span class="top-meta">ONE STORY A DAY</span></header>
@@ -288,6 +288,22 @@ window.addEventListener('scroll',()=>{
   progressTick=false;
  });
 },{passive:true});
+// A paged spread can fit the viewport exactly, leaving no scroll event to reveal the masthead.
+let pagedHeaderTouch=null;
+document.addEventListener('touchstart',event=>{
+ if(event.touches.length!==1||!document.body.classList.contains('paged-mode')||document.body.classList.contains('focus-mode')||!matchMedia('(orientation: landscape)').matches||!event.target.closest('.page-window')){pagedHeaderTouch=null;return}
+ const touch=event.touches[0];pagedHeaderTouch={id:touch.identifier,x:touch.clientX,y:touch.clientY,scrollY:window.scrollY};
+},{passive:true});
+document.addEventListener('touchend',event=>{
+ if(!pagedHeaderTouch)return;
+ const touch=Array.from(event.changedTouches).find(item=>item.identifier===pagedHeaderTouch.id);
+ if(touch){
+  const dx=touch.clientX-pagedHeaderTouch.x,dy=touch.clientY-pagedHeaderTouch.y;
+  if(dy>40&&dy>Math.abs(dx)*1.5&&Math.abs(window.scrollY-pagedHeaderTouch.scrollY)<4&&document.body.classList.contains('paged-mode')&&!document.body.classList.contains('focus-mode')&&matchMedia('(orientation: landscape)').matches)document.body.classList.remove('header-hidden');
+ }
+ pagedHeaderTouch=null;
+},{passive:true});
+document.addEventListener('touchcancel',()=>{pagedHeaderTouch=null},{passive:true});
 </script>
 <script src="./reader-notes.js"></script>
 <script src="./reader-pages.js?v=ipad-columns-20261006"></script>
