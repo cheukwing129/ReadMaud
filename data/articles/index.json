@@ -1756,6 +1756,21 @@
       "data": "./data/articles/article-118.json",
       "dailyFrom": "2026-10-10",
       "difficultyLevel": 5
+    },
+    {
+      "id": "article-119",
+      "order": 118,
+      "title": "山形的修辭學",
+      "author": "丁威仁",
+      "category": "當代散文・登山與身體記憶",
+      "intro": "丁威仁沿著南二段行走，從南雙頭山、塔芬池和雲峰寫到身體的疲憊、歷史記憶與內在轉變。山不只是風景，也成為映照自我、記錄身體經驗的語言。閱讀時可留意作者如何把登山詞彙轉成書寫比喻，以及回程如何改變他對旅程的理解。",
+      "sourceUrl": "https://drive.google.com/file/d/18m3cBwhJD_vrNeUFCb0xPGJFJc6VVTAZ/view?usp=drivesdk",
+      "type": "vernacular",
+      "paragraphCount": 12,
+      "ready": true,
+      "data": "./data/articles/article-119.json",
+      "dailyFrom": "2026-10-10",
+      "difficultyLevel": 5
     }
   ]
 }
