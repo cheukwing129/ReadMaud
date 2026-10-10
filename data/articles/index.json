@@ -1816,6 +1816,21 @@
       "data": "./data/articles/article-122.json",
       "dailyFrom": "2026-10-10",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-123",
+      "order": 122,
+      "title": "關於陳太太的稱呼",
+      "author": "流沙河悟淨",
+      "category": "當代散文・家庭與身分",
+      "intro": "流沙河悟淨以弟弟的視角書寫已婚姊姊，透過「陳太太」、高雄莫文蔚、越南舒淇等稱呼，描寫她在原生家庭與婚姻家庭之間的移動，以及被期待扮演的不同角色。文章以互相挖苦的姊弟對話維持幽默，逐步帶出女性身分、家庭責任與回家／離家的矛盾。閱讀時可留意稱呼如何既限制一個人，也容納她不同的樣子。",
+      "sourceUrl": "https://drive.google.com/file/d/1gVHkSxecEi2f_1xdXuFRYSZtCU7vBrNW/view?usp=drivesdk",
+      "type": "vernacular",
+      "paragraphCount": 12,
+      "ready": true,
+      "data": "./data/articles/article-123.json",
+      "dailyFrom": "2026-10-10",
+      "difficultyLevel": 4
     }
   ]
 }
