@@ -1786,6 +1786,21 @@
       "data": "./data/articles/article-120.json",
       "dailyFrom": "2026-10-10",
       "difficultyLevel": 3
+    },
+    {
+      "id": "article-121",
+      "order": 120,
+      "title": "解體",
+      "author": "李柏欣",
+      "category": "當代散文・醫學與生命倫理",
+      "intro": "李柏欣以醫學生的解剖課經驗，追問捐贈者的身體如何在醫學術語中變成教材，又如何透過家屬記憶、默禱和入殮重新成為一個人。文章在唯物知識、宗教想像與醫療倫理之間來回，探討學習解剖時如何看待逝者的尊嚴。閱讀時可留意作者如何運用「鬼魂」「它」及「有時在、有時不在」等語言，表現祛魅與復魅的拉扯。",
+      "sourceUrl": "https://drive.google.com/file/d/1gVHkSxecEi2f_1xdXuFRYSZtCU7vBrNW/view?usp=drivesdk",
+      "type": "vernacular",
+      "paragraphCount": 15,
+      "ready": true,
+      "data": "./data/articles/article-121.json",
+      "dailyFrom": "2026-10-10",
+      "difficultyLevel": 5
     }
   ]
 }
