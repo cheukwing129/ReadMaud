@@ -1801,6 +1801,21 @@
       "data": "./data/articles/article-121.json",
       "dailyFrom": "2026-10-10",
       "difficultyLevel": 5
+    },
+    {
+      "id": "article-122",
+      "order": 121,
+      "title": "孤立語",
+      "author": "偷筆",
+      "category": "當代散文・青春與競逐",
+      "intro": "作者以高中資訊競賽和「渡輪最短路徑」為線索，寫出一名邊陲高中生在菁英升學競爭中的挫敗、孤獨與身體壓力。當「孤立語」從同學口中的語言學名詞，轉化為重新理解孤獨的比喻，港口與航線也從競爭地圖變成連結彼此的可能。閱讀時可留意「空間換時間」「港口／孤島」如何同時連結演算法、教育資源和生命路徑。",
+      "sourceUrl": "https://drive.google.com/file/d/1gVHkSxecEi2f_1xdXuFRYSZtCU7vBrNW/view?usp=drivesdk",
+      "type": "vernacular",
+      "paragraphCount": 16,
+      "ready": true,
+      "data": "./data/articles/article-122.json",
+      "dailyFrom": "2026-10-10",
+      "difficultyLevel": 4
     }
   ]
 }
