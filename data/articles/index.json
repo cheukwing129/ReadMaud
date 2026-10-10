@@ -1831,6 +1831,36 @@
       "data": "./data/articles/article-123.json",
       "dailyFrom": "2026-10-10",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-124",
+      "order": 123,
+      "title": "晚飯",
+      "author": "黃蕙瑜",
+      "category": "當代散文・家庭與飲食記憶",
+      "intro": "黃蕙瑜以一頓晚飯串起七口之家的生活。家人各有口味，母親設法照料眾人；隨著子女長大離家，餐桌由熱鬧豐盛走向簡單冷清。閱讀時可留意菜餚如何標記家庭成員，以及結尾如何以一碗清湯和一尾魚回望親情與時間。",
+      "sourceUrl": "https://docs.google.com/document/d/1wTmp_Hgho7rVa-d5DFHxMtdMgS1MJ81j/edit",
+      "type": "vernacular",
+      "paragraphCount": 8,
+      "ready": true,
+      "data": "./data/articles/article-124.json",
+      "dailyFrom": "2026-10-11",
+      "difficultyLevel": 2
+    },
+    {
+      "id": "article-125",
+      "order": 124,
+      "title": "遠距種樹",
+      "author": "林佳樺",
+      "category": "當代散文・親子、植物與離巢",
+      "intro": "林佳樺與離家求學的女兒分隔兩地，各自照料同源的白水木。作者由植物移植、修枝、病害和生長，聯想到女兒離巢、成長及母女關係的改變。閱讀時可留意植物的根、形狀與空間如何成為親子關係的比喻，以及結尾如何讓女兒反過來安慰母親。",
+      "sourceUrl": "https://docs.google.com/document/d/1_7SIy4hfGIfd_WgTrjdK3QeSoFW7_Wm_/edit",
+      "type": "vernacular",
+      "paragraphCount": 19,
+      "ready": true,
+      "data": "./data/articles/article-125.json",
+      "dailyFrom": "2026-10-11",
+      "difficultyLevel": 4
     }
   ]
 }
