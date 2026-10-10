@@ -1771,6 +1771,21 @@
       "data": "./data/articles/article-119.json",
       "dailyFrom": "2026-10-10",
       "difficultyLevel": 5
+    },
+    {
+      "id": "article-120",
+      "order": 119,
+      "title": "螞蟻房間",
+      "author": "馬尼尼為",
+      "category": "當代散文・城市生活與創作",
+      "intro": "馬尼尼為寫自己在臺北狹小房間中的日常：便利的飲食、酷熱的夏天、搬家的妄想，以及重新回到創作的心境。文章以「螞蟻」和「飛蟲」的微小身影，書寫受限生活如何轉化為觀察與創作的力量。閱讀時可留意作者如何在自嘲、感官描寫和夢境之間，呈現困窘與自由並存的狀態。",
+      "sourceUrl": "https://drive.google.com/file/d/1gVHkSxecEi2f_1xdXuFRYSZtCU7vBrNW/view?usp=drivesdk",
+      "type": "vernacular",
+      "paragraphCount": 16,
+      "ready": true,
+      "data": "./data/articles/article-120.json",
+      "dailyFrom": "2026-10-10",
+      "difficultyLevel": 3
     }
   ]
 }
