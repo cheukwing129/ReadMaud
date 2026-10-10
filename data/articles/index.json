@@ -1726,6 +1726,36 @@
       "data": "./data/articles/article-116.json",
       "dailyFrom": "2026-10-10",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-117",
+      "order": 116,
+      "title": "風落兒",
+      "author": "淡巴菰",
+      "category": "當代散文・舊物、市集與偶然相逢",
+      "intro": "淡巴菰從洛杉磯的跳蚤市場寫起，記錄與古董淘客克力斯、八旬友人皮埃爾和史蒂夫的相遇。舊物、郵票與街頭善意連結起孤獨、疾病和疫情中的日常，文章以「windfall」引出意外的收穫。閱讀時可留意作者如何在價值與喜愛、衰老與活力之間來回觀看。",
+      "sourceUrl": "https://docs.google.com/document/d/1X-6Tdu2d7cm-4FnB6KzwBYIS1e54rK7a/edit",
+      "type": "vernacular",
+      "paragraphCount": 18,
+      "ready": true,
+      "data": "./data/articles/article-117.json",
+      "dailyFrom": "2026-10-10",
+      "difficultyLevel": 4
+    },
+    {
+      "id": "article-118",
+      "order": 117,
+      "title": "再見凱明",
+      "author": "林文心",
+      "category": "當代散文・童年記憶與離別",
+      "intro": "林文心以成年後重遇凱明為起點，回望老公寓、花園、蘋婆和母親的警告。童年記憶在真實與想像之間游移，對凱明的同情、恐懼與親近也留下難以解答的痕跡。閱讀時可留意風、花園和蘋婆意象如何串起時間，以及結尾如何回應開篇的重逢。",
+      "sourceUrl": "https://docs.google.com/document/d/1ly6LXgFq0dhypFT6rlvWaTQ4-Szkedc7/edit",
+      "type": "vernacular",
+      "paragraphCount": 9,
+      "ready": true,
+      "data": "./data/articles/article-118.json",
+      "dailyFrom": "2026-10-10",
+      "difficultyLevel": 5
     }
   ]
 }
