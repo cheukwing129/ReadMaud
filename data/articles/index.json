@@ -1696,6 +1696,36 @@
       "data": "./data/articles/article-114.json",
       "dailyFrom": "2026-10-08",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-115",
+      "order": 114,
+      "title": "父親、榆樹與墳",
+      "author": "李海辰",
+      "category": "當代散文・父子關係與故鄉記憶",
+      "intro": "李海辰以一次返鄉和掃墓，交織兒子眼中的父親、奶奶講述的童年往事，以及父親離鄉後的人生。榆樹、泉水和山林連起幾代人的記憶，也映照父子不善言辭的親情。閱讀時可留意「回去看看」如何成為父子接近彼此的方式，以及結尾如何由祖先的墳墓轉向父親逐漸老去的身影。",
+      "sourceUrl": "https://docs.google.com/document/d/1CWWpCsHVex9OJKg4GvdWDwYGvhJIJeu3/edit",
+      "type": "vernacular",
+      "paragraphCount": 16,
+      "ready": true,
+      "data": "./data/articles/article-115.json",
+      "dailyFrom": "2026-10-10",
+      "difficultyLevel": 3
+    },
+    {
+      "id": "article-116",
+      "order": 115,
+      "title": "我的散文時代",
+      "author": "王姿雯",
+      "category": "當代散文・母職與創作",
+      "intro": "王姿雯回望成為母親後的創作轉變，思考母職如何改變女性的時間、身分和寫作方式。她以「星辰」「包裹」和「黑洞」等意象，對照詩的抽象與散文的坦白，最後重新理解母愛中的失去與擴展。閱讀時可留意作者如何由「為何不寫」的疑問，走到接受自己可能以不同形式繼續寫作。",
+      "sourceUrl": "https://docs.google.com/document/d/1fvMcz-LXAyO29MKAc7wDzTmtUllm8_ld/edit",
+      "type": "vernacular",
+      "paragraphCount": 11,
+      "ready": true,
+      "data": "./data/articles/article-116.json",
+      "dailyFrom": "2026-10-10",
+      "difficultyLevel": 4
     }
   ]
 }
