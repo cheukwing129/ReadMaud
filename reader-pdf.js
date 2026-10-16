@@ -11,7 +11,7 @@
    while(chars.length){
     const inset=first?indent:0,limit=width-inset;
     let count=0,candidate='';
-    while(count<chars.length&&font.widthOfTextAtSize(candidate+chars[count],size)<=limit){candidate+=chars[count++];}
+    while(count<chars.length&&measureText(candidate+chars[count],font,size)<=limit){candidate+=chars[count++];}
     if(!count)throw new Error('PDF line width is too small');
     // Keep Chinese closing punctuation with the preceding line.
     if(count<chars.length&&closing.has(chars[count])){
@@ -28,15 +28,26 @@
   }
   return result;
  }
- async function create(article,{PDFLib,fontkit,fontBytes}){
+ function measureText(text,font,size){
+  if(typeof font.fontForChar!=='function')return font.widthOfTextAtSize(text,size);
+  return [...text].reduce((total,char)=>total+font.fontForChar(char).widthOfTextAtSize(char,size),0);
+ }
+ async function create(article,{PDFLib,fontkit,fontBytes,fallbackFontBytes}){
   if(!article?.title||!Array.isArray(article.paragraphs)||!article.paragraphs.length)throw new Error('No article text');
   const texts=[String(article.title),String(article.author||''),...article.paragraphs.map(p=>String(p.text||''))];
-  const supported=new Set(fontkit.create(new Uint8Array(fontBytes)).characterSet);
-  const missing=[...new Set([...texts.join('')].filter(c=>!/[\r\n\t]/.test(c)&&!supported.has(c.codePointAt(0))))];
+  const primaryKit=fontkit.create(new Uint8Array(fontBytes));
+  const fallbackKit=fallbackFontBytes?fontkit.create(new Uint8Array(fallbackFontBytes)):null;
+  const supported=new Set(primaryKit.characterSet);
+  const fallbackSupported=new Set(fallbackKit?.characterSet||[]);
+  const missing=[...new Set([...texts.join('')].filter(c=>!/[\r\n\t]/.test(c)&&!supported.has(c.codePointAt(0))&&!fallbackSupported.has(c.codePointAt(0))))];
   if(missing.length)throw new Error('匯出字體未收錄以下字元：'+missing.join(''));
   const pdf=await PDFLib.PDFDocument.create();pdf.registerFontkit(fontkit);
   // This asset is already subset to the collection. Retain its glyph IDs when embedding.
   const font=await pdf.embedFont(fontBytes,{subset:false});
+  const fallbackFont=fallbackKit&&[...fallbackSupported].some(code=>!supported.has(code))
+   ?await pdf.embedFont(fallbackFontBytes,{subset:false}):null;
+  const fontForChar=char=>supported.has(char.codePointAt(0))?font:fallbackFont;
+  const layoutFont={fontForChar,widthOfTextAtSize:(text,size)=>measureText(text,layoutFont,size)};
   pdf.setTitle(article.title);pdf.setAuthor(article.author||'');pdf.setCreator('ReadMaud');
   const width=595.28,height=841.89,margin=54,bodySize=14,lineHeight=25,usable=width-margin*2;
   const pages=[];let page,y;
@@ -44,15 +55,20 @@
   function draw(lines,size,leading,gap=0){
    for(const line of lines){
     if(y<margin+24)addPage();
-    if(line.text)page.drawText(line.text,{x:margin+line.indent,y,font,size,color:PDFLib.rgb(0.12,0.12,0.12)});
+    if(line.text){
+     let x=margin+line.indent,runFont=null,runText='';
+     const drawRun=()=>{if(runText){page.drawText(runText,{x,y,font:runFont,size,color:PDFLib.rgb(0.12,0.12,0.12)});x+=runFont.widthOfTextAtSize(runText,size);runText=''}};
+     for(const char of line.text){const nextFont=fontForChar(char);if(nextFont!==runFont){drawRun();runFont=nextFont}runText+=char}
+     drawRun();
+    }
     y-=leading;
    }
    y-=gap;
   }
   addPage();
-  draw(wrapText(article.title,font,21,usable),21,32,8);
-  if(article.author)draw(wrapText(article.author,font,12,usable),12,22,18);
-  for(const p of article.paragraphs)draw(wrapText(p.text,font,bodySize,usable,bodySize*2),bodySize,lineHeight,12);
+  draw(wrapText(article.title,layoutFont,21,usable),21,32,8);
+  if(article.author)draw(wrapText(article.author,layoutFont,12,usable),12,22,18);
+  for(const p of article.paragraphs)draw(wrapText(p.text,layoutFont,bodySize,usable,bodySize*2),bodySize,lineHeight,12);
   pages.forEach((p,index)=>{
    const label=`${index+1} / ${pages.length}`;
    p.drawText(label,{x:width-margin-font.widthOfTextAtSize(label,10),y:30,font,size:10,color:PDFLib.rgb(.4,.4,.4)});
@@ -68,8 +84,9 @@
   if(!resources)resources=Promise.all([
    root.PDFLib?Promise.resolve():loadScript('./vendor/pdf-lib.min.js'),
    root.fontkit?Promise.resolve():loadScript('./vendor/fontkit.min.js'),
-   fetch('./assets/source-han-serif-tc.ttf').then(r=>{if(!r.ok)throw new Error('PDF font failed');return r.arrayBuffer()})
-  ]).then(([, ,fontBytes])=>({PDFLib:root.PDFLib,fontkit:root.fontkit,fontBytes})).catch(error=>{resources=null;throw error});
+   fetch('./assets/source-han-serif-tc.ttf').then(r=>{if(!r.ok)throw new Error('PDF font failed');return r.arrayBuffer()}),
+   fetch('./assets/source-han-serif-tc-fallback.ttf').then(r=>{if(!r.ok)throw new Error('PDF fallback font failed');return r.arrayBuffer()})
+  ]).then(([, ,fontBytes,fallbackFontBytes])=>({PDFLib:root.PDFLib,fontkit:root.fontkit,fontBytes,fallbackFontBytes})).catch(error=>{resources=null;throw error});
   return resources;
  }
  const button=document.querySelector('#export-pdf'),status=document.querySelector('#pdf-status');
