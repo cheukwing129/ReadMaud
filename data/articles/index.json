@@ -1891,6 +1891,36 @@
       "data": "./data/articles/article-127.json",
       "dailyFrom": "2026-10-31",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-128",
+      "order": 127,
+      "title": "LINE",
+      "author": "汪玉如",
+      "category": "當代散文・照顧與生命",
+      "intro": "汪玉如從長者照顧工作的日常，寫與 Z 阿嬤相處、復能及突然告別的經歷。閱讀時可留意重複的問候、工作程序和結尾的薄汗，如何承載陪伴與離別。",
+      "sourceUrl": "https://docs.google.com/document/d/1-aTuox46R1ZCKug8Whbt6kaI8o2rYUTp/edit",
+      "type": "vernacular",
+      "paragraphCount": 13,
+      "ready": true,
+      "data": "./data/articles/article-128.json",
+      "dailyFrom": "2026-10-31",
+      "difficultyLevel": 2
+    },
+    {
+      "id": "article-129",
+      "order": 128,
+      "title": "收音機裏的外婆",
+      "author": "金睿瑜",
+      "category": "當代散文・音樂與親情記憶",
+      "intro": "金睿瑜由一部收音機和鄧麗君的歌曲，回想外婆唱歌、兒時彈琴及喪禮告別。閱讀時可留意音樂如何串連不同時間的記憶，並寄託對外婆的思念。",
+      "sourceUrl": "https://docs.google.com/document/d/1B-JVkns2HoLWHICrygV9Kzv1T4Vp_J3V/edit",
+      "type": "vernacular",
+      "paragraphCount": 11,
+      "ready": true,
+      "data": "./data/articles/article-129.json",
+      "dailyFrom": "2026-10-31",
+      "difficultyLevel": 2
     }
   ]
 }
