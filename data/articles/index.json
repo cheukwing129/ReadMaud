@@ -1876,6 +1876,21 @@
       "data": "./data/articles/article-126.json",
       "dailyFrom": "2026-10-31",
       "difficultyLevel": 2
+    },
+    {
+      "id": "article-127",
+      "order": 126,
+      "title": "輕衣",
+      "author": "劉雲芳",
+      "category": "當代散文・婚姻與女性處境",
+      "intro": "劉雲芳交錯記述街角織毛線的女人與墜子姑姑的生活，從針線、婚姻與家庭關係，思考女性的付出與處境。閱讀時可留意兩條敘事線如何相互映照，以及「編織」與「輕衣」的意象如何轉變。",
+      "sourceUrl": "https://docs.google.com/document/d/1W1oIXOUKc9hfU5Y60N-DYyGR-torMreb/edit",
+      "type": "vernacular",
+      "paragraphCount": 40,
+      "ready": true,
+      "data": "./data/articles/article-127.json",
+      "dailyFrom": "2026-10-31",
+      "difficultyLevel": 4
     }
   ]
 }
