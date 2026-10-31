@@ -1921,6 +1921,21 @@
       "data": "./data/articles/article-129.json",
       "dailyFrom": "2026-10-31",
       "difficultyLevel": 2
+    },
+    {
+      "id": "article-130",
+      "order": 129,
+      "title": "觀霧伏蛾",
+      "author": "林淵智",
+      "category": "當代散文・自然觀察與感官",
+      "intro": "林淵智與友人在觀霧的寒夜以燈光觀察蛾類，從不同蛾的形態與反應，回望自己使用電子耳和在社會中溝通的經驗。閱讀時可留意霧、光及不同感官描寫，如何連結自然觀察與自我思考。",
+      "sourceUrl": "https://docs.google.com/document/d/1njajxuU7xMXhre59CBgbQ6NmMPgQXy_4/edit",
+      "type": "vernacular",
+      "paragraphCount": 40,
+      "ready": true,
+      "data": "./data/articles/article-130.json",
+      "dailyFrom": "2026-10-31",
+      "difficultyLevel": 5
     }
   ]
 }
