@@ -1861,6 +1861,21 @@
       "data": "./data/articles/article-125.json",
       "dailyFrom": "2026-10-11",
       "difficultyLevel": 4
+    },
+    {
+      "id": "article-126",
+      "order": 125,
+      "title": "老狗",
+      "author": "梁裕敏",
+      "category": "當代散文・生命與童年記憶",
+      "intro": "梁裕敏回憶老家胡同裡一條由鄰里共同餵養的老狗，寫牠陪伴孩子、孤寂地走到生命盡頭，以及墳前蒲公英的生長。閱讀時可留意大人的熱鬧與老狗的孤獨如何形成對照，還有孩子對死亡和關懷的疑問。",
+      "sourceUrl": "https://docs.google.com/document/d/13M5PG3OMJdBp3z0zILTyscVZhnPoavyW/edit",
+      "type": "vernacular",
+      "paragraphCount": 19,
+      "ready": true,
+      "data": "./data/articles/article-126.json",
+      "dailyFrom": "2026-10-31",
+      "difficultyLevel": 2
     }
   ]
 }
